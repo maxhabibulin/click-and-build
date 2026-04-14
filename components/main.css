@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+@import "/components/_variables.css";
+@import "/components/_general.css";
+@import "/components/_navigation.css";
+@import "/components/_hero.css";
+@import "/components/_features.css";
+@import "/components/_testimonials.css";
+@import "/components/_product-cards.css";
+@import "/components/_footer.css";
+@import "/components/_buttons.css";
+@import "/components/_utility.css";
+@import "/components/_queries.css";

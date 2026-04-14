@@ -1,0 +1,108 @@
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+:root {
+  /* --- Light Mode ---  */
+  /* Brand Colors */
+  --color-primary: #1c7ed6;
+  --color-primary-dark: #1971c1;
+  --color-primary-darker: #1665ab;
+
+  /* White Colors */
+  --color-always-white: #fff;
+  --color-white: #fff;
+
+  /* Grays Colors */
+  --color-text-main: #343a40;
+  --color-text-muted: #495057;
+
+  /* Blue Tints */
+  --color-bg-light: #e7f5ff;
+  --color-bg-accent: #d0ebff;
+
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-highlight: rgba(0, 0, 0, 0.05);
+
+  /* Shadows */
+  --shadow-nav:
+    0 0.2rem 0.6rem rgba(0, 0, 0, 0.05), 0 0.2rem 0.2rem rgba(0, 0, 0, 0.08);
+  --shadow-dropdown:
+    0 0.2rem 0.4rem rgba(0, 0, 0, 0.04), 0 0.2rem 0.2rem rgba(0, 0, 0, 0.06);
+  --shadow-testimonial: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 2rem 3.2rem rgba(0, 0, 0, 0.07);
+  --shadow-card-hover: 0 2rem 4.8rem rgba(28, 126, 214, 0.1);
+  --shadow-btn-big-hover: 0 1.6rem 3.2rem rgba(0, 0, 0, 0.07);
+  --shadow-btn-big-active: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.1);
+
+  --color-card-bg: var(--color-white);
+
+  /*  --- Typography ---  */
+  /* Font Style*/
+  --font-main: "Inter", sans-serif;
+  /* Font Size System */
+  --font-size-sm: 1.4rem;
+  --font-size-md: 1.6rem;
+  --font-size-lg: 1.8rem;
+  --font-size-xl: 2rem;
+  --font-size-2xl: 2.4rem;
+  --font-size-h2: 3.6rem;
+  --font-size-h1: 4.4rem;
+
+  /*  --- Spacing ---  */
+  /* Spacing System */
+  --space-2: 0.2rem;
+  --space-4: 0.4rem;
+  --space-8: 0.8rem;
+  --space-12: 1.2rem;
+  --space-16: 1.6rem;
+  --space-24: 2.4rem;
+  --space-32: 3.2rem;
+  --space-48: 4.8rem;
+  --space-64: 6.4rem;
+  --space-80: 8rem;
+  --space-96: 9.6rem;
+  --space-128: 12.8rem;
+}
+
+body.dark-mode {
+  /* --- Dark Mode ---  */
+  /* Brand Colors */
+  --color-primary: #339af0;
+  --color-primary-dark: #1971c1;
+  --color-primary-darker: #1665ab;
+
+  /* White Colors */
+  --color-always-white: #fff;
+  --color-white: #121212;
+
+  /* Grays Colors */
+  --color-text-main: #e7f5ff;
+  --color-text-muted: #b9c4cc;
+
+  /* Blue Tints */
+  --color-bg-light: #1a1a1a;
+  --color-bg-accent: #2c2c2c;
+
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-highlight: rgba(255, 255, 255, 0.05);
+
+  /* Shadows */
+  --shadow-nav: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.5);
+  --shadow-dropdown:
+    0 0.8rem 2.4rem rgba(0, 0, 0, 0.6), 0 0.2rem 0.8rem rgba(0, 0, 0, 0.4);
+  --shadow-testimonial:
+    0 2.4rem 4.8rem rgba(0, 0, 0, 0.4), 0 0 2rem rgba(28, 126, 214, 0.1);
+  --shadow-card: 0 2rem 4rem rgba(0, 0, 0, 0.4);
+  /* Fix: Adjust shadow  */
+  --shadow-card-hover: 0 2rem 4.8rem rgba(28, 126, 214, 0.1);
+  /* Fix: Adjust button big hover and active */
+  --shadow-btn-hover: 0 0 2.5rem rgba(28, 126, 214, 0.4);
+  --shadow-btn-big-active: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.6);
+
+  --color-card-bg: #1e1e1e;
+}

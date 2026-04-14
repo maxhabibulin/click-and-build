@@ -1,0 +1,78 @@
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  color: var(--color-always-white);
+  background-color: var(--color-primary-dark);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 10rem;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: var(--color-primary);
+}
+
+.btn--big {
+  font-size: var(--font-size-lg);
+  padding: var(--space-16) var(--space-24);
+
+  &:hover {
+    box-shadow: var(--shadow-btn-big-hover);
+    transform: translateY(-0.2rem) scale(1.03);
+  }
+
+  &:active {
+    box-shadow: var(--shadow-btn-big-active);
+    transform: translateY(0.2rem);
+  }
+}
+
+.btn--small {
+  font-size: var(--font-size-sm);
+  padding: var(--space-8) var(--space-12);
+
+  &:hover {
+    transform: scale(103%);
+  }
+
+  &:active {
+    transform: scale(100%);
+  }
+}
+
+.slider-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background-color: var(--color-card-bg);
+  width: 4rem;
+  height: 4rem;
+  top: 50%;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.slider-btn--left {
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.slider-btn--right {
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.slider-btn__icon {
+  width: var(--space-24);
+  height: var(--space-24);
+  fill: var(--color-primary);
+}

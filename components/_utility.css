@@ -1,0 +1,18 @@
+/* Layout */
+.grid {
+  display: grid;
+  column-gap: var(--space-80);
+}
+
+.grid-3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Margin */
+.mb-96 {
+  margin-bottom: var(--space-96);
+}
+
+.mb-128 {
+  margin-bottom: var(--space-128);
+}

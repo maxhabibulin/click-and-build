@@ -1,0 +1,21 @@
+.hero__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: var(--space-80);
+  margin-top: var(--space-64);
+}
+
+.hero__img {
+  width: 100%;
+  border-radius: 1.2rem;
+}
+
+.hero__text-box {
+  align-self: center;
+}
+
+.hero__text {
+  font-size: var(--font-size-lg);
+  line-height: 1.7;
+  margin-bottom: var(--space-24);
+}
