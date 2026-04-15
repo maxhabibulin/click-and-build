@@ -21,25 +21,51 @@ It demonstrates a **single page application** for a fictional custom PC building
 ```
 click-and-build/
 │
-├── img/                       # Image assets
-│ ├── hero.avif
-│ ├── customer-1.avif
-│ ├── customer-2.avif
-│ ├── customer-3.avif
-│ ├── customer-4.avif
-│ ├── pc-1.avif
-│ ├── pc-2.avif
-│ └── pc-3.avif
+├── backend/
+│   ├── database.db
+│   ├── package.json
+│   └── server.js
 │
-├── modules/                  # JavaScript modules
-│ ├── current-year.js         # Dynamic year update
-│ ├── testimonial-data.js     # Testimonial data
-│ └── testimonial.js          # Carousel functionality
+├── frontend/
+│   ├── .nojekyll
+│   ├── index.html
+│   ├── main.js
+│   ├── components/
+│   │   ├── _buttons.css
+│   │   ├── _features.css
+│   │   ├── _footer.css
+│   │   ├── _general.css
+│   │   ├── _hero.css
+│   │   ├── _navigation.css
+│   │   ├── _product-cards.css
+│   │   ├── _queries.css
+│   │   ├── _testimonials.css
+│   │   ├── _utility.css
+│   │   ├── _variables.css
+│   │   └── main.css
+│   ├── img/
+│   │   ├── favicon/
+│   │   │   └── site.webmanifest
+│   │   ├── hero/
+│   │   │   └── hero.avif
+│   │   ├── logo/
+│   │   ├── product-card/
+│   │   │   ├── pc-1.avif
+│   │   │   ├── pc-2.avif
+│   │   │   └── pc-3.avif
+│   │   ├── svg/
+│   │   └── testimonial/
+│   │       ├── customer-1.avif
+│   │       ├── customer-2.avif
+│   │       ├── customer-3.avif
+│   │       └── customer-4.avif
+│   └── modules/
+│       ├── current-year.js
+│       ├── testimonial-data.js
+│       └── testimonial.js
 │
-├── index.html                # Main HTML file
-├── style.css                 # Styles and design system
-├── main.js                   # Application entry point
-├── LICENSE                   # MIT License
+├── .gitignore
+├── LICENSE
 └── README.md
 ```
 
