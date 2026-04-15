@@ -27,7 +27,6 @@ click-and-build/
 │   └── server.js
 │
 ├── frontend/
-│   ├── .nojekyll
 │   ├── index.html
 │   ├── main.js
 │   ├── components/
