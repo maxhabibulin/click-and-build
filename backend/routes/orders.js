@@ -6,6 +6,10 @@ const router = express.Router();
 router.post("/", (req, res) => {
   const { cart, firstName, lastName, email, address } = req.body;
 
+  if (!cart || cart.length === 0) {
+    return res.status(400).json({ error: "Empty cart" });
+  }
+
   let total = 0;
   cart.forEach((item) => {
     total += item.product_price * item.quantity;
