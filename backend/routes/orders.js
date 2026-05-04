@@ -38,7 +38,17 @@ router.post("/", (req, res) => {
 
       res.json({
         message: "Order created successfully!",
-        orderID: orderID,
+        orderInfo: {
+          id: orderID,
+          totalPrice: total,
+          customer: {
+            firstName,
+            lastName,
+            email,
+            address,
+          },
+          date: new Date().toLocaleString(),
+        },
       });
     },
   );
