@@ -1,4 +1,4 @@
-"strict";
+"use strict";
 
 import TESTIMONIALS from "./testimonial-data.js";
 
