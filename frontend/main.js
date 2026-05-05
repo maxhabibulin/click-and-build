@@ -2,6 +2,7 @@
 
 import CurrentYear from "./modules/current-year.js";
 import Testimonial from "./modules/testimonial.js";
+import FetchWrapper from "./modules/fetch-wrapper.js";
 
 const testimonial = new Testimonial();
 const currentYear = new CurrentYear();
@@ -101,3 +102,31 @@ document.addEventListener("keydown", (e) => {
     langMenuEl.classList.remove("active");
   }
 });
+
+const homeViewEl = document.querySelector("#js-home-view");
+const catalogViewEl = document.querySelector("#js-catalog-view");
+const navCatalogBtnEl = document.querySelector("#js-nav-catalog");
+const navLogoBtnEl = document.querySelector("#js-nav-logo");
+const navHomeBtnEl = document.querySelector("#js-nav-home");
+const navFeaturesBtnEl = document.querySelector("#js-nav-features");
+const navReviewsBtnEl = document.querySelector("#js-nav-reviews");
+const navBuildsBtnEl = document.querySelector("#js-nav-builds");
+
+navCatalogBtnEl.addEventListener("click", (e) => {
+  e.preventDefault();
+  homeViewEl.classList.add("hidden");
+  catalogViewEl.classList.remove("hidden");
+});
+
+const test = (btnName, elName) => {
+  btnName.addEventListener("click", () => {
+    elName.classList.remove("hidden");
+    catalogViewEl.classList.add("hidden");
+  });
+};
+
+test(navLogoBtnEl, homeViewEl);
+test(navHomeBtnEl, homeViewEl);
+test(navFeaturesBtnEl, homeViewEl);
+test(navReviewsBtnEl, homeViewEl);
+test(navBuildsBtnEl, homeViewEl);

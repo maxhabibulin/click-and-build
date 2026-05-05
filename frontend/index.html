@@ -31,18 +31,36 @@
   <body id="home">
     <header class="navigation">
       <nav class="navigation__content">
-        <a class="navigation__logo-link" href="#">
+        <a class="navigation__logo-link" id="js-nav-logo" href="#">
           <img
             class="navigation__logo-img"
             src="img/logo/cb-logo.png"
             alt="Click & Build logo"
         /></a>
         <ul class="navigation__list">
-          <li><a class="navigation__link" href="#home">Home</a></li>
-          <li><a class="navigation__link" href="#features">Features</a></li>
-          <li><a class="navigation__link" href="#reviews">Reviews</a></li>
-          <li><a class="navigation__link" href="#builds">Builds</a></li>
-          <li><a class="navigation__link" href="#">Catalog</a></li>
+          <li>
+            <a class="navigation__link" id="js-nav-home" href="#home">Home</a>
+          </li>
+          <li>
+            <a class="navigation__link" id="js-nav-features" href="#features"
+              >Features</a
+            >
+          </li>
+          <li>
+            <a class="navigation__link" id="js-nav-reviews" href="#reviews"
+              >Reviews</a
+            >
+          </li>
+          <li>
+            <a class="navigation__link" id="js-nav-builds" href="#builds"
+              >Builds</a
+            >
+          </li>
+          <li>
+            <a class="navigation__link" id="js-nav-catalog" href="#catalog"
+              >Catalog</a
+            >
+          </li>
         </ul>
         <div class="navigation__controls">
           <button class="nav-control nav-control--btn" id="js-cart-btn">
@@ -77,291 +95,301 @@
         </div>
       </nav>
     </header>
-    <main>
-      <section class="section-hero container mb-96">
-        <div class="hero__container">
-          <img
-            class="hero__img"
-            src="img/hero/hero.avif"
-            alt="Click & Build store"
-          />
-          <div class="hero__text-box">
-            <h1 class="hero__heading heading-primary">
-              We design and build custom computers to enhance your life
-            </h1>
-            <p class="hero__text">
-              Click & Build is dedicated to relentlessly perfecting our
-              computers. The result is a seamless blend of beauty and
-              technology, designed to enhance your productivity and performance.
-            </p>
-            <a class="btn btn--big" href="#">Try Now</a>
+    <main id="js-main-content">
+      <div id="js-home-view">
+        <section class="section-hero container mt-64 mb-96">
+          <div class="hero__container">
+            <img
+              class="hero__img"
+              src="img/hero/hero.avif"
+              alt="Click & Build store"
+            />
+            <div class="hero__text-box">
+              <h1 class="hero__heading heading-primary">
+                We design and build custom computers to enhance your life
+              </h1>
+              <p class="hero__text">
+                Click & Build is dedicated to relentlessly perfecting our
+                computers. The result is a seamless blend of beauty and
+                technology, designed to enhance your productivity and
+                performance.
+              </p>
+              <a class="btn btn--big" href="#">Try Now</a>
+            </div>
           </div>
-        </div>
-      </section>
-      <section class="section-feature container mb-96" id="features">
-        <div class="feature">
-          <h2 class="feature__heading heading-secondary">
-            What makes our computers special
+        </section>
+        <section class="section-feature container mb-96" id="features">
+          <div class="feature">
+            <h2 class="feature__heading heading-secondary">
+              What makes our computers special
+            </h2>
+            <div class="grid grid-3-cols">
+              <div class="feature__item">
+                <svg class="feature__icon">
+                  <use href="img/svg/icons.svg#icon-feature-1"></use>
+                </svg>
+                <p class="feature__title">
+                  <strong>Performance</strong>
+                </p>
+                <p class="feature__text">
+                  Our custom PCs combine cutting-edge performance, modern
+                  aesthetics, delivering high end unique machines.
+                </p>
+              </div>
+              <div class="feature__item">
+                <svg class="feature__icon">
+                  <use href="img/svg/icons.svg#icon-feature-2"></use>
+                </svg>
+                <p class="feature__title">
+                  <strong>Seamless experience</strong>
+                </p>
+                <p class="feature__text">
+                  Designed for daily comfort, our computers ensure silent
+                  operation and an ergonomic setup for extended use.
+                </p>
+              </div>
+              <div class="feature__item">
+                <svg class="feature__icon">
+                  <use href="img/svg/icons.svg#icon-feature-3"></use>
+                </svg>
+                <p class="feature__title">
+                  <strong>Built with responsibility</strong>
+                </p>
+                <p class="feature__text">
+                  We use ethically sourced materials to create sustainable,
+                  high-performance computers that stand the test of time.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section-testimonial container mb-128" id="reviews">
+          <div class="testimonial">
+            <div class="testimonial__box">
+              <h2 class="testimonial__heading" id="js-testimonial-heading">
+                "I will never go back to prebuilt PC's again!"
+              </h2>
+              <blockquote class="testimonial__quote" id="js-testimonial-quote">
+                Every component is carefully selected, and the performance is
+                unbeatable. The build quality is top-notch, and the attention to
+                detail makes all the difference!
+              </blockquote>
+              <p class="testimonial__author" id="js-testimonial-author">
+                Evan Mask
+              </p>
+              <p class="testimonial__tag" id="js-testimonial-tag">@DriftTech</p>
+            </div>
+            <img
+              class="testimonial__img"
+              id="js-testimonial-img"
+              src="img/testimonial/customer-1.avif"
+              alt="Customer"
+            />
+          </div>
+          <button
+            class="slider-btn slider-btn--left"
+            id="js-testimonial-prev"
+            aria-label="Previous"
+          >
+            <svg class="slider-btn__icon">
+              <use href="img/svg/icons.svg#icon-testimonial-btn-1"></use>
+            </svg>
+          </button>
+          <button
+            class="slider-btn slider-btn--right"
+            id="js-testimonial-next"
+            aria-label="Next"
+          >
+            <svg class="slider-btn__icon">
+              <use href="img/svg/icons.svg#icon-testimonial-btn-2"></use>
+            </svg>
+          </button>
+          <div class="pagination">
+            <button
+              class="pagination__dot pagination__dot--active"
+              data-js="dot"
+              data-index="0"
+              aria-label="View testimonial 1"
+            ></button>
+            <button
+              class="pagination__dot"
+              data-js="dot"
+              data-index="1"
+              aria-label="View testimonial 2"
+            ></button>
+            <button
+              class="pagination__dot"
+              data-js="dot"
+              data-index="2"
+              aria-label="View testimonial 3"
+            ></button>
+            <button
+              class="pagination__dot"
+              data-js="dot"
+              data-index="3"
+              aria-label="View testimonial 4"
+            ></button>
+          </div>
+        </section>
+        <section class="section-product-card container mb-96" id="builds">
+          <h2 class="product-card__heading heading-secondary">
+            Our bestselling computers
           </h2>
           <div class="grid grid-3-cols">
-            <div class="feature__item">
-              <svg class="feature__icon">
-                <use href="img/svg/icons.svg#icon-feature-1"></use>
-              </svg>
-              <p class="feature__title">
-                <strong>Performance</strong>
-              </p>
-              <p class="feature__text">
-                Our custom PCs combine cutting-edge performance, modern
-                aesthetics, delivering high end unique machines.
-              </p>
-            </div>
-            <div class="feature__item">
-              <svg class="feature__icon">
-                <use href="img/svg/icons.svg#icon-feature-2"></use>
-              </svg>
-              <p class="feature__title">
-                <strong>Seamless experience</strong>
-              </p>
-              <p class="feature__text">
-                Designed for daily comfort, our computers ensure silent
-                operation and an ergonomic setup for extended use.
-              </p>
-            </div>
-            <div class="feature__item">
-              <svg class="feature__icon">
-                <use href="img/svg/icons.svg#icon-feature-3"></use>
-              </svg>
-              <p class="feature__title">
-                <strong>Built with responsibility</strong>
-              </p>
-              <p class="feature__text">
-                We use ethically sourced materials to create sustainable,
-                high-performance computers that stand the test of time.
-              </p>
-            </div>
+            <figure class="product-card">
+              <img
+                class="product-card__img"
+                src="img/product-card/pc-1.avif"
+                alt="Photon Blade Gaming PC"
+              />
+              <div class="product-card__content">
+                <h3 class="heading-tertiary product-card__heading">
+                  Photon Blade
+                </h3>
+                <ul class="product-card__list">
+                  <li class="product-card__item">
+                    <svg class="product-card__icon">
+                      <use href="img/svg/icons.svg#icon-details-1"></use>
+                    </svg>
+                    Core i7-14700KF
+                  </li>
+                  <li class="product-card__item">
+                    <svg class="product-card__icon">
+                      <use href="img/svg/icons.svg#icon-details-2"></use>
+                    </svg>
+                    ASUS RTX 5070
+                  </li>
+                  <li class="product-card__item">
+                    <svg class="product-card__icon">
+                      <use href="img/svg/icons.svg#icon-details-3"></use>
+                    </svg>
+                    32GB DDR5 3K MHz
+                  </li>
+                  <li class="product-card__item">
+                    <svg class="product-card__icon">
+                      <use href="img/svg/icons.svg#icon-details-4"></use>
+                    </svg>
+                    NVMe SSD 1TB
+                  </li>
+                  <li class="product-card__item">
+                    <svg class="product-card__icon">
+                      <use href="img/svg/icons.svg#icon-details-5"></use>
+                    </svg>
+                    Windows 11
+                  </li>
+                </ul>
+                <div class="product-card__footer">
+                  <strong class="product-card__price">1,999$</strong>
+                  <a class="btn btn--small" href="#">Add to cart</a>
+                </div>
+              </div>
+            </figure>
+            <figure class="product-card">
+              <img
+                class="product-card__img"
+                src="img/product-card//pc-2.avif"
+                alt="Void Runner Pro Gaming PC"
+              />
+              <div class="product-card__content">
+                <h3 class="heading-tertiary product-card__heading">
+                  Void Runner Pro
+                </h3>
+                <ul class="product-card__list">
+                  <li class="product-card__item">
+                    <svg class="product-card__icon">
+                      <use href="img/svg/icons.svg#icon-details-1"></use>
+                    </svg>
+                    Ryzen 7800X3D
+                  </li>
+                  <li class="product-card__item">
+                    <svg class="product-card__icon">
+                      <use href="img/svg/icons.svg#icon-details-2"></use>
+                    </svg>
+                    MSI RTX 5080
+                  </li>
+                  <li class="product-card__item">
+                    <svg class="product-card__icon">
+                      <use href="img/svg/icons.svg#icon-details-3"></use>
+                    </svg>
+                    32GB DDR5 5K MHz
+                  </li>
+                  <li class="product-card__item">
+                    <svg class="product-card__icon">
+                      <use href="img/svg/icons.svg#icon-details-4"></use>
+                    </svg>
+                    NVMe SSD 2TB
+                  </li>
+                  <li class="product-card__item">
+                    <svg class="product-card__icon">
+                      <use href="img/svg/icons.svg#icon-details-5"></use>
+                    </svg>
+                    Windows 11
+                  </li>
+                </ul>
+                <div class="product-card__footer">
+                  <strong class="product-card__price">3,999$</strong>
+                  <a class="btn btn--small" href="#">Add to cart</a>
+                </div>
+              </div>
+            </figure>
+            <figure class="product-card">
+              <img
+                class="product-card__img"
+                src="img/product-card/pc-3.avif"
+                alt="Cyber Savage Pro Gaming PC"
+              />
+              <div class="product-card__content">
+                <h3 class="heading-tertiary product-card__heading">
+                  Cyber Savage Pro
+                </h3>
+                <ul class="product-card__list">
+                  <li class="product-card__item">
+                    <svg class="product-card__icon">
+                      <use href="img/svg/icons.svg#icon-details-1"></use>
+                    </svg>
+                    Ryzen 7 9800X3D
+                  </li>
+                  <li class="product-card__item">
+                    <svg class="product-card__icon">
+                      <use href="img/svg/icons.svg#icon-details-2"></use>
+                    </svg>
+                    ASUS RTX 5090
+                  </li>
+                  <li class="product-card__item">
+                    <svg class="product-card__icon">
+                      <use href="img/svg/icons.svg#icon-details-3"></use>
+                    </svg>
+                    64GB DDR6 6K MHz
+                  </li>
+                  <li class="product-card__item">
+                    <svg class="product-card__icon">
+                      <use href="img/svg/icons.svg#icon-details-4"></use>
+                    </svg>
+                    NVMe SSD 4TB
+                  </li>
+                  <li class="product-card__item">
+                    <svg class="product-card__icon">
+                      <use href="img/svg/icons.svg#icon-details-5"></use>
+                    </svg>
+                    Windows 11
+                  </li>
+                </ul>
+                <div class="product-card__footer">
+                  <strong class="product-card__price">7,999$</strong>
+                  <a class="btn btn--small" href="#">Add to cart</a>
+                </div>
+              </div>
+            </figure>
           </div>
-        </div>
-      </section>
-      <section class="section-testimonial container mb-128" id="reviews">
-        <div class="testimonial">
-          <div class="testimonial__box">
-            <h2 class="testimonial__heading" id="js-testimonial-heading">
-              "I will never go back to prebuilt PC's again!"
-            </h2>
-            <blockquote class="testimonial__quote" id="js-testimonial-quote">
-              Every component is carefully selected, and the performance is
-              unbeatable. The build quality is top-notch, and the attention to
-              detail makes all the difference!
-            </blockquote>
-            <p class="testimonial__author" id="js-testimonial-author">
-              Evan Mask
-            </p>
-            <p class="testimonial__tag" id="js-testimonial-tag">@DriftTech</p>
-          </div>
-          <img
-            class="testimonial__img"
-            id="js-testimonial-img"
-            src="img/testimonial/customer-1.avif"
-            alt="Customer"
-          />
-        </div>
-        <button
-          class="slider-btn slider-btn--left"
-          id="js-testimonial-prev"
-          aria-label="Previous"
-        >
-          <svg class="slider-btn__icon">
-            <use href="img/svg/icons.svg#icon-testimonial-btn-1"></use>
-          </svg>
-        </button>
-        <button
-          class="slider-btn slider-btn--right"
-          id="js-testimonial-next"
-          aria-label="Next"
-        >
-          <svg class="slider-btn__icon">
-            <use href="img/svg/icons.svg#icon-testimonial-btn-2"></use>
-          </svg>
-        </button>
-        <div class="pagination">
-          <button
-            class="pagination__dot pagination__dot--active"
-            data-js="dot"
-            data-index="0"
-            aria-label="View testimonial 1"
-          ></button>
-          <button
-            class="pagination__dot"
-            data-js="dot"
-            data-index="1"
-            aria-label="View testimonial 2"
-          ></button>
-          <button
-            class="pagination__dot"
-            data-js="dot"
-            data-index="2"
-            aria-label="View testimonial 3"
-          ></button>
-          <button
-            class="pagination__dot"
-            data-js="dot"
-            data-index="3"
-            aria-label="View testimonial 4"
-          ></button>
-        </div>
-      </section>
-      <section class="section-product-card container mb-96" id="builds">
-        <h2 class="product-card__heading heading-secondary">
-          Our bestselling computers
-        </h2>
-        <div class="grid grid-3-cols">
-          <figure class="product-card">
-            <img
-              class="product-card__img"
-              src="img/product-card/pc-1.avif"
-              alt="Photon Blade Gaming PC"
-            />
-            <div class="product-card__content">
-              <h3 class="heading-tertiary product-card__heading">
-                Photon Blade
-              </h3>
-              <ul class="product-card__list">
-                <li class="product-card__item">
-                  <svg class="product-card__icon">
-                    <use href="img/svg/icons.svg#icon-details-1"></use>
-                  </svg>
-                  Core i7-14700KF
-                </li>
-                <li class="product-card__item">
-                  <svg class="product-card__icon">
-                    <use href="img/svg/icons.svg#icon-details-2"></use>
-                  </svg>
-                  ASUS RTX 5070
-                </li>
-                <li class="product-card__item">
-                  <svg class="product-card__icon">
-                    <use href="img/svg/icons.svg#icon-details-3"></use>
-                  </svg>
-                  32GB DDR5 3K MHz
-                </li>
-                <li class="product-card__item">
-                  <svg class="product-card__icon">
-                    <use href="img/svg/icons.svg#icon-details-4"></use>
-                  </svg>
-                  NVMe SSD 1TB
-                </li>
-                <li class="product-card__item">
-                  <svg class="product-card__icon">
-                    <use href="img/svg/icons.svg#icon-details-5"></use>
-                  </svg>
-                  Windows 11
-                </li>
-              </ul>
-              <div class="product-card__footer">
-                <strong class="product-card__price">1,999$</strong>
-                <a class="btn btn--small" href="#">Add to cart</a>
-              </div>
-            </div>
-          </figure>
-          <figure class="product-card">
-            <img
-              class="product-card__img"
-              src="img/product-card//pc-2.avif"
-              alt="Void Runner Pro Gaming PC"
-            />
-            <div class="product-card__content">
-              <h3 class="heading-tertiary product-card__heading">
-                Void Runner Pro
-              </h3>
-              <ul class="product-card__list">
-                <li class="product-card__item">
-                  <svg class="product-card__icon">
-                    <use href="img/svg/icons.svg#icon-details-1"></use>
-                  </svg>
-                  Ryzen 7800X3D
-                </li>
-                <li class="product-card__item">
-                  <svg class="product-card__icon">
-                    <use href="img/svg/icons.svg#icon-details-2"></use>
-                  </svg>
-                  MSI RTX 5080
-                </li>
-                <li class="product-card__item">
-                  <svg class="product-card__icon">
-                    <use href="img/svg/icons.svg#icon-details-3"></use>
-                  </svg>
-                  32GB DDR5 5K MHz
-                </li>
-                <li class="product-card__item">
-                  <svg class="product-card__icon">
-                    <use href="img/svg/icons.svg#icon-details-4"></use>
-                  </svg>
-                  NVMe SSD 2TB
-                </li>
-                <li class="product-card__item">
-                  <svg class="product-card__icon">
-                    <use href="img/svg/icons.svg#icon-details-5"></use>
-                  </svg>
-                  Windows 11
-                </li>
-              </ul>
-              <div class="product-card__footer">
-                <strong class="product-card__price">3,999$</strong>
-                <a class="btn btn--small" href="#">Add to cart</a>
-              </div>
-            </div>
-          </figure>
-          <figure class="product-card">
-            <img
-              class="product-card__img"
-              src="img/product-card/pc-3.avif"
-              alt="Cyber Savage Pro Gaming PC"
-            />
-            <div class="product-card__content">
-              <h3 class="heading-tertiary product-card__heading">
-                Cyber Savage Pro
-              </h3>
-              <ul class="product-card__list">
-                <li class="product-card__item">
-                  <svg class="product-card__icon">
-                    <use href="img/svg/icons.svg#icon-details-1"></use>
-                  </svg>
-                  Ryzen 7 9800X3D
-                </li>
-                <li class="product-card__item">
-                  <svg class="product-card__icon">
-                    <use href="img/svg/icons.svg#icon-details-2"></use>
-                  </svg>
-                  ASUS RTX 5090
-                </li>
-                <li class="product-card__item">
-                  <svg class="product-card__icon">
-                    <use href="img/svg/icons.svg#icon-details-3"></use>
-                  </svg>
-                  64GB DDR6 6K MHz
-                </li>
-                <li class="product-card__item">
-                  <svg class="product-card__icon">
-                    <use href="img/svg/icons.svg#icon-details-4"></use>
-                  </svg>
-                  NVMe SSD 4TB
-                </li>
-                <li class="product-card__item">
-                  <svg class="product-card__icon">
-                    <use href="img/svg/icons.svg#icon-details-5"></use>
-                  </svg>
-                  Windows 11
-                </li>
-              </ul>
-              <div class="product-card__footer">
-                <strong class="product-card__price">7,999$</strong>
-                <a class="btn btn--small" href="#">Add to cart</a>
-              </div>
-            </div>
-          </figure>
-        </div>
-      </section>
+        </section>
+      </div>
+
+      <div class="hidden" id="js-catalog-view">
+        <section class="section-catalog container mt-64 mb-96" id="catalog">
+          <h2 class="catalog__heading heading-secondary">Computers</h2>
+          <div class="grid grid-3-cols" id="js-catalog-grid"></div>
+        </section>
+      </div>
     </main>
     <footer class="footer container">
       <div class="footer__content">

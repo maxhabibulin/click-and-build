@@ -9,10 +9,19 @@
 }
 
 /* Margin */
+.mt-64 {
+  margin-top: var(--space-64);
+}
+
 .mb-96 {
   margin-bottom: var(--space-96);
 }
 
 .mb-128 {
   margin-bottom: var(--space-128);
+}
+
+/* Hidden */
+.hidden {
+  display: none;
 }

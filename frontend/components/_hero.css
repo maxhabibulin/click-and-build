@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: var(--space-80);
-  margin-top: var(--space-64);
 }
 
 .hero__img {
