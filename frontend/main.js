@@ -112,21 +112,26 @@ const navFeaturesBtnEl = document.querySelector("#js-nav-features");
 const navReviewsBtnEl = document.querySelector("#js-nav-reviews");
 const navBuildsBtnEl = document.querySelector("#js-nav-builds");
 
-navCatalogBtnEl.addEventListener("click", (e) => {
-  e.preventDefault();
+const navigateTo = (viewToShow) => {
   homeViewEl.classList.add("hidden");
-  catalogViewEl.classList.remove("hidden");
-});
+  catalogViewEl.classList.add("hidden");
 
-const test = (btnName, elName) => {
-  btnName.addEventListener("click", () => {
-    elName.classList.remove("hidden");
-    catalogViewEl.classList.add("hidden");
-  });
+  viewToShow.classList.remove("hidden");
 };
 
-test(navLogoBtnEl, homeViewEl);
-test(navHomeBtnEl, homeViewEl);
-test(navFeaturesBtnEl, homeViewEl);
-test(navReviewsBtnEl, homeViewEl);
-test(navBuildsBtnEl, homeViewEl);
+const homeButtons = [
+  navLogoBtnEl,
+  navHomeBtnEl,
+  navFeaturesBtnEl,
+  navReviewsBtnEl,
+  navBuildsBtnEl,
+];
+
+homeButtons.forEach((btn) => {
+  btn.addEventListener("click", () => navigateTo(homeViewEl));
+});
+
+navCatalogBtnEl.addEventListener("click", (e) => {
+  e.preventDefault();
+  navigateTo(catalogViewEl);
+});
