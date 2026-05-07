@@ -3,6 +3,7 @@
 import CurrentYear from "./modules/current-year.js";
 import Testimonial from "./modules/testimonial.js";
 import FetchWrapper from "./modules/fetch-wrapper.js";
+import { renderProductCard } from "./modules/product-card.js";
 
 const testimonial = new Testimonial();
 const currentYear = new CurrentYear();
@@ -111,11 +112,11 @@ const navHomeBtnEl = document.querySelector("#js-nav-home");
 const navFeaturesBtnEl = document.querySelector("#js-nav-features");
 const navReviewsBtnEl = document.querySelector("#js-nav-reviews");
 const navBuildsBtnEl = document.querySelector("#js-nav-builds");
+const heroBtnEl = document.querySelector("#js-hero-btn");
 
 const navigateTo = (viewToShow) => {
   homeViewEl.classList.add("hidden");
   catalogViewEl.classList.add("hidden");
-
   viewToShow.classList.remove("hidden");
 };
 
@@ -127,11 +128,20 @@ const homeButtons = [
   navBuildsBtnEl,
 ];
 
+const catalogButtons = [navCatalogBtnEl, heroBtnEl];
+
 homeButtons.forEach((btn) => {
   btn.addEventListener("click", () => navigateTo(homeViewEl));
 });
 
-navCatalogBtnEl.addEventListener("click", (e) => {
-  e.preventDefault();
-  navigateTo(catalogViewEl);
+catalogButtons.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    navigateTo(catalogViewEl);
+  });
 });
+
+const API = new FetchWrapper("http://localhost:3000");
+const products = await API.get("/api/products");
+console.log(products);
+const catalogGrid = document.querySelector("#js-catalog-grid");
+catalogGrid.innerHTML = products.map((pc) => renderProductCard(pc)).join("");
