@@ -18,6 +18,7 @@ export const ui = {
       document.querySelector("#js-nav-reviews"),
       document.querySelector("#js-nav-builds"),
     ],
+    themeSwitcher: document.querySelector("#js-theme-btn"),
   },
 };
 

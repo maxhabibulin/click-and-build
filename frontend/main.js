@@ -7,6 +7,7 @@ import { renderProductCard } from "./modules/product-card.js";
 import { initEventListeners } from "./modules/events.js";
 import { allViews, ui } from "./modules/ui.js";
 import { navigateTo } from "./modules/navigation.js";
+import { applySavedTheme } from "./modules/theme.js";
 
 const testimonial = new Testimonial();
 const currentYear = new CurrentYear();
@@ -77,20 +78,6 @@ dotsEl.forEach((dot) => {
   });
 });
 
-const bodyEl = document.body;
-const savedTheme = localStorage.getItem("theme");
-
-if (savedTheme === "dark") {
-  bodyEl.classList.add("dark-mode");
-}
-
-themeSwitcherBtnEl.addEventListener("click", () => {
-  bodyEl.classList.toggle("dark-mode");
-
-  const isDark = bodyEl.classList.contains("dark-mode");
-  localStorage.setItem("theme", isDark ? "dark" : "light");
-});
-
 document.addEventListener("click", (e) => {
   const isButtonClick = langSwitcherBtnEl.contains(e.target);
 
@@ -106,6 +93,8 @@ document.addEventListener("keydown", (e) => {
     langMenuEl.classList.remove("active");
   }
 });
+
+applySavedTheme();
 
 const API = new FetchWrapper("http://localhost:3000");
 
