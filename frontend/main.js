@@ -5,7 +5,8 @@ import Testimonial from "./modules/testimonial.js";
 import FetchWrapper from "./modules/fetch-wrapper.js";
 import { renderProductCard } from "./modules/product-card.js";
 import { initEventListeners } from "./modules/events.js";
-import { ui } from "./modules/ui.js";
+import { allViews, ui } from "./modules/ui.js";
+import { navigateTo } from "./modules/navigation.js";
 
 const testimonial = new Testimonial();
 const currentYear = new CurrentYear();
@@ -118,5 +119,14 @@ const loadAndRenderCatalog = async () => {
     console.error("Failed to load catalog", err);
   }
 };
+
+const savedView = localStorage.getItem("currentView");
+
+if (savedView === "catalog") {
+  navigateTo(ui.views.catalog, allViews, "catalog");
+  loadAndRenderCatalog();
+} else {
+  navigateTo(ui.views.home, allViews, "home");
+}
 
 initEventListeners(loadAndRenderCatalog);

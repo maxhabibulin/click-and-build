@@ -1,6 +1,8 @@
-export const navigateTo = (viewToShow, allViews) => {
-  allViews.forEach((view) => {
-    if (view) view?.classList.add("hidden");
-  });
-  if (viewToShow) viewToShow?.classList.remove("hidden");
+export const navigateTo = (viewToShow, allViews, viewName) => {
+  allViews.forEach((view) => view?.classList.add("hidden"));
+  viewToShow?.classList.remove("hidden");
+
+  if (viewName) {
+    localStorage.setItem("currentView", viewName);
+  }
 };
