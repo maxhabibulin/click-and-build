@@ -144,4 +144,7 @@ const API = new FetchWrapper("http://localhost:3000");
 const products = await API.get("/api/products");
 console.log(products);
 const catalogGrid = document.querySelector("#js-catalog-grid");
-catalogGrid.innerHTML = products.map((pc) => renderProductCard(pc)).join("");
+
+products.forEach((pc) => {
+  catalogGrid.appendChild(renderProductCard(pc));
+});
