@@ -112,6 +112,7 @@ const API = new FetchWrapper("http://localhost:3000");
 const loadAndRenderCatalog = async () => {
   try {
     const products = await API.get("/api/products");
+    ui.grids.catalog.innerHTML = "";
     products.forEach((pc) => {
       ui.grids.catalog.appendChild(renderProductCard(pc));
     });
