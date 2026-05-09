@@ -4,6 +4,8 @@ import CurrentYear from "./modules/current-year.js";
 import Testimonial from "./modules/testimonial.js";
 import FetchWrapper from "./modules/fetch-wrapper.js";
 import { renderProductCard } from "./modules/product-card.js";
+import { initEventListeners } from "./modules/events.js";
+import { ui } from "./modules/ui.js";
 
 const testimonial = new Testimonial();
 const currentYear = new CurrentYear();
@@ -104,47 +106,17 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-const homeViewEl = document.querySelector("#js-home-view");
-const catalogViewEl = document.querySelector("#js-catalog-view");
-const navCatalogBtnEl = document.querySelector("#js-nav-catalog");
-const navLogoBtnEl = document.querySelector("#js-nav-logo");
-const navHomeBtnEl = document.querySelector("#js-nav-home");
-const navFeaturesBtnEl = document.querySelector("#js-nav-features");
-const navReviewsBtnEl = document.querySelector("#js-nav-reviews");
-const navBuildsBtnEl = document.querySelector("#js-nav-builds");
-const heroBtnEl = document.querySelector("#js-hero-btn");
+const API = new FetchWrapper("http://localhost:3000");
 
-const navigateTo = (viewToShow) => {
-  homeViewEl.classList.add("hidden");
-  catalogViewEl.classList.add("hidden");
-  viewToShow.classList.remove("hidden");
+const loadAndRenderCatalog = async () => {
+  try {
+    const products = await API.get("/api/products");
+    products.forEach((pc) => {
+      ui.grids.catalog.appendChild(renderProductCard(pc));
+    });
+  } catch (err) {
+    console.error("Failed to load catalog", err);
+  }
 };
 
-const homeButtons = [
-  navLogoBtnEl,
-  navHomeBtnEl,
-  navFeaturesBtnEl,
-  navReviewsBtnEl,
-  navBuildsBtnEl,
-];
-
-const catalogButtons = [navCatalogBtnEl, heroBtnEl];
-
-homeButtons.forEach((btn) => {
-  btn.addEventListener("click", () => navigateTo(homeViewEl));
-});
-
-catalogButtons.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    navigateTo(catalogViewEl);
-  });
-});
-
-const API = new FetchWrapper("http://localhost:3000");
-const products = await API.get("/api/products");
-console.log(products);
-const catalogGrid = document.querySelector("#js-catalog-grid");
-
-products.forEach((pc) => {
-  catalogGrid.appendChild(renderProductCard(pc));
-});
+initEventListeners(loadAndRenderCatalog);
