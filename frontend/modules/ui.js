@@ -1,3 +1,5 @@
+"use strict";
+
 export const ui = {
   views: {
     home: document.querySelector("#js-home-view"),
@@ -19,6 +21,10 @@ export const ui = {
       document.querySelector("#js-nav-builds"),
     ],
     themeSwitcher: document.querySelector("#js-theme-btn"),
+    langSwitcher: document.querySelector("#js-lang-btn"),
+  },
+  menus: {
+    lang: document.querySelector("#js-lang-menu"),
   },
 };
 

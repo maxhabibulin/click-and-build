@@ -78,22 +78,6 @@ dotsEl.forEach((dot) => {
   });
 });
 
-document.addEventListener("click", (e) => {
-  const isButtonClick = langSwitcherBtnEl.contains(e.target);
-
-  if (isButtonClick) {
-    langMenuEl.classList.toggle("active");
-  } else {
-    langMenuEl.classList.remove("active");
-  }
-});
-
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    langMenuEl.classList.remove("active");
-  }
-});
-
 applySavedTheme();
 
 const API = new FetchWrapper("http://localhost:3000");

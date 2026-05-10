@@ -1,3 +1,5 @@
+"use strict";
+
 export const navigateTo = (viewToShow, allViews, viewName) => {
   allViews.forEach((view) => view?.classList.add("hidden"));
   viewToShow?.classList.remove("hidden");
