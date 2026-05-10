@@ -1,40 +1,38 @@
 "use strict";
 
-import TESTIMONIALS from "./testimonial-data.js";
-
 class Testimonial {
   #counter;
   #testimonials;
 
   constructor() {
     this.#counter = 0;
-    this.#testimonials = TESTIMONIALS;
+    this.#testimonials = [];
+  }
+
+  get data() {
+    return this.#testimonials;
   }
 
   get counter() {
     return this.#counter;
   }
 
+  set data(value) {
+    this.#testimonials = value;
+  }
+
   set counter(value) {
     this.#counter = value;
   }
 
-  getTestimonials() {
-    return this.#testimonials;
-  }
-
   moveForward() {
-    if (this.#counter > 2) {
-      this.#counter = -1;
-    }
-    this.#counter++;
+    this.#counter = (this.#counter + 1) % this.#testimonials.length;
   }
 
   moveBackward() {
-    if (this.#counter < 1) {
-      this.#counter = 4;
-    }
-    this.#counter--;
+    this.#counter =
+      (this.#counter - 1 + this.#testimonials.length) %
+      this.#testimonials.length;
   }
 }
 

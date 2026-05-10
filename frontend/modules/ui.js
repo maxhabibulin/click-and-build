@@ -29,6 +29,16 @@ export const ui = {
   footer: {
     yearSpan: document.querySelector("#js-current-year"),
   },
+  testimonials: {
+    heading: document.querySelector("#js-testimonial-heading"),
+    quote: document.querySelector("#js-testimonial-quote"),
+    author: document.querySelector("#js-testimonial-author"),
+    tag: document.querySelector("#js-testimonial-tag"),
+    img: document.querySelector("#js-testimonial-img"),
+    btnNext: document.querySelector("#js-testimonial-next"),
+    btnPrev: document.querySelector("#js-testimonial-prev"),
+    dots: document.querySelectorAll("[data-js='dot']"),
+  },
 };
 
 export const allViews = Object.values(ui.views);
