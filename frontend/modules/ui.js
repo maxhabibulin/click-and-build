@@ -26,6 +26,9 @@ export const ui = {
   menus: {
     lang: document.querySelector("#js-lang-menu"),
   },
+  footer: {
+    yearSpan: document.querySelector("#js-current-year"),
+  },
 };
 
 export const allViews = Object.values(ui.views);

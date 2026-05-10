@@ -23,7 +23,8 @@ export const initEventListeners = (onCatalogOpen) => {
     toggleTheme();
   });
 
-  ui.buttons.langSwitcher?.addEventListener("click", () => {
+  ui.buttons.langSwitcher?.addEventListener("click", (e) => {
+    e.stopPropagation();
     toggleLanguageMenu(ui.menus.lang);
   });
 

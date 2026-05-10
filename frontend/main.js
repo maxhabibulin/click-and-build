@@ -10,7 +10,6 @@ import { navigateTo } from "./modules/navigation.js";
 import { applySavedTheme } from "./modules/theme.js";
 
 const testimonial = new Testimonial();
-const currentYear = new CurrentYear();
 
 const testimonialElements = {
   heading: document.querySelector("#js-testimonial-heading"),
@@ -25,10 +24,6 @@ const testimonialElements = {
   },
 };
 
-const langSwitcherBtnEl = document.querySelector("#js-lang-btn");
-const langMenuEl = document.querySelector("#js-lang-menu");
-const themeSwitcherBtnEl = document.querySelector("#js-theme-btn");
-const showCurrentYearEl = document.querySelector("#js-current-year");
 const dotsEl = document.querySelectorAll("[data-js='dot']");
 
 let previousCounter = 0;
@@ -49,8 +44,6 @@ const render = () => {
   currentDotEl.className = "pagination__dot pagination__dot--active";
   previousCounter = testimonial.counter;
 };
-
-showCurrentYearEl.textContent = currentYear.getCurrentYear();
 
 function goForward() {
   testimonial.moveForward();
@@ -77,6 +70,15 @@ dotsEl.forEach((dot) => {
     render();
   });
 });
+
+const initApp = () => {
+  const yearProvider = new CurrentYear();
+  if (ui.footer.yearSpan) {
+    ui.footer.yearSpan.textContent = yearProvider.getCurrentYear();
+  }
+};
+
+initApp();
 
 applySavedTheme();
 
