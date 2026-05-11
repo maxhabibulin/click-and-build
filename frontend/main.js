@@ -43,6 +43,10 @@ const loadTestimonials = async () => {
   }
 };
 
+const loadInitialData = async () => {
+  await Promise.all([loadAndRenderCatalog(), loadTestimonials()]);
+};
+
 const savedView = localStorage.getItem("currentView");
 
 if (savedView === "catalog") {
@@ -52,5 +56,5 @@ if (savedView === "catalog") {
   navigateTo(ui.views.home, allViews, "home");
 }
 
-loadTestimonials();
+loadInitialData();
 initEventListeners(loadAndRenderCatalog);

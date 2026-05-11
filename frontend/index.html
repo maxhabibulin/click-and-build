@@ -99,24 +99,26 @@
       <div id="js-home-view">
         <section class="section-hero container mt-64 mb-96">
           <div class="hero__container">
-            <img
-              class="hero__img"
-              src="img/hero/hero.avif"
-              alt="Click & Build store"
-            />
-            <div class="hero__text-box">
-              <h1 class="hero__heading heading-primary">
-                We design and build custom computers to enhance your life
-              </h1>
-              <p class="hero__text">
-                Click & Build is dedicated to relentlessly perfecting our
-                computers. The result is a seamless blend of beauty and
-                technology, designed to enhance your productivity and
-                performance.
-              </p>
-              <a class="btn btn--big" id="js-hero-btn" href="#catalog"
-                >Try Now</a
-              >
+            <div class="grid grid-2-cols">
+              <img
+                class="hero__img"
+                src="img/hero/hero.avif"
+                alt="Click & Build store"
+              />
+              <div class="hero__text-box">
+                <h1 class="hero__heading heading-primary">
+                  We design and build custom computers to enhance your life
+                </h1>
+                <p class="hero__text">
+                  Click & Build is dedicated to relentlessly perfecting our
+                  computers. The result is a seamless blend of beauty and
+                  technology, designed to enhance your productivity and
+                  performance.
+                </p>
+                <a class="btn btn--big" id="js-hero-btn" href="#catalog"
+                  >Try Now</a
+                >
+              </div>
             </div>
           </div>
         </section>
@@ -408,6 +410,60 @@
         >
       </div>
     </footer>
+    <div class="product-modal" id="js-product-modal">
+      <div class="product-modal__overlay"></div>
+      <article class="product-modal__content">
+        <button class="product-modal__close-btn" id="js-close-modal">
+          <svg class="product-modal__icon-x">
+            <use href="img/svg/icons.svg#icon-x"></use>
+          </svg>
+        </button>
+        <div class="grid grid-45-55-cols">
+          <section class="product-modal__visual">
+            <div class="product-modal__image-wrapper">
+              <img
+                class="product-modal__img"
+                id="js-details-img"
+                src="img/product-card/pc-1.avif"
+                alt="Phantom gaming pc"
+              />
+            </div>
+            <ul class="product-modal__perks">
+              <li class="product-modal__perks-item">Free shipping</li>
+              <li class="product-modal__perks-item">Return & refund policy</li>
+              <li class="product-modal__perks-item">Security & Privacy</li>
+            </ul>
+
+            <div class="product-modal__quantity">
+              <span class="product-modal__quantity-label">Quantity</span>
+              <div class="product-modal__quantity-controls">
+                <button class="product-modal__btn product-modal__btn--qty">
+                  -
+                </button>
+                <input
+                  class="product-modal__input"
+                  type="number"
+                  value="1"
+                  readonly
+                />
+                <button class="product-modal__btn product-modal__btn--qty">
+                  +
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section class="product-modal__info">
+            <h2
+              class="product-modal__title heading-secondary"
+              id="js-details-title"
+            >
+              Photon Blade
+            </h2>
+          </section>
+        </div>
+      </article>
+    </div>
     <script type="module" src="main.js"></script>
   </body>
 </html>

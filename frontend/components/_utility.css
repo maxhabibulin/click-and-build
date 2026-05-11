@@ -4,6 +4,14 @@
   column-gap: var(--space-80);
 }
 
+.grid-2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-45-55-cols {
+  grid-template-columns: 1fr 1.2fr;
+}
+
 .grid-3-cols {
   grid-template-columns: repeat(3, 1fr);
 }

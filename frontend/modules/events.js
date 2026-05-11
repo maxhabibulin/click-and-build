@@ -8,7 +8,6 @@ import { nextSlide, prevSlide, goToSlide } from "./testimonials-controller.js";
 
 export const initEventListeners = (onCatalogOpen) => {
   ui.testimonials.btnNext?.addEventListener("click", nextSlide);
-
   ui.testimonials.btnPrev?.addEventListener("click", prevSlide);
 
   ui.testimonials.dots?.forEach((dot) => {
