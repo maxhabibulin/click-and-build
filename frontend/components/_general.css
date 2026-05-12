@@ -51,13 +51,13 @@ body {
 .heading-primary {
   font-size: var(--font-size-h1);
   line-height: 1.1;
-  letter-spacing: -1px;
+  letter-spacing: -0.1rem;
   margin-bottom: var(--space-32);
 }
 
 .heading-secondary {
   font-size: var(--font-size-h2);
-  letter-spacing: -0.5px;
+  letter-spacing: -0.05rem;
   margin-bottom: var(--space-48);
 }
 

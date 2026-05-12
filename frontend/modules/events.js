@@ -57,4 +57,9 @@ export const initEventListeners = (onCatalogOpen) => {
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeLanguageMenu(ui.menus.lang);
   });
+
+  ui.buttons.closeProdMod.addEventListener("click", (e) => {
+    e.stopPropagation();
+    ui.productDetails.modal.classList.toggle("product-modal--hidden");
+  });
 };

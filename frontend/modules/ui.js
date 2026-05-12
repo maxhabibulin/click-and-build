@@ -22,6 +22,7 @@ export const ui = {
     ],
     themeSwitcher: document.querySelector("#js-theme-btn"),
     langSwitcher: document.querySelector("#js-lang-btn"),
+    closeProdMod: document.querySelector("#js-close-modal"),
   },
   menus: {
     lang: document.querySelector("#js-lang-menu"),
@@ -38,6 +39,9 @@ export const ui = {
     btnNext: document.querySelector("#js-testimonial-next"),
     btnPrev: document.querySelector("#js-testimonial-prev"),
     dots: document.querySelectorAll("[data-js='dot']"),
+  },
+  productDetails: {
+    modal: document.querySelector("#js-product-modal"),
   },
 };
 
