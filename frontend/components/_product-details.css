@@ -40,15 +40,6 @@
   z-index: 2001;
 }
 
-.product-modal__close-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
 .product-modal__icon-x {
   stroke: var(--color-text-main);
   width: var(--space-32);
@@ -73,7 +64,7 @@
   justify-content: center;
   overflow: hidden;
   background-color: var(--color-always-white);
-  border: 0.2rem solid var(--color-border);
+  border: 0.1rem solid var(--color-border);
   border-radius: var(--radius-12);
 }
 
@@ -96,14 +87,14 @@
   align-items: center;
   gap: var(--space-16);
   font-size: var(--font-size-lg);
-  font-weight: 500;
+  line-height: 1.7;
 }
 
 .product-modal__icon {
-  width: var(--space-24);
-  height: var(--space-24);
   stroke: var(--color-primary);
   fill: var(--color-white);
+  width: var(--space-24);
+  height: var(--space-24);
 }
 
 .product-modal__quantity {
@@ -114,6 +105,38 @@
 }
 
 .product-modal__quantity-label {
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+}
+
+.product-modal__quantity-controls {
+  display: flex;
+  align-items: center;
+  border: 0.1rem solid var(--color-border);
+  border-radius: var(--radius-12);
+  overflow: hidden;
+}
+
+.product-modal__icon-qty {
+  stroke: var(--color-text-main);
+  stroke-width: 8%;
+  width: var(--space-16);
+  height: var(--space-16);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Text align bug*/
+.product-modal__input {
+  font-family: inherit;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-main);
+  width: 3.5rem;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  outline: none;
 }
 
 .product-modal__footer {
@@ -123,4 +146,6 @@
 }
 
 .product-modal__price {
+  font-size: var(--font-size-3xl);
+  font-weight: 800;
 }

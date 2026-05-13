@@ -21,6 +21,7 @@
 .btn--big {
   font-size: var(--font-size-lg);
   padding: var(--space-16) var(--space-24);
+  text-align: center;
 
   &:hover {
     box-shadow: var(--shadow-btn-big-hover);
@@ -36,6 +37,7 @@
 .btn--small {
   font-size: var(--font-size-sm);
   padding: var(--space-8) var(--space-12);
+  text-align: center;
 
   &:hover {
     transform: scale(103%);
@@ -75,4 +77,32 @@
   width: var(--space-24);
   height: var(--space-24);
   fill: var(--color-primary);
+}
+
+.product-modal__close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.product-modal__btn--qty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  padding: var(--space-8) var(--space-12);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: var(--color-bg-accent);
+  }
+}
+
+.product-modal__btn--qty:hover .product-modal__icon-qty {
+  stroke: var(--color-primary);
 }
