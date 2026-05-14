@@ -40,24 +40,6 @@
   z-index: 2001;
 }
 
-.product-modal__icon-x {
-  stroke: var(--color-text-main);
-  width: var(--space-32);
-  height: var(--space-32);
-  padding: var(--space-2);
-  border-radius: 50%;
-  background-color: transparent;
-  transform: scale(0.9);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-
-  &:hover {
-    stroke: var(--color-primary);
-    background-color: var(--color-bg-accent);
-    transform: scale(1);
-  }
-}
-
 .product-modal__image-wrapper {
   display: flex;
   align-items: center;
@@ -107,36 +89,6 @@
 .product-modal__quantity-label {
   font-size: var(--font-size-lg);
   font-weight: 500;
-}
-
-.product-modal__quantity-controls {
-  display: flex;
-  align-items: center;
-  border: 0.1rem solid var(--color-border);
-  border-radius: var(--radius-12);
-  overflow: hidden;
-}
-
-.product-modal__icon-qty {
-  stroke: var(--color-text-main);
-  stroke-width: 8%;
-  width: var(--space-16);
-  height: var(--space-16);
-  pointer-events: none;
-  transition: all 0.3s ease;
-}
-
-/* Text align bug*/
-.product-modal__input {
-  font-family: inherit;
-  font-size: var(--font-size-lg);
-  color: var(--color-text-main);
-  width: 3.5rem;
-  padding: 0;
-  border: none;
-  background-color: transparent;
-  text-align: center;
-  outline: none;
 }
 
 .product-modal__footer {

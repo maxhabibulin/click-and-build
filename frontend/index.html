@@ -413,8 +413,8 @@
     <div class="product-modal" id="js-product-modal">
       <div class="product-modal__overlay"></div>
       <article class="product-modal__content">
-        <button class="product-modal__close-btn" id="js-close-modal">
-          <svg class="product-modal__icon-x">
+        <button class="close-btn" id="js-close-modal">
+          <svg class="close-btn__icon">
             <use href="img/svg/icons.svg#icon-x"></use>
           </svg>
         </button>
@@ -450,20 +450,20 @@
             </ul>
             <div class="product-modal__quantity">
               <span class="product-modal__quantity-label">Quantity</span>
-              <div class="product-modal__quantity-controls">
-                <button class="product-modal__btn product-modal__btn--qty">
-                  <svg class="product-modal__icon-qty">
+              <div class="quantity-controls">
+                <button class="quantity-controls__btn">
+                  <svg class="quantity-controls__icon">
                     <use href="img/svg/icons.svg#icon-minus"></use>
                   </svg>
                 </button>
                 <input
-                  class="product-modal__input"
+                  class="quantity-controls__input"
                   type="number"
                   value="1"
                   readonly
                 />
-                <button class="product-modal__btn product-modal__btn--qty">
-                  <svg class="product-modal__icon-qty">
+                <button class="quantity-controls__btn">
+                  <svg class="quantity-controls__icon">
                     <use href="img/svg/icons.svg#icon-plus"></use>
                   </svg>
                 </button>
