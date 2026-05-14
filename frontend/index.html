@@ -413,7 +413,7 @@
     <div class="product-modal" id="js-product-modal">
       <div class="product-modal__overlay"></div>
       <article class="product-modal__content">
-        <button class="close-btn" id="js-close-modal">
+        <button class="close-btn" id="js-close-modal" aria-label="Close modal">
           <svg class="close-btn__icon">
             <use href="img/svg/icons.svg#icon-x"></use>
           </svg>
@@ -473,7 +473,7 @@
               <strong id="js-details-price" class="product-modal__price"
                 >1,299$</strong
               >
-              <a class="btn btn--big" href="#cart"> Add to cart </a>
+              <a class="btn btn--big" href="#cart">Add to cart</a>
             </div>
           </section>
           <section class="product-modal__info">
@@ -483,6 +483,59 @@
             >
               Photon Blade
             </h2>
+            <div class="product-modal__description">
+              <h3 class="product-modal__subtitle heading-tertiary">
+                Description
+              </h3>
+              <p class="product-modal__text" id="js-details-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit.Curabitur convallis vestibulum diam eu pretium. Fusce
+                malesuada turpis sit amet cursus euismod. Cras turpis justo,
+                fermentum quis sodales vitae, molestie a neque. Nullam pretium
+                dolor eu sapien volutpat maximus.
+              </p>
+            </div>
+            <div class="product-modal__specs">
+              <h3 class="product-modal__subtitle heading-tertiary">
+                Specification
+              </h3>
+              <table class="product-modal__table">
+                <tr class="product-modal__table-row">
+                  <th class="product-modal__table-key">Part</th>
+                  <th class="product-modal__table-value">Detail</th>
+                </tr>
+                <tr class="product-modal__table-row">
+                  <td class="product-modal__table-key">CPU</td>
+                  <td class="product-modal__table-value" id="js-details-cpu">
+                    Core i7-14700KF
+                  </td>
+                </tr>
+                <tr class="product-modal__table-row">
+                  <td class="product-modal__table-key">GPU</td>
+                  <td class="product-modal__table-value" id="js-details-gpu">
+                    ASUS RTX 5070
+                  </td>
+                </tr>
+                <tr class="product-modal__table-row">
+                  <td class="product-modal__table-key">RAM</td>
+                  <td class="product-modal__table-value" id="js-details-ram">
+                    32GB DDR5 3K MHz
+                  </td>
+                </tr>
+                <tr class="product-modal__table-row">
+                  <td class="product-modal__table-key">SSD</td>
+                  <td class="product-modal__table-value" id="js-details-ssd">
+                    NVMe SSD 1TB
+                  </td>
+                </tr>
+                <tr class="product-modal__table-row">
+                  <td class="product-modal__table-key">OS</td>
+                  <td class="product-modal__table-value" id="js-details-os">
+                    Windows 11
+                  </td>
+                </tr>
+              </table>
+            </div>
           </section>
         </div>
       </article>
