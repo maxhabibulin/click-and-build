@@ -1,7 +1,9 @@
 /* FIX: Shadows and Transition */
 .product-card {
+  display: flex;
+  flex-direction: column;
   min-height: 57rem;
-  border-radius: 1.2rem;
+  border-radius: var(--radius-12);
   background-color: var(--color-card-bg);
   box-shadow: var(--shadow-card);
   transition:
@@ -13,6 +15,8 @@
 
 .product-card__img {
   width: 100%;
+  padding: var(--space-12);
+  background-color: var(--color-always-white);
   border-radius: var(--radius-12);
 }
 
@@ -33,9 +37,12 @@
   padding: var(--space-32);
 }
 
+.product-card__heading {
+  line-height: 1.5;
+}
+
 .product-card__list {
   list-style: none;
-  margin-bottom: var(--space-48);
 }
 
 .product-card__item {
@@ -43,6 +50,7 @@
   align-items: center;
   gap: var(--space-16);
   font-size: var(--font-size-md);
+  line-height: 1.5;
   margin-bottom: var(--space-16);
 }
 
@@ -51,6 +59,8 @@
   justify-content: space-between;
   align-items: center;
   font-size: var(--font-size-lg);
+  padding-top: var(--space-48);
+  margin-top: auto;
 }
 
 .product-card__icon {

@@ -1,12 +1,16 @@
+.btn,
 .btn:link,
 .btn:visited {
   display: inline-block;
   color: var(--color-always-white);
   background-color: var(--color-primary-dark);
+  font-family: inherit;
+  font-weight: 500;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: 500;
-  border-radius: 10rem;
+  border: none;
+  border-radius: var(--radius-10);
+  cursor: pointer;
   transition:
     transform 0.3s ease,
     background-color 0.3s ease,
@@ -21,7 +25,6 @@
 .btn--big {
   font-size: var(--font-size-lg);
   padding: var(--space-16) var(--space-24);
-  text-align: center;
 
   &:hover {
     box-shadow: var(--shadow-btn-big-hover);

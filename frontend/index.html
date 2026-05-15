@@ -284,7 +284,12 @@
                 </ul>
                 <div class="product-card__footer">
                   <strong class="product-card__price">1,999$</strong>
-                  <a class="btn btn--small" href="#">Add to cart</a>
+                  <button
+                    class="btn btn--small"
+                    aria-label="Add to cart button"
+                  >
+                    Add to cart
+                  </button>
                 </div>
               </div>
             </figure>
@@ -332,7 +337,12 @@
                 </ul>
                 <div class="product-card__footer">
                   <strong class="product-card__price">3,999$</strong>
-                  <a class="btn btn--small" href="#">Add to cart</a>
+                  <button
+                    class="btn btn--small"
+                    aria-label="Add to cart button"
+                  >
+                    Add to cart
+                  </button>
                 </div>
               </div>
             </figure>
@@ -380,7 +390,12 @@
                 </ul>
                 <div class="product-card__footer">
                   <strong class="product-card__price">7,999$</strong>
-                  <a class="btn btn--small" href="#">Add to cart</a>
+                  <button
+                    class="btn btn--small"
+                    aria-label="Add to cart button"
+                  >
+                    Add to cart
+                  </button>
                 </div>
               </div>
             </figure>
@@ -451,18 +466,19 @@
             <div class="product-modal__quantity">
               <span class="product-modal__quantity-label">Quantity</span>
               <div class="quantity-controls">
-                <button class="quantity-controls__btn">
+                <button class="quantity-controls__btn" aria-label="Reduce item">
                   <svg class="quantity-controls__icon">
                     <use href="img/svg/icons.svg#icon-minus"></use>
                   </svg>
                 </button>
                 <input
                   class="quantity-controls__input"
+                  aria-label="Item counter"
                   type="number"
                   value="1"
                   readonly
                 />
-                <button class="quantity-controls__btn">
+                <button class="quantity-controls__btn" aria-label="Add item">
                   <svg class="quantity-controls__icon">
                     <use href="img/svg/icons.svg#icon-plus"></use>
                   </svg>
@@ -473,7 +489,12 @@
               <strong id="js-details-price" class="product-modal__price"
                 >1,299$</strong
               >
-              <a class="btn btn--big" href="#cart">Add to cart</a>
+              <button
+                class="product-modal__btn btn btn--big js-add-to-cart"
+                aria-label="Add to cart button"
+              >
+                Add to cart
+              </button>
             </div>
           </section>
           <section class="product-modal__info">

@@ -59,7 +59,7 @@ export const renderProductCard = (pc) => {
   price.classList.add("product-card__price");
   price.textContent = `${pc.product_price}$`;
 
-  const btn = document.createElement("a");
+  const btn = document.createElement("button");
   btn.classList.add("btn", "btn--small", "js-add-to-cart");
   btn.dataset.id = pc.id;
   btn.href = "#cart";
