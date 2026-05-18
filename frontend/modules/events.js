@@ -5,8 +5,33 @@ import { navigateTo } from "./navigation.js";
 import { toggleTheme } from "./theme.js";
 import { toggleLanguageMenu, closeLanguageMenu } from "./language.js";
 import { nextSlide, prevSlide, goToSlide } from "./testimonials-controller.js";
+import {
+  openProductModal,
+  closeProductModal,
+} from "./product-details-controller.js";
 
-export const initEventListeners = (onCatalogOpen) => {
+export const initEventListeners = (onCatalogOpen, productsData) => {
+  ui.grids.catalog?.addEventListener("click", (e) => {
+    const cartBtn = e.target.closest(".js-add-to-cart");
+    const card = e.target.closest(".js-product-card");
+
+    if (cartBtn) {
+      e.stopPropagation();
+      const productId = Number(cartBtn.dataset.id);
+      console.log(`Add to cart btn click [item Id: ${productId}]`);
+      return;
+    }
+
+    if (card) {
+      const productId = Number(card.dataset.id);
+      const selectedProduct = productsData.find((p) => p.id === productId);
+
+      if (selectedProduct) {
+        openProductModal(selectedProduct);
+      }
+    }
+  });
+
   ui.testimonials.btnNext?.addEventListener("click", nextSlide);
   ui.testimonials.btnPrev?.addEventListener("click", prevSlide);
 
@@ -17,35 +42,32 @@ export const initEventListeners = (onCatalogOpen) => {
     });
   });
 
-  document.addEventListener("keydown", (e) => {
-    const isHomeVisible = !ui.views.home.classList.contains("hidden");
-
-    if (isHomeVisible) {
-      if (e.key === "ArrowRight") nextSlide();
-      if (e.key === "ArrowLeft") prevSlide();
-    }
-  });
-
-  ui.buttons.toHome.forEach((btn) => {
+  ui.buttons.toHome?.forEach((btn) => {
     btn?.addEventListener("click", () => {
       navigateTo(ui.views.home, allViews, "home");
     });
   });
 
-  ui.buttons.toCatalog.forEach((btn) => {
+  ui.buttons.toCatalog?.forEach((btn) => {
     btn?.addEventListener("click", () => {
       navigateTo(ui.views.catalog, allViews, "catalog");
       onCatalogOpen();
     });
   });
 
-  ui.buttons.themeSwitcher?.addEventListener("click", () => {
-    toggleTheme();
-  });
+  ui.buttons.themeSwitcher?.addEventListener("click", () => toggleTheme());
 
   ui.buttons.langSwitcher?.addEventListener("click", (e) => {
     e.stopPropagation();
     toggleLanguageMenu(ui.menus.lang);
+  });
+
+  ui.buttons.closeBtn?.addEventListener("click", closeProductModal);
+
+  ui.productModal.overlay?.addEventListener("click", (e) => {
+    if (e.target === ui.productModal.overlay) {
+      closeProductModal();
+    }
   });
 
   document.addEventListener("click", (e) => {
@@ -55,11 +77,15 @@ export const initEventListeners = (onCatalogOpen) => {
   });
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeLanguageMenu(ui.menus.lang);
-  });
+    if (e.key === "Escape") {
+      closeLanguageMenu(ui.menus.lang);
+      closeProductModal();
+    }
 
-  ui.buttons.closeProdMod.addEventListener("click", (e) => {
-    e.stopPropagation();
-    ui.productDetails.modal.classList.toggle("product-modal--hidden");
+    const isHomeVisible = !ui.views.home.classList.contains("hidden");
+    if (isHomeVisible) {
+      if (e.key === "ArrowRight") nextSlide();
+      if (e.key === "ArrowLeft") prevSlide();
+    }
   });
 };

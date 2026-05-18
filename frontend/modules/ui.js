@@ -22,7 +22,7 @@ export const ui = {
     ],
     themeSwitcher: document.querySelector("#js-theme-btn"),
     langSwitcher: document.querySelector("#js-lang-btn"),
-    closeProdMod: document.querySelector("#js-close-modal"),
+    closeBtn: document.querySelector("#js-close-btn"),
   },
   menus: {
     lang: document.querySelector("#js-lang-menu"),
@@ -40,8 +40,18 @@ export const ui = {
     btnPrev: document.querySelector("#js-testimonial-prev"),
     dots: document.querySelectorAll("[data-js='dot']"),
   },
-  productDetails: {
+  productModal: {
     modal: document.querySelector("#js-product-modal"),
+    overlay: document.querySelector("#js-product-overlay"),
+    name: document.querySelector("#js-details-title"),
+    price: document.querySelector("#js-details-price"),
+    cpu: document.querySelector("#js-details-cpu"),
+    gpu: document.querySelector("#js-details-gpu"),
+    ram: document.querySelector("#js-details-ram"),
+    ssd: document.querySelector("#js-details-ssd"),
+    os: document.querySelector("#js-details-os"),
+    description: document.querySelector("#js-details-description"),
+    img: document.querySelector("#js-details-img"),
   },
 };
 

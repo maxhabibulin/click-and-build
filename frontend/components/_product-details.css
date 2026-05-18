@@ -147,7 +147,7 @@
 
 .product-modal__table-key,
 .product-modal__table-value {
-  font-size: inherit;
+  font-size: var(--font-size-md);
   line-height: 1.5;
   padding: var(--space-12) 0;
   text-align: start;

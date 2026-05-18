@@ -21,11 +21,14 @@ initApp();
 applySavedTheme();
 
 const API = new FetchWrapper("http://localhost:3000");
+let globalProducts = [];
 
 const loadAndRenderCatalog = async () => {
   try {
     const data = await API.get("/api/products");
+    globalProducts = data;
     ui.grids.catalog.innerHTML = "";
+
     data.forEach((pc) => {
       ui.grids.catalog.appendChild(renderProductCard(pc));
     });
@@ -45,16 +48,15 @@ const loadTestimonials = async () => {
 
 const loadInitialData = async () => {
   await Promise.all([loadAndRenderCatalog(), loadTestimonials()]);
+  initEventListeners(loadAndRenderCatalog, globalProducts);
 };
 
-const savedView = localStorage.getItem("currentView");
+const savedView = localStorage.getItem("currentView" || "home");
 
 if (savedView === "catalog") {
   navigateTo(ui.views.catalog, allViews, "catalog");
-  loadAndRenderCatalog();
 } else {
   navigateTo(ui.views.home, allViews, "home");
 }
 
 loadInitialData();
-initEventListeners(loadAndRenderCatalog);

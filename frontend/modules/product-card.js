@@ -2,7 +2,9 @@
 
 export const renderProductCard = (pc) => {
   const figure = document.createElement("figure");
-  figure.classList.add("product-card");
+  figure.classList.add("product-card", "js-product-card");
+  figure.dataset.id = pc.id;
+  figure.style.cursor = "pointer";
 
   const img = document.createElement("img");
   img.classList.add("product-card__img");
@@ -61,8 +63,8 @@ export const renderProductCard = (pc) => {
 
   const btn = document.createElement("button");
   btn.classList.add("btn", "btn--small", "js-add-to-cart");
+  btn.setAttribute("aria-label", "Add to cart button");
   btn.dataset.id = pc.id;
-  btn.href = "#cart";
   btn.textContent = "Add to cart";
 
   footer.append(price, btn);

@@ -24,6 +24,8 @@ const render = () => {
     const dataKey = mapping[key];
     const uiElement = tUI[key];
 
+    if (!uiElement) return;
+
     if (key === "img") {
       uiElement.src = current[dataKey];
     } else {

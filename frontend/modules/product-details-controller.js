@@ -5,16 +5,34 @@ import { ui } from "./ui.js";
 const fillModalData = (pc) => {
   const modal = ui.productModal;
 
-  modal.title.textContent = pc.product_name;
-  modal.description.textContent = pc.product_description;
-  modal.price.textContent = `${pc.product_price}$`;
-  modal.img.src = pc.product_img;
-  modal.img.alt = `${pc.product_name} gaming PC`;
+  if (!modal) return;
 
-  const tableItems = [modal.cpu, modal.gpu, modal.ram, modal.ssd, modal.os];
+  const mapping = {
+    name: "product_name",
+    price: "product_price",
+    description: "product_description",
+    cpu: "product_cpu",
+    gpu: "product_gpu",
+    ram: "product_ram",
+    ssd: "product_ssd",
+    os: "product_os",
+    img: "product_img",
+  };
 
-  tableItems.forEach((item) => {
-    item.textContent = `pc.product_${item}`;
+  Object.keys(mapping).forEach((key) => {
+    const dataKey = mapping[key];
+    const uiElement = modal[key];
+
+    if (!uiElement) return;
+
+    if (key === "img") {
+      uiElement.src = pc[dataKey];
+      uiElement.alt = `${pc.product_name} gaming PC`;
+    } else if (key === "price") {
+      uiElement.textContent = `${pc[dataKey]}$`;
+    } else {
+      uiElement.textContent = pc[dataKey];
+    }
   });
 };
 
