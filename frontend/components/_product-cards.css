@@ -1,3 +1,7 @@
+.catalog__grid {
+  row-gap: var(--space-48);
+}
+
 /* FIX: Shadows and Transition */
 .product-card {
   display: flex;
@@ -49,9 +53,17 @@
   display: flex;
   align-items: center;
   gap: var(--space-16);
+  min-width: 0;
   font-size: var(--font-size-md);
   line-height: 1.5;
   margin-bottom: var(--space-16);
+}
+
+.product-card__spec-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
 }
 
 .product-card__footer {

@@ -1,18 +1,5 @@
-import express from "express";
-// import db from "../db.js";
-
-const router = express.Router();
-
-// router.get("/", (req, res) => {
-//   db.all("SELECT * FROM products", [], (err, rows) => {
-//     if (err) return res.status(500).json({ error: err.message });
-//     res.json(rows);
-//   });
-// });
-
-const productsCatalogMock = [
+export const productsCatalogMock = [
   {
-    id: 1,
     product_name: "Nebula Pulse",
     product_img: "img/product-card/pc-4.avif",
     product_cpu: "Core i5-14400F",
@@ -25,7 +12,6 @@ const productsCatalogMock = [
       "An entry-level powerhouse delivering a perfect balance for smooth FullHD gaming. This ultra-quiet setup easily handles modern esports titles, ensuring stable framerates and excellent thermal performance under heavy load.",
   },
   {
-    id: 2,
     product_name: "Apex Eclipse",
     product_img: "img/product-card/pc-5.avif",
     product_cpu: "Core i5-14600KF",
@@ -38,7 +24,6 @@ const productsCatalogMock = [
       "The ultimate sweet spot for demanding gamers crushing 2K resolution. This balanced CPU and GPU pairing guarantees flawless gameplay in open-world titles and smooth streaming capabilities without dropping any frames.",
   },
   {
-    id: 3,
     product_name: "Photon Blade",
     product_img: "img/product-card/pc-1.avif",
     product_cpu: "Core i7-14700KF",
@@ -51,7 +36,6 @@ const productsCatalogMock = [
       "A next-generation gaming rig built to dominate any modern challenge. Its cutting-edge graphics architecture lets you crank up ray tracing to the absolute max, revealing stunningly realistic visuals in every world.",
   },
   {
-    id: 4,
     product_name: "Stellar Horizon",
     product_img: "img/product-card/pc-6.avif",
     product_cpu: "Ryzen 5 9600X",
@@ -64,7 +48,6 @@ const productsCatalogMock = [
       "High-speed gaming desktop engineered around a state-of-the-art hardware platform. Blazing-fast memory and an upgraded GPU offer massive headroom for ultra-settings, heavy 3D rendering, and professional content creation.",
   },
   {
-    id: 5,
     product_name: "Void Runner Pro",
     product_img: "img/product-card/pc-2.avif",
     product_cpu: "Ryzen 7 7800X3D",
@@ -77,7 +60,6 @@ const productsCatalogMock = [
       "Elite tier battle station centered around the market's absolute best gaming processor. Teamed with MSI’s ferocious GPU, it pushes extreme framerates at 4K resolution, completely blurring the line between reality and game.",
   },
   {
-    id: 6,
     product_name: "Quantum Spectre",
     product_img: "img/product-card/pc-7.avif",
     product_cpu: "Core i9-14900KF",
@@ -90,7 +72,6 @@ const productsCatalogMock = [
       "An extreme level of processing muscle tailored for enthusiasts and hardcore creators. Massive high-speed memory and flagship components crush heavy multitasking, complex datasets, and triple-A games with ease.",
   },
   {
-    id: 7,
     product_name: "Ashen Overlord",
     product_img: "img/product-card/pc-8.avif",
     product_cpu: "Ryzen 9 9950X",
@@ -103,7 +84,6 @@ const productsCatalogMock = [
       "A true sovereign of the digital workspace housed in a premium chassis. The combination of an ultimate high-core processor and flagship ROG graphics unlocks unmatched rendering speeds and unparalleled computing power.",
   },
   {
-    id: 8,
     product_name: "Cyber Savage Pro",
     product_img: "img/product-card/pc-3.avif",
     product_cpu: "Ryzen 7 9800X3D",
@@ -116,7 +96,6 @@ const productsCatalogMock = [
       "An uncompromising masterpiece of engineering for those who demand nothing but the best. Revolutionary memory architecture and a groundbreaking chip unlock the future of gaming, ensuring absolute competitive dominance.",
   },
   {
-    id: 9,
     product_name: "Titan Singularity",
     product_img: "img/product-card/pc-9.avif",
     product_cpu: "AMD Threadripper 7960X",
@@ -129,9 +108,3 @@ const productsCatalogMock = [
       "The zenith of technological evolution. Packing a monstrous dual-GPU setup and a colossal memory array, this beast is purpose-built for training heavy AI models, cinematic 3D rendering, and ultimate data computations.",
   },
 ];
-
-router.get("/", (req, res) => {
-  res.json(productsCatalogMock);
-});
-
-export default router;

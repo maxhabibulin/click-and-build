@@ -49,8 +49,10 @@ export const renderProductCard = (pc) => {
     listItem.classList.add("product-card__item");
     listItem.innerHTML = `<svg class="product-card__icon"><use href="img/svg/icons.svg#${spec.icon}"></use></svg>`;
 
-    const textNode = document.createTextNode(` ${spec.text}`);
-    listItem.appendChild(textNode);
+    const span = document.createElement("span");
+    span.classList.add("product-card__spec-text");
+    span.textContent = spec.text;
+    listItem.appendChild(span);
     list.appendChild(listItem);
   });
 
