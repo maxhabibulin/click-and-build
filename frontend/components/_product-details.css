@@ -8,7 +8,6 @@
   align-items: center;
   justify-content: center;
   z-index: 2000;
-  transition: all 0.3s ease;
 }
 
 .product-modal--hidden {
@@ -25,6 +24,8 @@
   height: 100%;
   background-color: var(--color-modal-bg);
   backdrop-filter: blur(0.5rem);
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .product-modal__content {
@@ -37,6 +38,15 @@
   box-shadow: var(--shadow-modal);
   overflow-y: auto;
   scrollbar-width: thin;
+  transform: scale(1);
+  transition:
+    transform 0.3s cubic-bezier(0.34, 1.45, 0.64, 1),
+    opacity 0.2s ease-out;
+}
+
+.product-modal--hidden .product-modal__content {
+  transform: scale(0.5);
+  opacity: 0;
 }
 
 .product-modal__visual {
@@ -79,7 +89,7 @@
 
 .product-modal__icon {
   stroke: var(--color-primary);
-  fill: var(--color-white);
+  fill: var(--color-card-bg);
   width: var(--space-24);
   height: var(--space-24);
 }

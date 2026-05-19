@@ -3,6 +3,8 @@
   align-items: center;
   position: sticky;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
   height: 8rem;
   background-color: var(--color-white);
@@ -10,6 +12,16 @@
   transition:
     background-color 0.5s ease,
     box-shadow 0.5s ease;
+}
+
+body:has(.product-modal:not(.product-modal--hidden)) {
+  & .navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1999;
+  }
 }
 
 .navigation__content {
