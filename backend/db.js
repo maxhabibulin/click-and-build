@@ -1,11 +1,13 @@
 import sqlite3 from "sqlite3";
+import testimonialsMock from "./data/testimonials-mock.js";
+import productsCatalogMock from "./data/products-mock.js";
 
 const db = new sqlite3.Database("./database.db");
 
 db.serialize(() => {
   db.run(`
         CREATE TABLE IF NOT EXISTS products (
-                id INTEGER PRIMARY KEY,
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
                 product_name TEXT,
                 product_price REAL,
                 product_cpu TEXT,
@@ -20,7 +22,7 @@ db.serialize(() => {
 
   db.run(`
         CREATE TABLE IF NOT EXISTS orders (
-                id INTEGER PRIMARY KEY,
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
                 order_total_price REAL,
                 customer_first_name TEXT,
                 customer_last_name TEXT,
@@ -32,7 +34,7 @@ db.serialize(() => {
 
   db.run(`
         CREATE TABLE IF NOT EXISTS order_items (
-                id INTEGER PRIMARY KEY,
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
                 order_id INTEGER,
                 product_id INTEGER,
                 quantity INTEGER,
@@ -51,47 +53,75 @@ db.serialize(() => {
             )
         `);
 
-  //   db.get("SELECT COUNT(*) as count FROM testimonials", (err, row) => {
-  //     if (row.count === 0) {
-  //       const stmt = db.prepare(
-  //         "INSERT INTO testimonials (testimonial_heading, testimonial_quote, testimonial_name, testimonial_tag, testimonial_img) VALUES (?, ?, ?, ?, ?)",
-  //       );
+  db.get("SELECT COUNT(*) as count FROM testimonials", (err, row) => {
+    if (err) {
+      console.error("Error validating table (testimonials): ", err.message);
+      return;
+    }
 
-  //       stmt.run(
-  //         '"I will always go back to prebuilt PCs now!"',
-  //         "Every component is carefully selected, and the performance is unbeatable. The build quality is top-notch, and the attention to detail makes all the difference!",
-  //         "Evan Mask",
-  //         "@DriftTech",
-  //         "img/testimonial/customer-1.avif",
-  //       );
+    if (row.count === 0) {
+      const stmt = db.prepare(
+        "INSERT INTO testimonials (testimonial_heading, testimonial_quote, testimonial_name, testimonial_tag, testimonial_img) VALUES (?, ?, ?, ?, ?)",
+      );
 
-  //       stmt.run(
-  //         '"Custom builds changed how I game forever!"',
-  //         "The speed and power of this machine blew me away. Every premium part was chosen with precision, and the result is a flawless experience — smooth, fast, and reliable!",
-  //         "Kris Jackson",
-  //         "@KrisJackson",
-  //         "img/testimonial/customer-2.avif",
-  //       );
+      testimonialsMock.forEach((t) => {
+        stmt.run(
+          t.testimonial_heading,
+          t.testimonial_quote,
+          t.testimonial_name,
+          t.testimonial_tag,
+          t.testimonial_img,
+        );
+      });
 
-  //       stmt.run(
-  //         `"The best PC I've ever owned — hands down!"`,
-  //         "Everything runs buttery smooth, even the most demanding games. The attention to detail in the build is incredible, and I love knowing each part was chosen just for me.",
-  //         "Jordan Wang",
-  //         "@Asmonplay",
-  //         "img/testimonial/customer-3.avif",
-  //       );
+      stmt.finalize((finalizeErr) => {
+        if (finalizeErr) {
+          console.error("Error finalizing request: ", finalizeErr.message);
+        } else {
+          console.log(
+            `Database successfully imported testimonials from file: ${testimonialsMock.length}`,
+          );
+        }
+      });
+    }
+  });
 
-  //       stmt.run(
-  //         `"From order to action — a seamless experience!"`,
-  //         "Setting it up was a breeze, and I was gaming at ultra settings within minutes. The performance is unmatched and the design is sleek, quiet, and powerful.",
-  //         "Riley Jonson",
-  //         "@RileyJ47",
-  //         "img/testimonial/customer-4.avif",
-  //       );
+  db.get("SELECT COUNT(*) as count FROM products", (err, row) => {
+    if (err) {
+      console.error("Error validating table (products): ", err.message);
+      return;
+    }
 
-  //       stmt.finalize();
-  //     }
-  //   });
+    if (row.count === 0) {
+      const stmt = db.prepare(
+        "INSERT INTO products (product_name, product_price, product_cpu, product_gpu, product_ram, product_ssd, product_os, product_description, product_img) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+      );
+
+      productsCatalogMock.forEach((pc) => {
+        stmt.run(
+          pc.product_name,
+          pc.product_price,
+          pc.product_cpu,
+          pc.product_gpu,
+          pc.product_ram,
+          pc.product_ssd,
+          pc.product_os,
+          pc.product_description,
+          pc.product_img,
+        );
+      });
+
+      stmt.finalize((finalizeErr) => {
+        if (finalizeErr) {
+          console.error("Error finalizing request: ", finalizeErr.message);
+        } else {
+          console.log(
+            `Database successfully imported products from file: ${productsCatalogMock.length}`,
+          );
+        }
+      });
+    }
+  });
 });
 
 export default db;
