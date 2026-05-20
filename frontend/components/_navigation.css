@@ -14,16 +14,6 @@
     box-shadow 0.5s ease;
 }
 
-body:has(.product-modal:not(.product-modal--hidden)) {
-  & .navigation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1999;
-  }
-}
-
 .navigation__content {
   display: grid;
   grid-template-columns: 1fr auto 1fr;

@@ -6,6 +6,23 @@ html {
   scrollbar-width: thin;
 }
 
+html.modal-open {
+  overflow: hidden !important;
+}
+
+html.modal-open body {
+  overflow: hidden !important;
+  scrollbar-gutter: stable !important;
+
+  & .navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    z-index: 1999;
+  }
+}
+
 *,
 *::before,
 *::after {

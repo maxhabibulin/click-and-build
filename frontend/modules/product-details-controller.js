@@ -39,10 +39,8 @@ const fillModalData = (pc) => {
 export const openProductModal = (pc) => {
   fillModalData(pc);
   ui.productModal.modal.classList.remove("product-modal--hidden");
-  document.body.style.overflow = "hidden";
 };
 
 export const closeProductModal = () => {
   ui.productModal.modal.classList.add("product-modal--hidden");
-  document.body.style.overflow = "";
 };
