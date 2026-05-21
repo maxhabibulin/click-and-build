@@ -18,6 +18,7 @@ export const initEventListeners = (onCatalogOpen, getProductsFn) => {
       e.stopPropagation();
       const productId = Number(cartBtn.dataset.id);
       console.log(`Add to cart btn clicked [ID: ${productId}]`);
+      closeProductModal();
     }
   };
 
