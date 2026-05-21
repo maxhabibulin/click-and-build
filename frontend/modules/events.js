@@ -11,20 +11,27 @@ import {
 } from "./product-details-controller.js";
 
 export const initEventListeners = (onCatalogOpen, getProductsFn) => {
-  const handleGridClick = (e) => {
+  const handleAddCartBtnClick = (e) => {
     const cartBtn = e.target.closest(".js-add-to-cart");
-    const card = e.target.closest(".js-product-card");
 
     if (cartBtn) {
       e.stopPropagation();
       const productId = Number(cartBtn.dataset.id);
       console.log(`Add to cart btn clicked [ID: ${productId}]`);
+    }
+  };
+
+  const handleGridClick = (e) => {
+    const cartBtn = e.target.closest(".js-add-to-cart");
+    const card = e.target.closest(".js-product-card");
+
+    if (cartBtn) {
+      handleAddCartBtnClick(e);
       return;
     }
 
     if (card) {
       const productId = Number(card.dataset.id);
-
       const currentProducts = getProductsFn();
       const selectedProduct = currentProducts.find((p) => p.id === productId);
 
@@ -38,6 +45,8 @@ export const initEventListeners = (onCatalogOpen, getProductsFn) => {
       }
     }
   };
+
+  ui.productModal.modal?.addEventListener("click", handleAddCartBtnClick);
 
   ui.grids.catalog?.addEventListener("click", handleGridClick);
   ui.grids.featured?.addEventListener("click", handleGridClick);

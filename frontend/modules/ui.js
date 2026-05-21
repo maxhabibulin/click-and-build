@@ -24,6 +24,7 @@ export const ui = {
     themeSwitcher: document.querySelector("#js-theme-btn"),
     langSwitcher: document.querySelector("#js-lang-btn"),
     closeBtn: document.querySelector("#js-close-btn"),
+    cartBtn: document.querySelector("#js-product-modal .js-add-to-cart"),
   },
   menus: {
     lang: document.querySelector("#js-lang-menu"),

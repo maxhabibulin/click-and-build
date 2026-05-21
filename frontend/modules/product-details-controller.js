@@ -4,6 +4,7 @@ import { ui } from "./ui.js";
 
 const fillModalData = (pc) => {
   const modal = ui.productModal;
+  const cartBtn = ui.buttons.cartBtn;
 
   if (!modal) return;
 
@@ -34,6 +35,10 @@ const fillModalData = (pc) => {
       uiElement.textContent = pc[dataKey];
     }
   });
+
+  if (cartBtn) {
+    cartBtn.dataset.id = pc.id;
+  }
 };
 
 export const openProductModal = (pc) => {
