@@ -7,6 +7,7 @@ export const ui = {
   },
   grids: {
     catalog: document.querySelector("#js-catalog-grid"),
+    featured: document.querySelector("#js-featured-grid"),
   },
   buttons: {
     toCatalog: [

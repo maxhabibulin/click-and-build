@@ -10,27 +10,37 @@ import {
   closeProductModal,
 } from "./product-details-controller.js";
 
-export const initEventListeners = (onCatalogOpen, productsData) => {
-  ui.grids.catalog?.addEventListener("click", (e) => {
+export const initEventListeners = (onCatalogOpen, getProductsFn) => {
+  const handleGridClick = (e) => {
     const cartBtn = e.target.closest(".js-add-to-cart");
     const card = e.target.closest(".js-product-card");
 
     if (cartBtn) {
       e.stopPropagation();
       const productId = Number(cartBtn.dataset.id);
-      console.log(`Add to cart btn click [item Id: ${productId}]`);
+      console.log(`Add to cart btn clicked [ID: ${productId}]`);
       return;
     }
 
     if (card) {
       const productId = Number(card.dataset.id);
-      const selectedProduct = productsData.find((p) => p.id === productId);
+
+      const currentProducts = getProductsFn();
+      const selectedProduct = currentProducts.find((p) => p.id === productId);
 
       if (selectedProduct) {
+        console.log(`Opening modal for [ID: ${selectedProduct.id}]`);
         openProductModal(selectedProduct);
+      } else {
+        console.warn(
+          `Product with [ID: ${productId}] not found in global list`,
+        );
       }
     }
-  });
+  };
+
+  ui.grids.catalog?.addEventListener("click", handleGridClick);
+  ui.grids.featured?.addEventListener("click", handleGridClick);
 
   ui.testimonials.btnNext?.addEventListener("click", nextSlide);
   ui.testimonials.btnPrev?.addEventListener("click", prevSlide);
