@@ -1,12 +1,12 @@
-import CurrentYear from "./modules/current-year.js";
-import FetchWrapper from "./modules/fetch-wrapper.js";
-import { renderProductCard } from "./modules/product-card.js";
-import { initEventListeners } from "./modules/events.js";
-import { allViews, ui } from "./modules/ui.js";
-import { navigateTo } from "./modules/navigation.js";
-import { applySavedTheme } from "./modules/theme.js";
-import { initTestimonials } from "./modules/testimonials-controller.js";
-import { renderFeaturedProducts } from "./modules/featured-products-controller.js";
+import { allViews, ui } from "./src/ui.js";
+import { initEventListeners } from "./src/events.js";
+import CurrentYear from "./src/models/current-year.js";
+import { navigateTo } from "./src/utils/navigation.js";
+import { applySavedTheme } from "./src/utils/theme.js";
+import FetchWrapper from "./src/utils/fetch-wrapper.js";
+import { renderProductCard } from "./src/views/product-card.js";
+import { initTestimonials } from "./src/controllers/testimonials-controller.js";
+import { renderFeaturedProducts } from "./src/controllers/featured-products-controller.js";
 
 const initApp = () => {
   const yearProvider = new CurrentYear();

@@ -1,12 +1,16 @@
 import { ui, allViews } from "./ui.js";
-import { navigateTo } from "./navigation.js";
-import { toggleTheme } from "./theme.js";
-import { toggleLanguageMenu, closeLanguageMenu } from "./language.js";
-import { nextSlide, prevSlide, goToSlide } from "./testimonials-controller.js";
+import { toggleTheme } from "./utils/theme.js";
+import { navigateTo } from "./utils/navigation.js";
+import { toggleLanguageMenu, closeLanguageMenu } from "./utils/language.js";
+import {
+  nextSlide,
+  prevSlide,
+  goToSlide,
+} from "./controllers/testimonials-controller.js";
 import {
   openProductModal,
   closeProductModal,
-} from "./product-details-controller.js";
+} from "./controllers/product-details-controller.js";
 
 export const initEventListeners = (onCatalogOpen, getProductsFn) => {
   const handleAddCartBtnClick = (e) => {
