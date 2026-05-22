@@ -1,5 +1,3 @@
-"use strict";
-
 class Testimonial {
   #counter;
   #testimonials;

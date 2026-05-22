@@ -1,5 +1,3 @@
-"use strict";
-
 import { ui } from "./ui.js";
 import { renderProductCard } from "./product-card.js";
 

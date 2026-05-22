@@ -1,5 +1,3 @@
-"use strict";
-
 import { ui, allViews } from "./ui.js";
 import { navigateTo } from "./navigation.js";
 import { toggleTheme } from "./theme.js";

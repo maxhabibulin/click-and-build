@@ -1,5 +1,3 @@
-"use strict";
-
 export const toggleLanguageMenu = (menuEl) => {
   menuEl?.classList.toggle("active");
 };

@@ -1,5 +1,3 @@
-"use strict";
-
 export const toggleTheme = () => {
   const bodyEl = document.body;
   bodyEl.classList.toggle("dark-mode");

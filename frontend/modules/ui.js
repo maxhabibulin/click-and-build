@@ -1,5 +1,3 @@
-"use strict";
-
 export const ui = {
   views: {
     home: document.querySelector("#js-home-view"),

@@ -1,5 +1,3 @@
-"use strict";
-
 import CurrentYear from "./modules/current-year.js";
 import FetchWrapper from "./modules/fetch-wrapper.js";
 import { renderProductCard } from "./modules/product-card.js";

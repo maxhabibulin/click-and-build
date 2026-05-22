@@ -1,5 +1,3 @@
-"use strict";
-
 import { ui } from "./ui.js";
 import Testimonial from "./testimonial.js";
 
