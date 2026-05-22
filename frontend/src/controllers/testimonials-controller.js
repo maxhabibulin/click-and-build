@@ -1,5 +1,5 @@
-import { ui } from "./ui.js";
-import Testimonial from "./testimonial.js";
+import { ui } from "../ui.js";
+import Testimonial from "../models/testimonial.js";
 
 const model = new Testimonial();
 let previousCounter = 0;

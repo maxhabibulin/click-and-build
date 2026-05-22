@@ -1,4 +1,4 @@
-import { ui } from "./ui.js";
+import { ui } from "../ui.js";
 
 const fillModalData = (pc) => {
   const modal = ui.productModal;
