@@ -12,6 +12,7 @@ FONT SIZE SYSTEM (px)
   --color-primary: #1c7ed6;
   --color-primary-dark: #1971c1;
   --color-primary-darker: #1665ab;
+  --color-primary-outline: rgba(28, 126, 214, 0.5);
 
   /* White Colors */
   --color-always-white: #fff;
@@ -23,7 +24,7 @@ FONT SIZE SYSTEM (px)
 
   /* Blue Tints */
   --color-bg-light: #e7f5ff;
-  --color-bg-accent: #d0ebff;
+  --color-bg-accent: #d2e5f7;
 
   --color-card-bg: var(--color-white);
   --color-modal-bg: rgba(255, 255, 255, 0.4);
@@ -72,8 +73,8 @@ FONT SIZE SYSTEM (px)
   --space-128: 12.8rem;
 
   /* Border Radius */
-  --radius-10: 10rem;
   --radius-12: 1.2rem;
+  --radius-100: 10rem;
 }
 
 body.dark-mode {
@@ -82,6 +83,7 @@ body.dark-mode {
   --color-primary: #339af0;
   --color-primary-dark: #1971c1;
   --color-primary-darker: #1665ab;
+  --color-primary-outline: rgba(51, 154, 240, 0.5);
 
   /* White Colors */
   --color-always-white: #fff;

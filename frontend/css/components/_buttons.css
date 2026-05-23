@@ -9,7 +9,7 @@
   text-decoration: none;
   text-transform: uppercase;
   border: none;
-  border-radius: var(--radius-10);
+  border-radius: var(--radius-100);
   cursor: pointer;
   transition:
     transform 0.3s ease,
@@ -93,17 +93,19 @@
 
 .close-btn__icon {
   stroke: var(--color-text-main);
+  stroke-width: 1.7;
   width: var(--space-32);
   height: var(--space-32);
   padding: var(--space-2);
-  border-radius: 50%;
+  border-radius: var(--radius-100);
   background-color: transparent;
   transform: scale(0.9);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
 
-  &:hover {
+  .close-btn &:hover {
     stroke: var(--color-primary);
+    stroke-width: 1.6;
     background-color: var(--color-bg-accent);
     transform: scale(1);
   }
@@ -113,7 +115,7 @@
   display: flex;
   align-items: center;
   border: 0.1rem solid var(--color-border);
-  border-radius: var(--radius-12);
+  border-radius: var(--radius-100);
   overflow: hidden;
 }
 
@@ -130,15 +132,15 @@
   &:hover {
     background-color: var(--color-bg-accent);
   }
-}
 
-.quantity-controls__btn:hover .quantity-controls__icon {
-  stroke: var(--color-primary);
+  &:hover .quantity-controls__icon {
+    stroke: var(--color-primary);
+  }
 }
 
 .quantity-controls__icon {
   stroke: var(--color-text-main);
-  stroke-width: 8%;
+  stroke-width: 2.4;
   width: var(--space-16);
   height: var(--space-16);
   pointer-events: none;
@@ -166,4 +168,41 @@
 .quantity-controls__input[type="number"] {
   -moz-appearance: textfield;
   appearance: none;
+}
+
+.search__btn {
+  position: absolute;
+  top: 50%;
+  right: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%) scale(0.95);
+  border: none;
+  background-color: transparent;
+  border-radius: var(--radius-100);
+  padding: var(--space-8);
+  cursor: pointer;
+  transition:
+    stroke 0.3s ease,
+    background-color 0.3s ease,
+    transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-50%) scale(1);
+    background-color: var(--color-bg-accent);
+  }
+
+  &:hover .search__btn-icon {
+    stroke: var(--color-primary);
+  }
+}
+
+.search__btn-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  stroke: var(--color-text-main);
+  stroke-width: 1.5;
+  fill: none;
+  transition: stroke 0.3s ease;
 }
