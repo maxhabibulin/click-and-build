@@ -1,7 +1,7 @@
 import { ui } from "../ui.js";
 import { renderProductCard } from "../views/product-card.js";
 
-const FEATURED_IDS = [1, 5, 7];
+export const FEATURED_IDS = [1, 5, 7];
 
 export const renderFeaturedProducts = (allProducts) => {
   const container = ui.grids.featured;

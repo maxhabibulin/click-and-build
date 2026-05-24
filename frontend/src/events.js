@@ -1,7 +1,6 @@
 import { ui, allViews } from "./ui.js";
 import { toggleTheme } from "./utils/theme.js";
 import { navigateTo } from "./utils/navigation.js";
-import { toggleLanguageMenu, closeLanguageMenu } from "./utils/language.js";
 import {
   nextSlide,
   prevSlide,
@@ -11,6 +10,8 @@ import {
   openProductModal,
   closeProductModal,
 } from "./controllers/product-details-controller.js";
+import { handleSortChange } from "./controllers/catalog-controller.js";
+import { toggleLanguageMenu, closeLanguageMenu } from "./utils/language.js";
 
 export const initEventListeners = (onCatalogOpen, getProductsFn) => {
   const handleAddCartBtnClick = (e) => {
@@ -109,5 +110,9 @@ export const initEventListeners = (onCatalogOpen, getProductsFn) => {
       if (e.key === "ArrowRight") nextSlide();
       if (e.key === "ArrowLeft") prevSlide();
     }
+  });
+
+  ui.catalogControls.sortSelect.addEventListener("change", (e) => {
+    handleSortChange(e.target.value);
   });
 };

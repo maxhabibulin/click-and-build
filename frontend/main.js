@@ -5,8 +5,8 @@ import { navigateTo } from "./src/utils/navigation.js";
 import { applySavedTheme } from "./src/utils/theme.js";
 import FetchWrapper from "./src/utils/fetch-wrapper.js";
 import { renderProductCard } from "./src/views/product-card.js";
+import { initCatalog } from "./src/controllers/catalog-controller.js";
 import { initTestimonials } from "./src/controllers/testimonials-controller.js";
-import { renderFeaturedProducts } from "./src/controllers/featured-products-controller.js";
 
 const initApp = () => {
   const yearProvider = new CurrentYear();
@@ -25,16 +25,9 @@ const API = new FetchWrapper("http://localhost:3000");
 const loadAndRenderCatalog = async () => {
   try {
     const data = await API.get("/api/products");
-    const catalogGrid = ui.grids.catalog;
-
     globalProducts = data;
-    catalogGrid.innerHTML = "";
 
-    renderFeaturedProducts(data);
-
-    data.forEach((pc) => {
-      catalogGrid.appendChild(renderProductCard(pc));
-    });
+    initCatalog(data);
   } catch (err) {
     console.error("Failed to load catalog", err);
   }

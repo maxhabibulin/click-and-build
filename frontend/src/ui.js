@@ -53,6 +53,9 @@ export const ui = {
     description: document.querySelector("#js-details-description"),
     img: document.querySelector("#js-details-img"),
   },
+  catalogControls: {
+    sortSelect: document.querySelector("#js-catalog-sort"),
+  },
 };
 
 export const allViews = Object.values(ui.views);
