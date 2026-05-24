@@ -26,10 +26,10 @@ FONT SIZE SYSTEM (px)
   --color-bg-light: #e7f5ff;
   --color-bg-accent: #d2e5f7;
 
-  --color-card-bg: var(--color-white);
+  --color-card-bg: #fff;
   --color-modal-bg: rgba(255, 255, 255, 0.4);
+  --color-highlight-bg: #f0f2f5;
   --color-border: rgba(0, 0, 0, 0.1);
-  --color-highlight: rgba(0, 0, 0, 0.05);
 
   /* Shadows */
   --shadow-nav:
@@ -99,8 +99,8 @@ body.dark-mode {
 
   --color-card-bg: #1e1e1e;
   --color-modal-bg: rgba(0, 0, 0, 0.5);
+  --color-highlight-bg: rgba(255, 255, 255, 0.05);
   --color-border: rgba(255, 255, 255, 0.1);
-  --color-highlight: rgba(255, 255, 255, 0.05);
 
   /* Shadows */
   --shadow-nav: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.5);

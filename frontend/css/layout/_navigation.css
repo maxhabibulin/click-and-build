@@ -165,7 +165,7 @@
 
   &:hover {
     color: var(--color-primary);
-    background-color: var(--color-highlight);
+    background-color: var(--color-highlight-bg);
     border-radius: var(--radius-12);
   }
 }
