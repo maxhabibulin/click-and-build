@@ -38,12 +38,11 @@
   }
 }
 
-.catalog__sort-wrapper {
-  position: relative;
-}
-
 .catalog__sort-select {
-  appearance: base-select;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: none;
   font-family: inherit;
   font-size: var(--font-size-md);
   line-height: 1.5;
@@ -51,7 +50,7 @@
   background-color: var(--color-white);
   border: 0.1rem solid var(--color-border);
   border-radius: var(--radius-100);
-  padding: var(--space-12) var(--space-32) var(--space-12) var(--space-16);
+  padding: var(--space-12) var(--space-16);
   cursor: pointer;
   transition:
     color 0.5s ease,
