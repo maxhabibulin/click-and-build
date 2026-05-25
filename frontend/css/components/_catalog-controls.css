@@ -13,6 +13,7 @@
 
 .catalog__search-input {
   width: 100%;
+  height: 4.8rem;
   font-family: inherit;
   font-size: var(--font-size-md);
   line-height: 1.5;
@@ -20,7 +21,7 @@
   background-color: var(--color-white);
   border: 0.1rem solid var(--color-border);
   border-radius: var(--radius-100);
-  padding: var(--space-12) var(--space-48) var(--space-12) var(--space-16);
+  padding: 0 var(--space-48) 0 var(--space-16);
   transition:
     color 0.5s ease,
     border-color 0.5s ease,
@@ -43,6 +44,7 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   background-image: none;
+  height: 4.8rem;
   font-family: inherit;
   font-size: var(--font-size-md);
   line-height: 1.5;
@@ -51,7 +53,7 @@
   text-align: center;
   border: 0.1rem solid var(--color-border);
   border-radius: var(--radius-100);
-  padding: var(--space-12) var(--space-16);
+  padding: 0 var(--space-16);
   cursor: pointer;
   transition:
     color 0.5s ease,
