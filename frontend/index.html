@@ -63,13 +63,27 @@
           </li>
         </ul>
         <div class="navigation__controls">
-          <button class="nav-control nav-control--btn" id="js-cart-btn">
-            <svg class="nav-control__icon nav-control__icon--cart">
+          <button
+            class="nav-control nav-control--btn"
+            id="js-cart-btn"
+            aria-label="Open cart"
+          >
+            <svg
+              class="nav-control__icon nav-control__icon--cart"
+              aria-hidden="true"
+            >
               <use href="img/svg/icons.svg#icon-cart"></use>
             </svg>
           </button>
-          <button class="nav-control" id="js-lang-btn">
-            <svg class="nav-control__icon nav-control__icon--lang">
+          <button
+            class="nav-control"
+            id="js-lang-btn"
+            aria-label="Change language"
+          >
+            <svg
+              class="nav-control__icon nav-control__icon--lang"
+              aria-hidden="true"
+            >
               <use href="img/svg/icons.svg#icon-lang"></use>
             </svg>
             <ul class="nav-control__menu" id="js-lang-menu">
@@ -84,11 +98,21 @@
               </li>
             </ul>
           </button>
-          <button class="nav-control nav-control--btn" id="js-theme-btn">
-            <svg class="nav-control__icon nav-control__icon--sun">
+          <button
+            class="nav-control nav-control--btn"
+            id="js-theme-btn"
+            aria-label="Toggle dark mode"
+          >
+            <svg
+              class="nav-control__icon nav-control__icon--sun"
+              aria-hidden="true"
+            >
               <use href="img/svg/icons.svg#icon-sun"></use>
             </svg>
-            <svg class="nav-control__icon nav-control__icon--moon">
+            <svg
+              class="nav-control__icon nav-control__icon--moon"
+              aria-hidden="true"
+            >
               <use href="img/svg/icons.svg#icon-moon"></use>
             </svg>
           </button>
@@ -129,7 +153,7 @@
             </h2>
             <div class="grid grid-3-cols">
               <div class="feature__item">
-                <svg class="feature__icon">
+                <svg class="feature__icon" aria-hidden="true">
                   <use href="img/svg/icons.svg#icon-feature-1"></use>
                 </svg>
                 <p class="feature__title">
@@ -141,7 +165,7 @@
                 </p>
               </div>
               <div class="feature__item">
-                <svg class="feature__icon">
+                <svg class="feature__icon" aria-hidden="true">
                   <use href="img/svg/icons.svg#icon-feature-2"></use>
                 </svg>
                 <p class="feature__title">
@@ -153,7 +177,7 @@
                 </p>
               </div>
               <div class="feature__item">
-                <svg class="feature__icon">
+                <svg class="feature__icon" aria-hidden="true">
                   <use href="img/svg/icons.svg#icon-feature-3"></use>
                 </svg>
                 <p class="feature__title">
@@ -195,7 +219,7 @@
             id="js-testimonial-prev"
             aria-label="Previous"
           >
-            <svg class="slider-btn__icon">
+            <svg class="slider-btn__icon" aria-hidden="true">
               <use href="img/svg/icons.svg#icon-testimonial-btn-1"></use>
             </svg>
           </button>
@@ -204,7 +228,7 @@
             id="js-testimonial-next"
             aria-label="Next"
           >
-            <svg class="slider-btn__icon">
+            <svg class="slider-btn__icon" aria-hidden="true">
               <use href="img/svg/icons.svg#icon-testimonial-btn-2"></use>
             </svg>
           </button>
@@ -251,17 +275,13 @@
                 class="catalog__search-input"
                 id="js-catalog-search"
                 type="text"
-                placeholder="Search computers..."
+                placeholder="Search..."
               />
-              <button
-                class="search__btn"
-                id="js-search-btn"
-                aria-label="Search button"
-              >
-                <svg class="search__btn-icon">
+              <div class="catalog__search-icon-box">
+                <svg class="catalog__search-icon" aria-hidden="true">
                   <use href="img/svg/icons.svg#icon-search"></use>
                 </svg>
-              </button>
+              </div>
             </div>
             <div class="catalog__sort-wrapper">
               <select class="catalog__sort-select" id="js-catalog-sort">
@@ -289,7 +309,7 @@
         <div class="footer__copyright">
           Copyright © <span id="js-current-year">2020</span> &#124; Made by
         </div>
-        <svg class="footer__icon">
+        <svg class="footer__icon" aria-hidden="true">
           <use href="img/svg/icons.svg#icon-github"></use>
         </svg>
         <a
@@ -304,7 +324,7 @@
       <div class="product-modal__overlay" id="js-product-overlay"></div>
       <article class="product-modal__content">
         <button class="close-btn" id="js-close-btn" aria-label="Close modal">
-          <svg class="close-btn__icon">
+          <svg class="close-btn__icon" aria-hidden="true">
             <use href="img/svg/icons.svg#icon-x"></use>
           </svg>
         </button>
@@ -320,19 +340,19 @@
             </div>
             <ul class="product-modal__perks">
               <li class="product-modal__perks-item">
-                <svg class="product-modal__icon">
+                <svg class="product-modal__icon" aria-hidden="true">
                   <use href="img/svg/icons.svg#icon-perks-1"></use>
                 </svg>
                 Free shipping
               </li>
               <li class="product-modal__perks-item">
-                <svg class="product-modal__icon">
+                <svg class="product-modal__icon" aria-hidden="true">
                   <use href="img/svg/icons.svg#icon-perks-2"></use>
                 </svg>
                 Return & Refund policy
               </li>
               <li class="product-modal__perks-item">
-                <svg class="product-modal__icon">
+                <svg class="product-modal__icon" aria-hidden="true">
                   <use href="img/svg/icons.svg#icon-perks-3"></use>
                 </svg>
                 Security & Privacy
@@ -342,7 +362,7 @@
               <span class="product-modal__quantity-label">Quantity</span>
               <div class="quantity-controls">
                 <button class="quantity-controls__btn" aria-label="Reduce item">
-                  <svg class="quantity-controls__icon">
+                  <svg class="quantity-controls__icon" aria-hidden="true">
                     <use href="img/svg/icons.svg#icon-minus"></use>
                   </svg>
                 </button>
@@ -354,7 +374,7 @@
                   readonly
                 />
                 <button class="quantity-controls__btn" aria-label="Add item">
-                  <svg class="quantity-controls__icon">
+                  <svg class="quantity-controls__icon" aria-hidden="true">
                     <use href="img/svg/icons.svg#icon-plus"></use>
                   </svg>
                 </button>

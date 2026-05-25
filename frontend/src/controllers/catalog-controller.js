@@ -60,15 +60,22 @@ export const handleSortChange = (sortType) => {
 
 export const handleSearch = (query) => {
   const cleanQuery = query.toLowerCase().trim();
-  console.log("Login to search, search string: ", cleanQuery);
 
   const filteredProducts = originalProducts.filter((pc) => {
-    const name = pc.product_name.toLowerCase().trim();
-    return name.includes(cleanQuery);
+    const searchTarget = `
+        ${pc.product_name || ""} 
+        ${pc.product_price || ""}
+        ${pc.product_cpu || ""}
+        ${pc.product_gpu || ""}
+        ${pc.product_ram || ""}
+        ${pc.product_ssd || ""}
+        ${pc.product_os || ""}
+    `
+      .toLocaleLowerCase()
+      .trim();
+
+    return searchTarget.includes(cleanQuery);
   });
 
-  console.log(
-    `Found products: ${filteredProducts.length} from ${originalProducts.length}`,
-  );
   renderCatalog(filteredProducts);
 };

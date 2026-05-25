@@ -62,3 +62,27 @@
     background-color: var(--color-highlight-bg);
   }
 }
+
+.catalog__search-icon-box {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-100);
+  padding: var(--space-8);
+  pointer-events: none;
+  transition: background-color 0.5s ease;
+}
+
+.catalog__search-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  stroke: var(--color-card-bg);
+  stroke-width: 1.7;
+  fill: none;
+  transition: stroke 0.5s ease;
+}

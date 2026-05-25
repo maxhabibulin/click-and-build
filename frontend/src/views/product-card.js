@@ -45,7 +45,7 @@ export const renderProductCard = (pc) => {
   specs.forEach((spec) => {
     const listItem = document.createElement("li");
     listItem.classList.add("product-card__item");
-    listItem.innerHTML = `<svg class="product-card__icon"><use href="img/svg/icons.svg#${spec.icon}"></use></svg>`;
+    listItem.innerHTML = `<svg class="product-card__icon" aria-hidden="true"><use href="img/svg/icons.svg#${spec.icon}"></use></svg>`;
 
     const span = document.createElement("span");
     span.classList.add("product-card__spec-text");
