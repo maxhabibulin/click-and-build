@@ -57,3 +57,18 @@ export const handleSortChange = (sortType) => {
 
   renderCatalog(sortedProducts);
 };
+
+export const handleSearch = (query) => {
+  const cleanQuery = query.toLowerCase().trim();
+  console.log("Login to search, search string: ", cleanQuery);
+
+  const filteredProducts = originalProducts.filter((pc) => {
+    const name = pc.product_name.toLowerCase().trim();
+    return name.includes(cleanQuery);
+  });
+
+  console.log(
+    `Found products: ${filteredProducts.length} from ${originalProducts.length}`,
+  );
+  renderCatalog(filteredProducts);
+};

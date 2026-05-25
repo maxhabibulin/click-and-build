@@ -48,6 +48,7 @@
   line-height: 1.5;
   color: var(--color-text-main);
   background-color: var(--color-white);
+  text-align: center;
   border: 0.1rem solid var(--color-border);
   border-radius: var(--radius-100);
   padding: var(--space-12) var(--space-16);

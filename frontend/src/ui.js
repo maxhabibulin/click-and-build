@@ -54,6 +54,7 @@ export const ui = {
     img: document.querySelector("#js-details-img"),
   },
   catalogControls: {
+    search: document.querySelector("#js-catalog-search"),
     sortSelect: document.querySelector("#js-catalog-sort"),
   },
 };

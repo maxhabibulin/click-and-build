@@ -10,7 +10,10 @@ import {
   openProductModal,
   closeProductModal,
 } from "./controllers/product-details-controller.js";
-import { handleSortChange } from "./controllers/catalog-controller.js";
+import {
+  handleSearch,
+  handleSortChange,
+} from "./controllers/catalog-controller.js";
 import { toggleLanguageMenu, closeLanguageMenu } from "./utils/language.js";
 
 export const initEventListeners = (onCatalogOpen, getProductsFn) => {
@@ -100,19 +103,26 @@ export const initEventListeners = (onCatalogOpen, getProductsFn) => {
   });
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
+    const key = e.key;
+
+    if (key === "Escape") {
       closeLanguageMenu(ui.menus.lang);
       closeProductModal();
     }
 
     const isHomeVisible = !ui.views.home.classList.contains("hidden");
     if (isHomeVisible) {
-      if (e.key === "ArrowRight") nextSlide();
-      if (e.key === "ArrowLeft") prevSlide();
+      if (key === "ArrowRight") nextSlide();
+      if (key === "ArrowLeft") prevSlide();
     }
   });
 
-  ui.catalogControls.sortSelect.addEventListener("change", (e) => {
+  ui.catalogControls.sortSelect?.addEventListener("change", (e) => {
     handleSortChange(e.target.value);
+  });
+
+  ui.catalogControls.search?.addEventListener("input", (e) => {
+    const query = e.target.value;
+    handleSearch(query);
   });
 };

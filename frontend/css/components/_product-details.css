@@ -90,6 +90,7 @@
 
 .product-modal__icon {
   stroke: var(--color-primary);
+  stroke-width: 1.5;
   fill: var(--color-card-bg);
   width: var(--space-24);
   height: var(--space-24);

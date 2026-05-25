@@ -25,8 +25,9 @@ const API = new FetchWrapper("http://localhost:3000");
 const loadAndRenderCatalog = async () => {
   try {
     const data = await API.get("/api/products");
-    globalProducts = data;
+    console.table("Server data: ", data);
 
+    globalProducts = data;
     initCatalog(data);
   } catch (err) {
     console.error("Failed to load catalog", err);
