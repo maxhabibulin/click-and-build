@@ -32,6 +32,9 @@ html.modal-open body {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-size: 1.6rem;
   font-family: var(--font-main);
   color: var(--color-text-main);
@@ -57,6 +60,12 @@ body {
     outline: 0.5rem solid var(--color-primary-outline);
     outline-offset: 0;
   }
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
