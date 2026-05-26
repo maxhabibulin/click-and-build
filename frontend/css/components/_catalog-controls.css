@@ -20,7 +20,7 @@
   color: var(--color-text-main);
   background-color: var(--color-white);
   border: 0.1rem solid var(--color-border);
-  border-radius: var(--radius-100);
+  border-radius: var(--radius-12);
   padding: 0 var(--space-48) 0 var(--space-16);
   transition:
     color 0.5s ease,
@@ -39,42 +39,16 @@
   }
 }
 
-.catalog__sort-select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: none;
-  height: 4.8rem;
-  font-family: inherit;
-  font-size: var(--font-size-md);
-  line-height: 1.5;
-  color: var(--color-text-main);
-  background-color: var(--color-white);
-  text-align: center;
-  border: 0.1rem solid var(--color-border);
-  border-radius: var(--radius-100);
-  padding: 0 var(--space-16);
-  cursor: pointer;
-  transition:
-    color 0.5s ease,
-    border-color 0.5s ease,
-    background-color 0.5s ease;
-
-  &:hover {
-    background-color: var(--color-highlight-bg);
-  }
-}
-
 .catalog__search-icon-box {
   position: absolute;
   top: 50%;
-  right: 0.5rem;
+  right: 0.4rem;
   transform: translateY(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--color-primary);
-  border-radius: var(--radius-100);
+  border-radius: calc(var(--radius-12) - 0.2rem);
   padding: var(--space-8);
   pointer-events: none;
   transition: background-color 0.5s ease;
@@ -87,4 +61,29 @@
   stroke-width: 1.7;
   fill: none;
   transition: stroke 0.5s ease;
+}
+
+.catalog__sort-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: none;
+  height: 4.8rem;
+  font-family: inherit;
+  font-size: var(--font-size-md);
+  line-height: 1.5;
+  color: var(--color-text-main);
+  background-color: var(--color-white);
+  border: 0.1rem solid var(--color-border);
+  border-radius: var(--radius-12);
+  padding: 0 var(--space-16);
+  cursor: pointer;
+  transition:
+    color 0.5s ease,
+    border-color 0.5s ease,
+    background-color 0.5s ease;
+
+  &:hover {
+    background-color: var(--color-highlight-bg);
+  }
 }
