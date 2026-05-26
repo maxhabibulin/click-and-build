@@ -1,6 +1,6 @@
 const productsCatalogMock = [
   {
-    product_name: "Photon Blade",
+    product_name: "Phantom Blade",
     product_price: 1999,
     product_cpu: "Intel Core i7-14700KF",
     product_gpu: "Asus RTX 5070",
@@ -60,7 +60,7 @@ const productsCatalogMock = [
     product_img: "img/product-card/pc-2.avif",
   },
   {
-    product_name: "Quantum Spectre",
+    product_name: "Quantum Spectre Pro",
     product_price: 4899,
     product_cpu: "Intel Core i9-14900KF",
     product_gpu: "MSI RTX 5080 Ti",
@@ -73,7 +73,7 @@ const productsCatalogMock = [
   },
 
   {
-    product_name: "Cyber Savage Pro",
+    product_name: "Cyber Savage Ultra",
     product_price: 7999,
     product_cpu: "AMD Ryzen 7 9800X3D",
     product_gpu: "Gigabyte RTX 5090",
@@ -85,7 +85,7 @@ const productsCatalogMock = [
     product_img: "img/product-card/pc-3.avif",
   },
   {
-    product_name: "Ashen Overlord",
+    product_name: "Ashen Overlord Pro",
     product_price: 6499,
     product_cpu: "AMD Ryzen 9 9950X",
     product_gpu: "Asus ROG RTX 5090",
@@ -97,7 +97,7 @@ const productsCatalogMock = [
     product_img: "img/product-card/pc-8.avif",
   },
   {
-    product_name: "Titan Singularity",
+    product_name: "Titan Singularity Ultra",
     product_price: 9999,
     product_cpu: "AMD Threadripper 7960X",
     product_gpu: "MSI Dual RTX 5090 NVLink",
