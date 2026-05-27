@@ -58,7 +58,7 @@
   width: 2.4rem;
   height: 2.4rem;
   stroke: var(--color-card-bg);
-  stroke-width: 1.7;
+  stroke-width: 2;
   fill: none;
   transition: stroke 0.5s ease;
 }

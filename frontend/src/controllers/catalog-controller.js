@@ -14,6 +14,10 @@ const emptyMessage = (searchQuery) => {
   const div = document.createElement("div");
   div.classList.add("catalog__empty");
 
+  const icon = document.createElement("div");
+  icon.classList.add("catalog__empty-icon");
+  icon.innerHTML = `<svg class="catalog__empty-icon-sad" aria-hidden="true"><use href="img/svg/icons.svg#icon-sad"></use></svg>`;
+
   const title = document.createElement("h3");
   title.classList.add("catalog__empty-title", "heading-tertiary");
   title.textContent = "No computers found for your request";
@@ -22,7 +26,7 @@ const emptyMessage = (searchQuery) => {
   text.classList.add("catalog__empty-text");
   text.innerHTML = `We couldn't find anything matching <strong>"${searchQuery}"</strong>. Try checking for typos or use different keywords.`;
 
-  div.append(title, text);
+  div.append(icon, title, text);
   grid.appendChild(div);
 };
 

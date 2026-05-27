@@ -11,7 +11,9 @@
   font-size: var(--font-size-sm);
   padding: var(--space-32) 0;
   border-top: 0.1rem solid var(--color-border);
-  transition: border-top-color 0.5s ease;
+  transition:
+    color 0.5s ease,
+    0.5s ease;
 }
 
 .footer__link {
@@ -44,4 +46,5 @@
   width: 1.6rem;
   height: 1.6rem;
   fill: currentColor;
+  transition: fill 0.5s ease;
 }
