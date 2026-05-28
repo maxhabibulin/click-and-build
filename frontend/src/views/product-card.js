@@ -13,7 +13,7 @@ export const renderProductCard = (pc) => {
   content.classList.add("product-card__content");
 
   const title = document.createElement("h3");
-  title.classList.add("heading-tertiary", "product-card__heading");
+  title.classList.add("product-card__title", "heading-tertiary");
   title.textContent = pc.product_name;
 
   const list = document.createElement("ul");

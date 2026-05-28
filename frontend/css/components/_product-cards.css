@@ -37,7 +37,7 @@
   padding: var(--space-32);
 }
 
-.product-card__heading {
+.product-card__title {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
