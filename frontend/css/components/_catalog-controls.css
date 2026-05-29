@@ -57,7 +57,7 @@
 .catalog__search-icon {
   width: 2.4rem;
   height: 2.4rem;
-  stroke: var(--color-card-bg);
+  stroke: var(--color-always-white);
   stroke-width: 2;
   fill: none;
   transition: stroke 0.5s ease;

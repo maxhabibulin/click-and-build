@@ -2,6 +2,7 @@ import { ui, allViews } from "./ui.js";
 import { toggleTheme } from "./utils/theme.js";
 import { navigateTo } from "./utils/navigation.js";
 import { addToCart } from "./services/cart-service.js";
+import { updateCartBadge } from "./controllers/cart-controller.js";
 import {
   nextSlide,
   prevSlide,
@@ -28,8 +29,8 @@ export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
       addToCart(targetProduct);
       console.log(
         `Product with ID: ${targetProduct.id} "${targetProduct.product_name}" successfully added to cart!`,
-        closeProductModal(),
       );
+      closeProductModal();
     } else {
       console.warn(`Product with ID: ${productId} is not found in global list`);
     }
@@ -137,4 +138,6 @@ export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
     const query = e.target.value;
     handleSearch(query);
   });
+
+  window?.addEventListener("cartUpdated", updateCartBadge);
 };

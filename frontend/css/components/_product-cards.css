@@ -16,7 +16,7 @@
 .product-card__img {
   width: 100%;
   padding: var(--space-12);
-  background-color: var(--color-always-white);
+  background-color: var(--color-white-bg);
   border-radius: var(--radius-12);
 }
 
@@ -76,6 +76,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: var(--font-size-lg);
+  color: var(--color-text-main);
   padding-top: var(--space-48);
   margin-top: auto;
 }

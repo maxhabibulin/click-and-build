@@ -61,7 +61,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-color: var(--color-always-white);
+  background-color: var(--color-white-bg);
   border: 0.1rem solid var(--color-border);
   border-radius: var(--radius-12);
   margin-bottom: var(--space-32);
@@ -123,6 +123,7 @@
 
 .product-modal__btn {
   width: 100%;
+  font-weight: 700;
 }
 
 .product-modal__title {

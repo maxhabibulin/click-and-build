@@ -103,6 +103,10 @@
 
   &:hover {
     transform: translateY(-0.2rem);
+
+    .nav-control__badge {
+      background-color: var(--color-primary);
+    }
   }
 }
 
@@ -182,6 +186,27 @@
 
 .nav-control__icon--cart {
   transform: scale(0.85);
+}
+
+.nav-control__badge {
+  position: absolute;
+  top: 0.15rem;
+  right: -0.15rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-esm);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-always-white);
+  background-color: var(--color-primary-dark);
+  border-radius: var(--radius-100);
+  z-index: 10;
+  transition:
+    color 0.5s ease,
+    background-color 0.5s ease;
 }
 
 .nav-control__icon--lang {

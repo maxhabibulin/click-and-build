@@ -26,6 +26,7 @@ FONT SIZE SYSTEM (px)
   --color-bg-light: #e7f5ff;
   --color-bg-accent: #d2e5f7;
 
+  --color-white-bg: #fff;
   --color-card-bg: #fff;
   --color-modal-bg: rgba(255, 255, 255, 0.4);
   --color-highlight-bg: #f0f2f5;
@@ -48,6 +49,7 @@ FONT SIZE SYSTEM (px)
   /* Font Style*/
   --font-main: "Inter", sans-serif;
   /* Font Size System */
+  --font-size-esm: 1rem;
   --font-size-sm: 1.4rem;
   --font-size-md: 1.6rem;
   --font-size-lg: 1.8rem;
@@ -86,7 +88,7 @@ body.dark-mode {
   --color-primary-outline: rgba(51, 154, 240, 0.5);
 
   /* White Colors */
-  --color-always-white: #fff;
+  --color-always-white: #e7f5ff;
   --color-white: #121212;
 
   /* Grays Colors */
@@ -97,6 +99,7 @@ body.dark-mode {
   --color-bg-light: #1a1a1a;
   --color-bg-accent: #2c2c2c;
 
+  --color-white-bg: #fff;
   --color-card-bg: #1e1e1e;
   --color-modal-bg: rgba(0, 0, 0, 0.5);
   --color-highlight-bg: rgba(255, 255, 255, 0.05);

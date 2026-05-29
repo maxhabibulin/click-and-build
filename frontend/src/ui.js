@@ -23,8 +23,10 @@ export const ui = {
     langSwitcher: document.querySelector("#js-lang-btn"),
     closeBtn: document.querySelector("#js-close-btn"),
     cartBtn: document.querySelector(".js-add-to-cart"),
+    menuCartBtn: document.querySelector("#js-cart-btn"),
   },
   menus: {
+    cartBadge: document.querySelector("#js-cart-badge"),
     lang: document.querySelector("#js-lang-menu"),
   },
   footer: {
