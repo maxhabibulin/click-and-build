@@ -1,6 +1,7 @@
 import { ui, allViews } from "./ui.js";
 import { toggleTheme } from "./utils/theme.js";
 import { navigateTo } from "./utils/navigation.js";
+import { addToCart } from "./services/cart-service.js";
 import {
   nextSlide,
   prevSlide,
@@ -16,15 +17,21 @@ import {
 } from "./controllers/catalog-controller.js";
 import { toggleLanguageMenu, closeLanguageMenu } from "./utils/language.js";
 
-export const initEventListeners = (onCatalogOpen, getProductsFn) => {
-  const handleAddCartBtnClick = (e) => {
-    const cartBtn = e.target.closest(".js-add-to-cart");
+export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
+  const handleAddToCartAction = (productId) => {
+    if (!productId) return;
 
-    if (cartBtn) {
-      e.stopPropagation();
-      const productId = Number(cartBtn.dataset.id);
-      console.log(`Add to cart btn clicked [ID: ${productId}]`);
-      closeProductModal();
+    const products = getGlobalProducts();
+    const targetProduct = products.find((p) => Number(p.id) === productId);
+
+    if (targetProduct) {
+      addToCart(targetProduct);
+      console.log(
+        `Product with ID: ${targetProduct.id} "${targetProduct.product_name}" successfully added to cart!`,
+        closeProductModal(),
+      );
+    } else {
+      console.warn(`Product with ID: ${productId} is not found in global list`);
     }
   };
 
@@ -33,30 +40,35 @@ export const initEventListeners = (onCatalogOpen, getProductsFn) => {
     const card = e.target.closest(".js-product-card");
 
     if (cartBtn) {
-      handleAddCartBtnClick(e);
+      e.stopPropagation();
+      const productId = Number(cartBtn.dataset.id);
+      handleAddToCartAction(productId);
       return;
     }
 
     if (card) {
       const productId = Number(card.dataset.id);
-      const currentProducts = getProductsFn();
+      const currentProducts = getGlobalProducts();
       const selectedProduct = currentProducts.find((p) => p.id === productId);
 
       if (selectedProduct) {
-        console.log(`Opening modal for [ID: ${selectedProduct.id}]`);
+        console.log(`Opening modal for ID: ${selectedProduct.id}`);
         openProductModal(selectedProduct);
-      } else {
-        console.warn(
-          `Product with [ID: ${productId}] not found in global list`,
-        );
       }
     }
   };
 
-  ui.productModal.modal?.addEventListener("click", handleAddCartBtnClick);
-
   ui.grids.catalog?.addEventListener("click", handleGridClick);
   ui.grids.featured?.addEventListener("click", handleGridClick);
+
+  ui.productModal.modal?.addEventListener("click", (e) => {
+    const cartBtn = e.target.closest(".js-add-to-cart");
+
+    if (cartBtn) {
+      const productId = Number(cartBtn.dataset.id);
+      handleAddToCartAction(productId);
+    }
+  });
 
   ui.testimonials.btnNext?.addEventListener("click", nextSlide);
   ui.testimonials.btnPrev?.addEventListener("click", prevSlide);
