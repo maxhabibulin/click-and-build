@@ -48,8 +48,9 @@ FONT SIZE SYSTEM (px)
   /*  --- Typography ---  */
   /* Font Style*/
   --font-main: "Inter", sans-serif;
+
   /* Font Size System */
-  --font-size-esm: 1rem;
+  --font-size-esm: 1.1rem;
   --font-size-sm: 1.4rem;
   --font-size-md: 1.6rem;
   --font-size-lg: 1.8rem;

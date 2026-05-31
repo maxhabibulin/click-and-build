@@ -6,6 +6,7 @@ import { applySavedTheme } from "./src/utils/theme.js";
 import FetchWrapper from "./src/utils/fetch-wrapper.js";
 import { renderProductCard } from "./src/views/product-card.js";
 import { initCatalog } from "./src/controllers/catalog-controller.js";
+import { updateCartBadge } from "./src/controllers/cart-controller.js";
 import { initTestimonials } from "./src/controllers/testimonials-controller.js";
 
 const initApp = () => {
@@ -13,10 +14,10 @@ const initApp = () => {
   if (ui.footer.yearSpan) {
     ui.footer.yearSpan.textContent = yearProvider.getCurrentYear();
   }
+  updateCartBadge();
 };
 
 initApp();
-
 applySavedTheme();
 
 let globalProducts = [];

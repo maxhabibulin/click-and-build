@@ -7,12 +7,20 @@ export const updateCartBadge = () => {
   if (badge) {
     const count = getCartCount();
 
-    badge.textContent = count;
-
-    if (count === 0) {
+    if (count <= 0) {
+      badge.textContent = "0";
       badge.classList.add("hidden");
-    } else {
-      badge.classList.remove("hidden");
+      return;
     }
+
+    if (count > 99) {
+      badge.textContent = "99+";
+      badge.style.width = "3.2rem";
+      badge.style.transform = "translateX(56%)";
+    } else {
+      badge.textContent = count;
+    }
+
+    badge.classList.remove("hidden");
   }
 };

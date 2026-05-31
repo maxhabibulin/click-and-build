@@ -190,10 +190,11 @@
 
 .nav-control__badge {
   position: absolute;
-  top: 0.15rem;
-  right: -0.15rem;
-  width: 1.6rem;
-  height: 1.6rem;
+  top: -0.6rem;
+  right: 0;
+  transform: translateX(50%);
+  width: 2.8rem;
+  height: 1.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -203,7 +204,9 @@
   color: var(--color-always-white);
   background-color: var(--color-primary-dark);
   border-radius: var(--radius-100);
+  padding: 0 0.5rem;
   z-index: 10;
+  white-space: nowrap;
   transition:
     color 0.5s ease,
     background-color 0.5s ease;
