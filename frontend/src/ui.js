@@ -28,9 +28,9 @@ export const ui = {
     closeBtn: document.querySelector("#js-close-btn"),
   },
   menus: {
-    cartBadge: document.querySelector("#js-cart-badge"),
     cart: document.querySelector("#js-cart-menu"),
     lang: document.querySelector("#js-lang-menu"),
+    cartBadge: document.querySelector("#js-cart-badge"),
   },
   footer: {
     yearSpan: document.querySelector("#js-current-year"),
