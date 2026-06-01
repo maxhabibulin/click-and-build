@@ -2,7 +2,9 @@ import { ui, allViews } from "./ui.js";
 import { toggleTheme } from "./utils/theme.js";
 import { navigateTo } from "./utils/navigation.js";
 import { addToCart } from "./services/cart-service.js";
+import { toggleCartMenu, closeCartMenu } from "./utils/cart.js";
 import { updateCartBadge } from "./controllers/cart-controller.js";
+import { toggleLanguageMenu, closeLanguageMenu } from "./utils/language.js";
 import {
   nextSlide,
   prevSlide,
@@ -16,7 +18,6 @@ import {
   handleSearch,
   handleSortChange,
 } from "./controllers/catalog-controller.js";
-import { toggleLanguageMenu, closeLanguageMenu } from "./utils/language.js";
 
 export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
   const handleAddToCartAction = (productId) => {
@@ -94,11 +95,28 @@ export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
     });
   });
 
-  ui.buttons.themeSwitcher?.addEventListener("click", () => toggleTheme());
-
-  ui.buttons.langSwitcher?.addEventListener("click", (e) => {
+  ui.buttons.navigation.cartSwitcher?.addEventListener("click", (e) => {
     e.stopPropagation();
-    toggleLanguageMenu(ui.menus.lang);
+    const cartMenu = ui.menus.cart;
+    const langMenu = ui.menus.lang;
+    toggleCartMenu(cartMenu);
+    closeLanguageMenu(langMenu);
+  });
+
+  ui.buttons.navigation.langSwitcher?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const langMenu = ui.menus.lang;
+    const cartMenu = ui.menus.cart;
+    toggleLanguageMenu(langMenu);
+    closeCartMenu(cartMenu);
+  });
+
+  ui.buttons.navigation.themeSwitcher?.addEventListener("click", () =>
+    toggleTheme(),
+  );
+
+  ui.menus.cart?.addEventListener("click", (e) => {
+    e.stopPropagation();
   });
 
   ui.buttons.closeBtn?.addEventListener("click", closeProductModal);
@@ -110,16 +128,29 @@ export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
   });
 
   document.addEventListener("click", (e) => {
-    if (!ui.buttons.langSwitcher?.contains(e.target)) {
-      closeLanguageMenu(ui.menus.lang);
+    const target = e.target;
+    const cartMenu = ui.menus.cart;
+    const langMenu = ui.menus.lang;
+    const cartSwitcher = ui.buttons.navigation.cartSwitcher;
+    const langSwitcher = ui.buttons.navigation.langSwitcher;
+
+    if (!cartSwitcher?.contains(target) && !cartMenu?.contains(target)) {
+      closeCartMenu(cartMenu);
+    }
+
+    if (!langSwitcher?.contains(target) && !langMenu?.contains(target)) {
+      closeLanguageMenu(langMenu);
     }
   });
 
   document.addEventListener("keydown", (e) => {
     const key = e.key;
+    const cartMenu = ui.menus.cart;
+    const langMenu = ui.menus.lang;
 
     if (key === "Escape") {
-      closeLanguageMenu(ui.menus.lang);
+      closeCartMenu(cartMenu);
+      closeLanguageMenu(langMenu);
       closeProductModal();
     }
 
@@ -131,7 +162,8 @@ export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
   });
 
   ui.catalogControls.sortSelect?.addEventListener("change", (e) => {
-    handleSortChange(e.target.value);
+    const value = e.target.value;
+    handleSortChange(value);
   });
 
   ui.catalogControls.search?.addEventListener("input", (e) => {

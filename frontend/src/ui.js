@@ -19,14 +19,17 @@ export const ui = {
       document.querySelector("#js-nav-reviews"),
       document.querySelector("#js-nav-builds"),
     ],
-    themeSwitcher: document.querySelector("#js-theme-btn"),
-    langSwitcher: document.querySelector("#js-lang-btn"),
-    closeBtn: document.querySelector("#js-close-btn"),
+    navigation: {
+      cartSwitcher: document.querySelector("#js-cart-btn"),
+      themeSwitcher: document.querySelector("#js-theme-btn"),
+      langSwitcher: document.querySelector("#js-lang-btn"),
+    },
     cartBtn: document.querySelector(".js-add-to-cart"),
-    menuCartBtn: document.querySelector("#js-cart-btn"),
+    closeBtn: document.querySelector("#js-close-btn"),
   },
   menus: {
     cartBadge: document.querySelector("#js-cart-badge"),
+    cart: document.querySelector("#js-cart-menu"),
     lang: document.querySelector("#js-lang-menu"),
   },
   footer: {
