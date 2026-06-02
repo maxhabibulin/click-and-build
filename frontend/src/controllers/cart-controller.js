@@ -1,4 +1,5 @@
 import { ui } from "../ui.js";
+import generateSvg from "../utils/svg-ns.js";
 import { getCart, getCartCount } from "../services/cart-service.js";
 
 const renderEmptyCart = (container) => {
@@ -7,18 +8,7 @@ const renderEmptyCart = (container) => {
   const wrapper = document.createElement("div");
   wrapper.classList.add("cart-dropdown__empty");
 
-  const svgNS = "http://www.w3.org/2000/svg";
-  const svg = document.createElementNS(svgNS, "svg");
-  svg.setAttribute("class", "cart-dropdown__empty-icon");
-  svg.setAttribute("aria-hidden", "true");
-
-  const use = document.createElementNS(svgNS, "use");
-  use.setAttributeNS(
-    "http://www.w3.org/1999/xlink",
-    "href",
-    "img/svg/icons.svg#icon-cart",
-  );
-  svg.appendChild(use);
+  const svg = generateSvg("cart-dropdown__empty-icon", "icon-cart");
 
   const title = document.createElement("p");
   title.classList.add("cart-dropdown__empty-title");
