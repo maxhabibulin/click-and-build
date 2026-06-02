@@ -1,6 +1,10 @@
 import { ui } from "../ui.js";
 import generateSvg from "../utils/svg-ns.js";
-import { getCart, getCartCount } from "../services/cart-service.js";
+import {
+  getCart,
+  getCartCount,
+  getCartTotal,
+} from "../services/cart-service.js";
 
 const renderEmptyCart = (container) => {
   container.innerHTML = "";
@@ -22,6 +26,80 @@ const renderEmptyCart = (container) => {
   container.appendChild(wrapper);
 };
 
+const renderFilledCart = (container, cartItems) => {
+  container.innerHTML = "";
+  console.log("Cart items: ", { cartItems });
+
+  const wrapper = document.createElement("div");
+  wrapper.classList.add("cart-dropdown__filled");
+
+  const ul = document.createElement("ul");
+  ul.classList.add("cart-dropdown__list");
+
+  cartItems.forEach((item) => {
+    const li = document.createElement("li");
+    li.classList.add("cart-dropdown__item");
+
+    const imgBox = document.createElement("div");
+    imgBox.classList.add("cart-dropdown__img-box");
+
+    const img = document.createElement("img");
+    img.classList.add("cart-dropdown__img");
+    img.src = item.product_img;
+    img.alt = item.product_name;
+
+    imgBox.appendChild(img);
+
+    const itemInfo = document.createElement("div");
+    itemInfo.classList.add("cart-dropdown__item-info");
+
+    const quantity = document.createElement("strong");
+    quantity.classList.add("cart-dropdown__item-quantity");
+    quantity.textContent = `x${item.quantity}`;
+
+    const title = document.createElement("h4");
+    title.classList.add("cart-dropdown__item-title", "heading-quaternary");
+    title.textContent = item.product_name;
+
+    title.append(quantity);
+
+    const price = document.createElement("span");
+    price.classList.add("cart-dropdown__item-price");
+    price.textContent = `${item.product_price}$`;
+
+    itemInfo.append(title, price);
+    li.append(imgBox, itemInfo);
+    ul.appendChild(li);
+  });
+
+  const footer = document.createElement("div");
+  footer.classList.add("cart-dropdown__footer");
+
+  const totalBlock = document.createElement("div");
+  totalBlock.classList.add("cart-dropdown__total");
+
+  const totalLabel = document.createElement("span");
+  totalLabel.classList.add("cart-dropdown__total-label");
+  totalLabel.textContent = "Total:";
+
+  const totalPrice = document.createElement("span");
+  totalPrice.classList.add("cart-dropdown__total-price");
+  totalPrice.id = "js-cart-dropdown-total";
+  totalPrice.textContent = `${getCartTotal()}$`;
+
+  totalBlock.append(totalLabel, totalPrice);
+
+  const checkoutBtn = document.createElement("a");
+  checkoutBtn.classList.add("cart-dropdown__checkout-btn", "btn", "btn--small");
+  checkoutBtn.href = "#cart";
+  checkoutBtn.textContent = "Go to cart";
+
+  footer.append(totalBlock, checkoutBtn);
+
+  wrapper.append(ul, footer);
+  container.appendChild(wrapper);
+};
+
 export const updateCartBadge = () => {
   const cartMenu = ui.menus.cart;
   const badge = ui.menus.cartBadge;
@@ -29,6 +107,8 @@ export const updateCartBadge = () => {
 
   if (cartMenu && (!cartItems || cartItems.length === 0)) {
     renderEmptyCart(cartMenu);
+  } else {
+    renderFilledCart(cartMenu, cartItems);
   }
 
   if (badge) {

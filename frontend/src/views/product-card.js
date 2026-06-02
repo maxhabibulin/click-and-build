@@ -54,9 +54,7 @@ export const renderProductCard = (pc) => {
     span.classList.add("product-card__spec-text");
     span.textContent = spec.text;
 
-    const children = [svg, span];
-
-    listItem.append(...children);
+    listItem.append(svg, span);
     list.appendChild(listItem);
   });
 

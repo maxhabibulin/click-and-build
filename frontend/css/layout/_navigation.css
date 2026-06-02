@@ -260,9 +260,10 @@
   display: flex;
   flex-direction: column;
   list-style: none;
-  max-height: 26rem;
+  max-height: 32rem;
   padding-right: var(--space-4);
   overflow-y: auto;
+  scrollbar-width: thin;
 }
 
 .cart-dropdown__item {
@@ -306,13 +307,21 @@
 }
 
 .cart-dropdown__item-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   color: var(--color-text-main);
+}
+
+.cart-dropdown__item-quantity {
+  color: var(--color-primary-darker);
+  font-weight: 800;
 }
 
 .cart-dropdown__item-price {
   font-size: var(--font-size-sm);
   color: var(--color-text-main);
-  font-weight: 500;
+  font-weight: 600;
   opacity: 0.85;
 }
 
