@@ -38,6 +38,7 @@
   box-shadow: var(--shadow-modal);
   overflow-y: auto;
   scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
   overscroll-behavior: contain;
   transform: scale(1);
   transition:

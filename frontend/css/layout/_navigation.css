@@ -72,7 +72,6 @@
   &:hover,
   &:active {
     color: var(--color-primary);
-    transform: translateY(-0.2rem);
   }
 
   &:hover::after {
@@ -102,8 +101,6 @@
   transition: transform 0.3s ease;
 
   &:hover {
-    transform: translateY(-0.2rem);
-
     .nav-control__badge {
       background-color: var(--color-primary);
     }
@@ -244,13 +241,13 @@
 
 .cart-menu {
   width: 34rem;
-  padding: var(--space-16);
+  padding: var(--space-16) 0 var(--space-16) var(--space-16);
   border-radius: var(--radius-12);
   cursor: default;
   z-index: 1000;
 }
 
-.cart-dropdown {
+.cart-dropdown__filled {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -260,10 +257,11 @@
   display: flex;
   flex-direction: column;
   list-style: none;
-  max-height: 32rem;
-  padding-right: var(--space-4);
+  max-height: 37rem;
+  padding-right: var(--space-16);
   overflow-y: auto;
   scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
 }
 
 .cart-dropdown__item {
@@ -272,6 +270,7 @@
   align-items: center;
   gap: var(--space-12);
   padding: var(--space-12) 0;
+  transition: background-color 0.3s ease;
 
   &:first-child {
     padding-top: 0;
@@ -322,7 +321,7 @@
   font-size: var(--font-size-sm);
   color: var(--color-text-main);
   font-weight: 600;
-  opacity: 0.85;
+  opacity: 0.8;
 }
 
 .cart-dropdown__footer {
@@ -330,7 +329,7 @@
   flex-direction: column;
   gap: var(--space-16);
   border-top: 0.1rem solid var(--color-border);
-  padding-top: var(--space-12);
+  padding: var(--space-12) var(--space-16) 0 0;
   margin-top: var(--space-4);
 }
 
