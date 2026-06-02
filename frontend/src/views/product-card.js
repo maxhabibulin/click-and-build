@@ -1,3 +1,5 @@
+import generateSvg from "../utils/svg-ns.js";
+
 export const renderProductCard = (pc) => {
   const figure = document.createElement("figure");
   figure.classList.add("product-card", "js-product-card");
@@ -45,12 +47,16 @@ export const renderProductCard = (pc) => {
   specs.forEach((spec) => {
     const listItem = document.createElement("li");
     listItem.classList.add("product-card__item");
-    listItem.innerHTML = `<svg class="product-card__icon" aria-hidden="true"><use href="img/svg/icons.svg#${spec.icon}"></use></svg>`;
+
+    const svg = generateSvg("product-card__icon", `${spec.icon}`);
 
     const span = document.createElement("span");
     span.classList.add("product-card__spec-text");
     span.textContent = spec.text;
-    listItem.appendChild(span);
+
+    const children = [svg, span];
+
+    listItem.append(...children);
     list.appendChild(listItem);
   });
 

@@ -1,4 +1,5 @@
 import { ui } from "../ui.js";
+import generateSvg from "../utils/svg-ns.js";
 import { renderProductCard } from "../views/product-card.js";
 import {
   FEATURED_IDS,
@@ -16,7 +17,9 @@ const emptyMessage = (searchQuery) => {
 
   const icon = document.createElement("div");
   icon.classList.add("catalog__empty-icon");
-  icon.innerHTML = `<svg class="catalog__empty-icon-sad" aria-hidden="true"><use href="img/svg/icons.svg#icon-sad"></use></svg>`;
+
+  const svg = generateSvg("catalog__empty-icon-sad", "icon-sad");
+  icon.appendChild(svg);
 
   const title = document.createElement("h3");
   title.classList.add("catalog__empty-title", "heading-tertiary");
