@@ -117,6 +117,14 @@ export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
 
   ui.menus.cart?.addEventListener("click", (e) => {
     e.stopPropagation();
+    const mainCartBtn = e.target.closest("#js-main-cart-btn");
+    const cartView = ui.views.cart;
+    const cartMenu = ui.menus.cart;
+
+    if (mainCartBtn) {
+      navigateTo(cartView, allViews, "cart");
+      closeCartMenu(cartMenu);
+    }
   });
 
   ui.buttons.closeBtn?.addEventListener("click", closeProductModal);

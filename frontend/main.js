@@ -49,10 +49,12 @@ const loadInitialData = async () => {
   initEventListeners(loadAndRenderCatalog, () => globalProducts);
 };
 
-const savedView = localStorage.getItem("currentView" || "home");
+const savedView = localStorage.getItem("currentView") ?? "home";
 
 if (savedView === "catalog") {
   navigateTo(ui.views.catalog, allViews, "catalog");
+} else if (savedView === "cart") {
+  navigateTo(ui.views.cart, allViews, "cart");
 } else {
   navigateTo(ui.views.home, allViews, "home");
 }

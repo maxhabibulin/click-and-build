@@ -2,16 +2,14 @@ export const ui = {
   views: {
     home: document.querySelector("#js-home-view"),
     catalog: document.querySelector("#js-catalog-view"),
+    cart: document.querySelector("#js-cart-view"),
   },
   grids: {
     catalog: document.querySelector("#js-catalog-grid"),
     featured: document.querySelector("#js-featured-grid"),
+    cart: document.querySelector("#js-cart-grid"),
   },
   buttons: {
-    toCatalog: [
-      document.querySelector("#js-nav-catalog"),
-      document.querySelector("#js-hero-btn"),
-    ],
     toHome: [
       document.querySelector("#js-nav-logo"),
       document.querySelector("#js-nav-home"),
@@ -19,6 +17,11 @@ export const ui = {
       document.querySelector("#js-nav-reviews"),
       document.querySelector("#js-nav-builds"),
     ],
+    toCatalog: [
+      document.querySelector("#js-nav-catalog"),
+      document.querySelector("#js-hero-btn"),
+    ],
+    toCart: document.querySelector("#js-main-cart-btn"),
     navigation: {
       cartSwitcher: document.querySelector("#js-cart-btn"),
       themeSwitcher: document.querySelector("#js-theme-btn"),

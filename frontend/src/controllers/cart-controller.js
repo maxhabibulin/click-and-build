@@ -89,12 +89,13 @@ const renderFilledCart = (container, cartItems) => {
 
   totalBlock.append(totalLabel, totalPrice);
 
-  const checkoutBtn = document.createElement("a");
-  checkoutBtn.classList.add("cart-dropdown__checkout-btn", "btn", "btn--small");
-  checkoutBtn.href = "#cart";
-  checkoutBtn.textContent = "Go to cart";
+  const mainCartBtn = document.createElement("a");
+  mainCartBtn.classList.add("cart-dropdown__cart-btn", "btn", "btn--small");
+  mainCartBtn.id = "js-main-cart-btn";
+  mainCartBtn.href = "#cart";
+  mainCartBtn.textContent = "Go to cart";
 
-  footer.append(totalBlock, checkoutBtn);
+  footer.append(totalBlock, mainCartBtn);
 
   wrapper.append(ul, footer);
   container.appendChild(wrapper);
