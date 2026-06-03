@@ -44,19 +44,33 @@ const loadTestimonials = async () => {
   }
 };
 
-const loadInitialData = async () => {
-  await Promise.all([loadAndRenderCatalog(), loadTestimonials()]);
-  initEventListeners(loadAndRenderCatalog, () => globalProducts);
+const handleCatalogViewOpen = () => {
+  if (globalProducts.length === 0) {
+    loadAndRenderCatalog();
+  } else {
+    initCatalog(globalProducts);
+  }
 };
 
-const savedView = localStorage.getItem("currentView") ?? "home";
+const handleCartViewOpen = () => {
+  console.log("Main cart is opened...");
+};
 
-if (savedView === "catalog") {
-  navigateTo(ui.views.catalog, allViews, "catalog");
-} else if (savedView === "cart") {
-  navigateTo(ui.views.cart, allViews, "cart");
-} else {
-  navigateTo(ui.views.home, allViews, "home");
-}
+const loadInitialData = async () => {
+  await Promise.all([loadAndRenderCatalog(), loadTestimonials()]);
+  initEventListeners(handleCatalogViewOpen, () => globalProducts);
+
+  const savedView = localStorage.getItem("currentView") ?? "home";
+
+  if (savedView === "catalog") {
+    navigateTo(ui.views.catalog, allViews, "catalog");
+    handleCatalogViewOpen();
+  } else if (savedView === "cart") {
+    navigateTo(ui.views.cart, allViews, "cart");
+    handleCartViewOpen();
+  } else {
+    navigateTo(ui.views.home, allViews, "home");
+  }
+};
 
 loadInitialData();
