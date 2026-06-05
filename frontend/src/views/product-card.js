@@ -9,7 +9,7 @@ export const renderProductCard = (pc) => {
   const img = document.createElement("img");
   img.classList.add("product-card__img");
   img.src = pc.product_img;
-  img.alt = `${pc.product_name} gaming PC`;
+  img.alt = pc.product_name;
 
   const content = document.createElement("div");
   content.classList.add("product-card__content");

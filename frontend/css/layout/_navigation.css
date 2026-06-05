@@ -279,6 +279,10 @@
   &:not(:last-child) {
     border-bottom: 0.1rem solid var(--color-border);
   }
+
+  &:hover .cart-dropdown__item-quantity {
+    color: var(--color-primary);
+  }
 }
 
 .cart-dropdown__img-box {
@@ -315,6 +319,10 @@
 .cart-dropdown__item-quantity {
   color: var(--color-primary-darker);
   font-weight: 800;
+
+  .dark-mode & {
+    color: var(--color-primary);
+  }
 }
 
 .cart-dropdown__item-price {

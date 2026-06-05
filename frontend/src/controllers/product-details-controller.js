@@ -26,7 +26,7 @@ const fillModalData = (pc) => {
 
     if (key === "img") {
       uiElement.src = pc[dataKey];
-      uiElement.alt = `${pc.product_name} gaming PC`;
+      uiElement.alt = pc.product_name;
     } else if (key === "price") {
       uiElement.textContent = `${pc[dataKey]}$`;
     } else {

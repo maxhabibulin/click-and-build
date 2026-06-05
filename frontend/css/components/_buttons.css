@@ -119,7 +119,7 @@
   display: flex;
   align-items: center;
   border: 0.1rem solid var(--color-border);
-  border-radius: calc(var(--radius-12) - 0.2rem);
+  border-radius: calc(var(--radius-12) - 0.6rem);
   overflow: hidden;
 }
 
@@ -129,7 +129,7 @@
   justify-content: center;
   border: none;
   background-color: transparent;
-  padding: var(--space-8) var(--space-12);
+  padding: var(--space-8);
   cursor: pointer;
   transition: background-color 0.3s ease;
 
@@ -145,8 +145,8 @@
 .quantity-controls__icon {
   stroke: var(--color-text-main);
   stroke-width: 2.4;
-  width: var(--space-16);
-  height: var(--space-16);
+  width: 1.6rem;
+  height: 1.6rem;
   pointer-events: none;
   transition: all 0.3s ease;
 }
@@ -161,6 +161,7 @@
   background-color: transparent;
   text-align: center;
   outline: none;
+  transition: color 0.5s ease;
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {

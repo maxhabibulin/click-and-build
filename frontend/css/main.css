@@ -7,6 +7,7 @@
 @import "./components/_catalog-controls.css";
 @import "./components/_product-cards.css";
 @import "./components/_product-details.css";
+@import "./layout/_cart.css";
 @import "./layout/_catalog.css";
 @import "./layout/_features.css";
 @import "./layout/_footer.css";
