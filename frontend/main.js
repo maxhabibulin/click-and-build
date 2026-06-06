@@ -1,20 +1,24 @@
 import { allViews, ui } from "./src/ui.js";
+import CurrentYear from "./src/utils/date.js";
 import { initEventListeners } from "./src/events.js";
-import CurrentYear from "./src/models/current-year.js";
 import { navigateTo } from "./src/utils/navigation.js";
-import { applySavedTheme } from "./src/utils/theme.js";
 import FetchWrapper from "./src/utils/fetch-wrapper.js";
 import { renderProductCard } from "./src/views/product-card.js";
 import { initCatalog } from "./src/controllers/catalog-controller.js";
-import { updateCartBadge } from "./src/controllers/cart-controller.js";
+import { applySavedTheme } from "./src/controllers/theme-controller.js";
 import { initTestimonials } from "./src/controllers/testimonials-controller.js";
+import {
+  updateMiniCart,
+  renderMainCartPage,
+} from "./src/controllers/cart-controller.js";
 
 const initApp = () => {
   const yearProvider = new CurrentYear();
   if (ui.footer.yearSpan) {
     ui.footer.yearSpan.textContent = yearProvider.getCurrentYear();
   }
-  updateCartBadge();
+  updateMiniCart();
+  renderMainCartPage();
 };
 
 initApp();

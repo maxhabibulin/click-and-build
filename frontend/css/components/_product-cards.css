@@ -79,4 +79,5 @@
   color: var(--color-text-main);
   padding-top: var(--space-48);
   margin-top: auto;
+  transition: color 0.5s ease;
 }

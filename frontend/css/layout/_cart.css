@@ -117,7 +117,7 @@
 
 .cart__summary {
   position: static;
-  width: 38rem;
+  width: 39.4rem;
   margin-left: auto;
 }
 
@@ -131,21 +131,34 @@
   transition:
     background-color 0.5s ease,
     box-shadow 0.5s ease;
+
+  &:hover {
+    box-shadow: var(--shadow-card-hover);
+  }
 }
 
 .summary-card__lable {
   font-size: var(--font-size-lg);
-  font-weight: 450;
   margin-bottom: var(--space-8);
 }
 
 .summary-card__price {
-  font-size: var(--font-size-h2);
+  font-size: var(--font-size-3xl);
   font-weight: 800;
+  letter-spacing: -0.01rem;
   margin-bottom: var(--space-16);
 }
 
 .summary-card__btn {
   width: 100%;
-  font-weight: 650;
+  font-weight: 600;
+}
+
+.cart-main__empty {
+}
+
+.cart-main__empty-title {
+}
+
+.cart-main__empty-text {
 }

@@ -65,6 +65,12 @@ export const ui = {
     search: document.querySelector("#js-catalog-search"),
     sortSelect: document.querySelector("#js-catalog-sort"),
   },
+  mainCart: {
+    cartHeader: document.querySelector("#js-cart-table-header"),
+    cartList: document.querySelector(".js-cart-list"),
+    cartSummary: document.querySelector("#js-cart-summary"),
+    subtotalPrice: document.querySelector("#js-subtotal__price"),
+  },
 };
 
 export const allViews = Object.values(ui.views);

@@ -305,81 +305,26 @@
           ></div>
         </section>
       </div>
-      <div class="cart" id="js-cart-view">
+      <div class="cart hidden" id="js-cart-view">
         <section class="section-cart container mt-64 mb-96" id="cart">
           <h2 class="cart__heading heading-secondary">Shopping Cart</h2>
           <div class="cart__grid" id="js-cart-grid">
-            <div class="cart__main">
-              <ul class="cart__table-header">
+            <div class="cart__main js-cart-main">
+              <ul class="cart__table-header hidden" id="js-cart-table-header">
                 <li class="cart__table-header-col">Product</li>
                 <li class="cart__table-header-col">Details</li>
                 <li class="cart__table-header-col">Quantity</li>
                 <li class="cart__table-header-col">Unit price</li>
                 <li class="cart__table-header-col">Total</li>
               </ul>
-              <div class="cart__list">
-                <div class="cart-item" data-id="1">
-                  <div class="cart-item__product">
-                    <figure class="cart-item__img-box">
-                      <img
-                        class="cart-item__img"
-                        src="img/product-card/pc-1.avif"
-                        alt="Phantom Blade"
-                      />
-                    </figure>
-                    <h3 class="cart-item__name">Phantom Blade</h3>
-                  </div>
-                  <div class="cart-item__details">
-                    <ul class="cart-item__details-list">
-                      <li class="cart-item__details-item">
-                        Intel Core i7-14700KF
-                      </li>
-                      <li class="cart-item__details-item">Asus RTX 5070</li>
-                      <li class="cart-item__details-item">
-                        Corsair 32GB DDR5 3000MHz
-                      </li>
-                      <li class="cart-item__details-item">
-                        Samsung NVMe SSD 1TB
-                      </li>
-                      <li class="cart-item__details-item">Windows 11 Pro</li>
-                    </ul>
-                  </div>
-                  <div class="cart-item__quantity">
-                    <div class="quantity-controls">
-                      <button
-                        class="quantity-controls__btn js-cart-minus"
-                        aria-label="Reduce item"
-                      >
-                        <svg class="quantity-controls__icon" aria-hidden="true">
-                          <use href="img/svg/icons.svg#icon-minus"></use>
-                        </svg>
-                      </button>
-                      <input
-                        class="quantity-controls__input"
-                        aria-label="Item counter"
-                        type="number"
-                        value="1"
-                        readonly
-                      />
-                      <button
-                        class="quantity-controls__btn js-cart-plus"
-                        aria-label="Add item"
-                      >
-                        <svg class="quantity-controls__icon" aria-hidden="true">
-                          <use href="img/svg/icons.svg#icon-plus"></use>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                  <span class="cart-item__unit-price">1999$</span>
-                  <span class="cart-item__total-price">1999$</span>
-                </div>
-              </div>
+              <div class="cart__list js-cart-list"></div>
             </div>
-            <div class="cart__summary">
+            <div class="cart__summary hidden" id="js-cart-summary">
               <div class="summary-card">
                 <span class="summary-card__lable">Subtotal price:</span>
-                <strong class="summary-card__price">1999$</strong>
+                <strong class="summary-card__price" id="js-subtotal__price"
+                  >1999$</strong
+                >
                 <button class="summary-card__btn btn btn--big">
                   Proceed to checkout
                 </button>

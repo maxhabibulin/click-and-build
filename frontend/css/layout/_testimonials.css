@@ -2,11 +2,7 @@
   position: relative;
   max-width: 96rem;
   color: var(--color-white);
-  background: linear-gradient(
-    135deg,
-    var(--color-primary-darker),
-    var(--color-primary)
-  );
+  background: var(--color-primary-gradient);
   border-radius: var(--radius-12);
   padding: var(--space-24);
   transition:

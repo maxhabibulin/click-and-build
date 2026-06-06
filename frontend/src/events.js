@@ -1,10 +1,13 @@
 import { ui, allViews } from "./ui.js";
-import { toggleTheme } from "./utils/theme.js";
+import { toggleTheme } from "./controllers/theme-controller.js";
 import { navigateTo } from "./utils/navigation.js";
-import { addToCart } from "./services/cart-service.js";
-import { toggleCartMenu, closeCartMenu } from "./utils/cart.js";
-import { updateCartBadge } from "./controllers/cart-controller.js";
-import { toggleLanguageMenu, closeLanguageMenu } from "./utils/language.js";
+import { addToCart, updateQuantity } from "./services/cart-service.js";
+import { toggleCartMenu, closeCartMenu } from "./ui/cart-menu.js";
+import {
+  updateMiniCart,
+  renderMainCartPage,
+} from "./controllers/cart-controller.js";
+import { toggleLanguageMenu, closeLanguageMenu } from "./ui/language-menu.js";
 import {
   nextSlide,
   prevSlide,
@@ -62,6 +65,25 @@ export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
 
   ui.grids.catalog?.addEventListener("click", handleGridClick);
   ui.grids.featured?.addEventListener("click", handleGridClick);
+
+  ui.grids.cart?.addEventListener("click", (e) => {
+    const minusBtn = e.target.closest(".js-cart-minus");
+    const plusBtn = e.target.closest(".js-cart-plus");
+
+    if (!minusBtn && !plusBtn) return;
+
+    const itemRow = e.target.closest(".js-cart-item");
+
+    if (!itemRow) return;
+
+    const productId = Number(itemRow.dataset.id);
+
+    if (minusBtn) {
+      updateQuantity(productId, -1);
+    } else if (plusBtn) {
+      updateQuantity(productId, 1);
+    }
+  });
 
   ui.productModal.modal?.addEventListener("click", (e) => {
     const cartBtn = e.target.closest(".js-add-to-cart");
@@ -124,6 +146,7 @@ export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
     if (mainCartBtn) {
       navigateTo(cartView, allViews, "cart");
       closeCartMenu(cartMenu);
+      renderMainCartPage();
     }
   });
 
@@ -179,5 +202,8 @@ export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
     handleSearch(query);
   });
 
-  window?.addEventListener("cartUpdated", updateCartBadge);
+  window?.addEventListener("cartUpdated", () => {
+    updateMiniCart();
+    renderMainCartPage();
+  });
 };

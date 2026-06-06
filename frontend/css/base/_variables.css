@@ -13,6 +13,16 @@ FONT SIZE SYSTEM (px)
   --color-primary-dark: #1971c1;
   --color-primary-darker: #1665ab;
   --color-primary-outline: rgba(28, 126, 214, 0.5);
+  --color-primary-gradient: linear-gradient(
+    135deg,
+    var(--color-primary-darker),
+    var(--color-primary)
+  );
+  --color-primary-gradient-dark: linear-gradient(
+    135deg,
+    var(--color-primary-darker),
+    var(--gradient-end)
+  );
 
   /* White Colors */
   --color-always-white: #fff;
@@ -87,6 +97,17 @@ body.dark-mode {
   --color-primary-dark: #1971c1;
   --color-primary-darker: #1665ab;
   --color-primary-outline: rgba(51, 154, 240, 0.5);
+  --color-primary-gradient: linear-gradient(
+    135deg,
+    var(--color-primary-darker),
+    var(--color-primary)
+  );
+  --gradient-end: #1971c1
+    --color-primary-gradient-dark: linear-gradient(
+      135deg,
+      var(--color-primary-darker),
+      var(--gradient-end)
+    );
 
   /* White Colors */
   --color-always-white: #e7f5ff;
