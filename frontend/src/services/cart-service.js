@@ -13,9 +13,10 @@ export const addToCart = (product) => {
   const existingProduct = cart.find(
     (item) => Number(item.id) === Number(product.id),
   );
+  const qtyToAdd = product.quantity ? Number(product.quantity) : 1;
 
   if (existingProduct) {
-    existingProduct.quantity += 1;
+    existingProduct.quantity += qtyToAdd;
   } else {
     cart.push({
       id: Number(product.id),
@@ -27,7 +28,7 @@ export const addToCart = (product) => {
       product_ssd: product.product_ssd,
       product_os: product.product_os,
       product_img: product.product_img,
-      quantity: 1,
+      quantity: qtyToAdd,
     });
   }
 

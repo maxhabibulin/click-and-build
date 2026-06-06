@@ -23,14 +23,15 @@ import {
 } from "./controllers/catalog-controller.js";
 
 export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
-  const handleAddToCartAction = (productId) => {
+  const handleAddToCartAction = (productId, quantity = 1) => {
     if (!productId) return;
 
     const products = getGlobalProducts();
     const targetProduct = products.find((p) => Number(p.id) === productId);
 
     if (targetProduct) {
-      addToCart(targetProduct);
+      const productToAdd = { ...targetProduct, quantity: quantity };
+      addToCart(productToAdd);
       console.log(
         `Product with ID: ${targetProduct.id} "${targetProduct.product_name}" successfully added to cart!`,
       );
@@ -47,7 +48,7 @@ export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
     if (cartBtn) {
       e.stopPropagation();
       const productId = Number(cartBtn.dataset.id);
-      handleAddToCartAction(productId);
+      handleAddToCartAction(productId, 1);
       return;
     }
 
@@ -59,6 +60,14 @@ export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
       if (selectedProduct) {
         console.log(`Opening modal for ID: ${selectedProduct.id}`);
         openProductModal(selectedProduct);
+
+        const input = ui.productModal.modal?.querySelector(
+          ".quantity-controls__input",
+        );
+
+        if (input) {
+          input.value = 1;
+        }
       }
     }
   };
@@ -87,10 +96,31 @@ export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
 
   ui.productModal.modal?.addEventListener("click", (e) => {
     const cartBtn = e.target.closest(".js-add-to-cart");
+    const minusBtn = e.target.closest(".js-cart-minus");
+    const plusBtn = e.target.closest(".js-cart-plus");
+    const input = ui.productModal.modal.querySelector(
+      ".quantity-controls__input",
+    );
 
     if (cartBtn) {
       const productId = Number(cartBtn.dataset.id);
-      handleAddToCartAction(productId);
+      const currentQuantity = input ? Number(input.value) : 1;
+      handleAddToCartAction(productId, currentQuantity);
+      return;
+    }
+
+    if (minusBtn || plusBtn) {
+      if (!input) return;
+
+      let currentValue = Number(input.value);
+
+      if (plusBtn) {
+        currentValue++;
+      } else if (minusBtn && currentValue > 1) {
+        currentValue--;
+      }
+
+      input.value = currentValue;
     }
   });
 
