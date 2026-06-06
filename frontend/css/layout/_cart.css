@@ -84,20 +84,6 @@
 .cart-item__quantity {
   display: flex;
   justify-content: flex-start;
-
-  & .quantity-controls__btn {
-    padding: 0.6rem;
-  }
-
-  & .quantity-controls__icon {
-    stroke-width: 2.5;
-    width: 1.4rem;
-    height: 1.4rem;
-  }
-
-  & .quantity-controls__input {
-    font-size: var(--font-size-md);
-  }
 }
 
 .cart-item__unit-price,
@@ -162,7 +148,7 @@
   max-width: 52rem;
   text-align: center;
   padding: var(--space-64) var(--space-32);
-  margin: var(--space-48) auto;
+  margin: var(--space-64) auto;
   position: relative;
 }
 

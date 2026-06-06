@@ -129,7 +129,7 @@
   justify-content: center;
   border: none;
   background-color: transparent;
-  padding: var(--space-8);
+  padding: 0.6rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 
@@ -144,16 +144,16 @@
 
 .quantity-controls__icon {
   stroke: var(--color-text-main);
-  stroke-width: 2.4;
-  width: 1.6rem;
-  height: 1.6rem;
+  stroke-width: 2.5;
+  width: 1.4rem;
+  height: 1.4rem;
   pointer-events: none;
   transition: all 0.3s ease;
 }
 
 .quantity-controls__input {
   font-family: inherit;
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-md);
   color: var(--color-text-main);
   width: 3.5rem;
   padding: 0;
