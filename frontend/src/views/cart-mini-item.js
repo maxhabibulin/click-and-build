@@ -1,4 +1,5 @@
 import generateSvg from "../utils/svg-ns.js";
+import { getCartTotal } from "../services/cart-service.js";
 
 export const renderMiniEmptyCart = (container) => {
   if (!container) return;

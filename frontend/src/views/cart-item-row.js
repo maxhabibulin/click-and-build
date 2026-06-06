@@ -1,4 +1,6 @@
+import { ui } from "../ui.js";
 import generateSvg from "../utils/svg-ns.js";
+import { getCartTotal } from "../services/cart-service.js";
 
 export const renderMainEmptyCart = (container) => {
   if (!container) return;
@@ -7,6 +9,13 @@ export const renderMainEmptyCart = (container) => {
 
   const wrapper = document.createElement("div");
   wrapper.classList.add("cart-main__empty");
+
+  const svgWrapper = document.createElement("div");
+  svgWrapper.classList.add("cart-main__empty-icon");
+
+  const svg = generateSvg("cart-main__empty-icon-cart", "icon-cart");
+
+  svgWrapper.appendChild(svg);
 
   const title = document.createElement("h3");
   title.classList.add("cart-main__empty-title", "heading-tertiary");
@@ -17,7 +26,7 @@ export const renderMainEmptyCart = (container) => {
   text.textContent =
     "When you add products to your cart, they will appear here.";
 
-  wrapper.append(title, text);
+  wrapper.append(svgWrapper, title, text);
   container.appendChild(wrapper);
 };
 

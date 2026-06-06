@@ -7,11 +7,7 @@ import {
   renderMiniEmptyCart,
   renderMiniFilledCart,
 } from "../views/cart-mini-item.js";
-import {
-  getCart,
-  getCartCount,
-  getCartTotal,
-} from "../services/cart-service.js";
+import { getCart, getCartCount } from "../services/cart-service.js";
 
 export const renderMainCartPage = () => {
   const cartGrid = ui.grids.cart;
