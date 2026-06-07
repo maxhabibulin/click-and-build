@@ -71,7 +71,8 @@ const loadInitialData = async () => {
     handleCatalogViewOpen();
   } else if (savedView === "cart") {
     navigateTo(ui.views.cart, allViews, "cart");
-    handleCartViewOpen();
+  } else if (savedView === "checkout") {
+    navigateTo(ui.views.checkout, allViews, "checkout");
   } else {
     navigateTo(ui.views.home, allViews, "home");
   }

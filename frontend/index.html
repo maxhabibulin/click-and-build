@@ -325,8 +325,30 @@
                 <strong class="summary-card__price" id="js-subtotal__price"
                   >1999$</strong
                 >
-                <button class="summary-card__btn btn btn--big">
+                <a
+                  class="summary-card__btn btn btn--big"
+                  href="#checkout"
+                  id="js-checkout-btn"
+                >
                   Proceed to checkout
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="checkout" id="js-checkout-view">
+        <section class="section-checkout container mt-64 mb-96" id="checkout">
+          <h2 class="checkout__heading heading-secondary">Checkout</h2>
+          <div class="checkout__grid" id="js-checkout-grid">
+            <div class="checkout__summary">
+              <div class="summary-checkout">
+                <span class="summary-checkout__label"
+                  >Security & Verification</span
+                >
+                <p class="summary-checkout__text">Price verified by server</p>
+                <button class="summary-checkout__btn btn btn--big">
+                  Place order
                 </button>
               </div>
             </div>

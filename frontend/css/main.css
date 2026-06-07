@@ -9,6 +9,7 @@
 @import "./components/_product-details.css";
 @import "./layout/_cart.css";
 @import "./layout/_catalog.css";
+@import "./layout/_checkout.css";
 @import "./layout/_features.css";
 @import "./layout/_footer.css";
 @import "./layout/_hero.css";

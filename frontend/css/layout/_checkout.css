@@ -1,0 +1,31 @@
+.checkout__summary {
+  position: static;
+  width: 39.4rem;
+  margin-left: auto;
+}
+
+.summary-checkout {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-card-bg);
+  box-shadow: var(--shadow-card);
+  border-radius: var(--radius-12);
+  padding: var(--space-32);
+  transition:
+    background-color 0.5s ease,
+    box-shadow 0.5s ease;
+
+  &:hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+}
+
+.summary-checkout__label {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-8);
+}
+
+.summary-checkout__btn {
+  width: 100%;
+  font-weight: 600;
+}

@@ -147,6 +147,29 @@ export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
     });
   });
 
+  ui.menus.cart?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const mainCartBtn = e.target.closest("#js-main-cart-btn");
+    const cartView = ui.views.cart;
+    const cartMenu = ui.menus.cart;
+
+    if (mainCartBtn) {
+      navigateTo(cartView, allViews, "cart");
+      closeCartMenu(cartMenu);
+      renderMainCartPage();
+    }
+  });
+
+  ui.views.cart?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const checkoutBtn = e.target.closest("#js-checkout-btn");
+    const checkoutView = ui.views.checkout;
+
+    if (checkoutBtn) {
+      navigateTo(checkoutView, allViews, "checkout");
+    }
+  });
+
   ui.buttons.navigation.cartSwitcher?.addEventListener("click", (e) => {
     e.stopPropagation();
     const cartMenu = ui.menus.cart;
@@ -166,19 +189,6 @@ export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
   ui.buttons.navigation.themeSwitcher?.addEventListener("click", () =>
     toggleTheme(),
   );
-
-  ui.menus.cart?.addEventListener("click", (e) => {
-    e.stopPropagation();
-    const mainCartBtn = e.target.closest("#js-main-cart-btn");
-    const cartView = ui.views.cart;
-    const cartMenu = ui.menus.cart;
-
-    if (mainCartBtn) {
-      navigateTo(cartView, allViews, "cart");
-      closeCartMenu(cartMenu);
-      renderMainCartPage();
-    }
-  });
 
   ui.buttons.closeBtn?.addEventListener("click", closeProductModal);
 

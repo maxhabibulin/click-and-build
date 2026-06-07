@@ -3,11 +3,13 @@ export const ui = {
     home: document.querySelector("#js-home-view"),
     catalog: document.querySelector("#js-catalog-view"),
     cart: document.querySelector("#js-cart-view"),
+    checkout: document.querySelector("#js-checkout-view"),
   },
   grids: {
     catalog: document.querySelector("#js-catalog-grid"),
     featured: document.querySelector("#js-featured-grid"),
     cart: document.querySelector("#js-cart-grid"),
+    checkout: document.querySelector("#js-checkout-grid"),
   },
   buttons: {
     toHome: [
@@ -21,7 +23,6 @@ export const ui = {
       document.querySelector("#js-nav-catalog"),
       document.querySelector("#js-hero-btn"),
     ],
-    toCart: document.querySelector("#js-main-cart-btn"),
     navigation: {
       cartSwitcher: document.querySelector("#js-cart-btn"),
       themeSwitcher: document.querySelector("#js-theme-btn"),
