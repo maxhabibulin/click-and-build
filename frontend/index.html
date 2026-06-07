@@ -340,14 +340,95 @@
       <div class="checkout" id="js-checkout-view">
         <section class="section-checkout container mt-64 mb-96" id="checkout">
           <h2 class="checkout__heading heading-secondary">Checkout</h2>
-          <div class="checkout__grid" id="js-checkout-grid">
-            <div class="checkout__summary">
-              <div class="summary-checkout">
-                <span class="summary-checkout__label"
-                  >Security & Verification</span
+          <div class="checkout__grid grid grid-2-cols" id="js-checkout-grid">
+            <form
+              class="checkout__form shipping-form"
+              id="js-checkout-form"
+              novalidate
+            >
+              <h3 class="shipping-form__title heading-tertiary">
+                Shipping information
+              </h3>
+              <div class="shipping-form__field">
+                <label class="shipping-form__label" for="checkout-firstname"
+                  >First name:</label
                 >
-                <p class="summary-checkout__text">Price verified by server</p>
-                <button class="summary-checkout__btn btn btn--big">
+                <input
+                  class="shipping-form__input"
+                  id="checkout-firstname"
+                  type="text"
+                  name="firstname"
+                  placeholder="John"
+                  required
+                />
+              </div>
+              <div class="shipping-form__field">
+                <label class="shipping-form__label" for="checkout-lastname"
+                  >Last name:</label
+                >
+                <input
+                  class="shipping-form__input"
+                  id="checkout-lastname"
+                  type="text"
+                  name="lastname"
+                  placeholder="Doe"
+                  required
+                />
+              </div>
+              <div class="shipping-form__field">
+                <label class="shipping-form__label" for="checkout-email"
+                  >Email address:</label
+                >
+                <input
+                  class="shipping-form__input"
+                  id="checkout-email"
+                  type="text"
+                  name="email"
+                  placeholder="john.doe@email.com"
+                  required
+                />
+              </div>
+              <div class="shipping-form__field">
+                <label class="shipping-form__label" for="checkout-address"
+                  >Shipping address:</label
+                >
+                <input
+                  class="shipping-form__input"
+                  id="checkout-address"
+                  type="text"
+                  name="address"
+                  placeholder="Stationsstraat 12, 1012 AB Amsterdam"
+                  required
+                />
+              </div>
+            </form>
+            <div class="checkout__sidebar">
+              <div class="checkout__summary">
+                <h3 class="checkout__summary-title heading-tertiary">
+                  Order summary
+                </h3>
+                <div
+                  class="checkout__summary-list"
+                  id="js-checkout-summary-list"
+                ></div>
+              </div>
+              <div class="checkout__verification">
+                <h3 class="checkout__verification-title heading-tertiary">
+                  Security & Verification
+                </h3>
+                <div class="checkout__verification-box">
+                  <svg class="checkout__verification-icon" aria-hidden="true">
+                    <use href="img/svg/icons.svg#icon-cmd"></use>
+                  </svg>
+                  <p class="checkout__verification-text">
+                    Price verified by server.
+                  </p>
+                </div>
+                <button
+                  class="checkout__verification-btn btn btn--big"
+                  type="submit"
+                  form="js-checkout-form"
+                >
                   Place order
                 </button>
               </div>
