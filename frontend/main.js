@@ -10,6 +10,7 @@ import { initTestimonials } from "./src/controllers/testimonials-controller.js";
 import {
   updateMiniCart,
   renderMainCartPage,
+  renderCheckoutPage,
 } from "./src/controllers/cart-controller.js";
 
 const initApp = () => {
@@ -73,6 +74,7 @@ const loadInitialData = async () => {
     navigateTo(ui.views.cart, allViews, "cart");
   } else if (savedView === "checkout") {
     navigateTo(ui.views.checkout, allViews, "checkout");
+    renderCheckoutPage();
   } else {
     navigateTo(ui.views.home, allViews, "home");
   }

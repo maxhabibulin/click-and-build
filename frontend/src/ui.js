@@ -72,6 +72,10 @@ export const ui = {
     cartSummary: document.querySelector("#js-cart-summary"),
     subtotalPrice: document.querySelector("#js-subtotal__price"),
   },
+  checkout: {
+    form: document.querySelector("#js-checkout-form"),
+    summaryList: document.querySelector("#js-checkout-summary-list"),
+  },
 };
 
 export const allViews = Object.values(ui.views);

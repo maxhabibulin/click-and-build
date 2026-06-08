@@ -66,3 +66,17 @@ export const updateMiniCart = () => {
     badge.classList.remove("hidden");
   }
 };
+
+export const renderCheckoutPage = () => {
+  const container = ui.checkout.summaryList;
+  if (!container) return;
+
+  const cartItems = getCart();
+
+  if (cartItems && cartItems.length > 0) {
+    renderMiniFilledCart(container, cartItems);
+
+    const footerToRemove = container.querySelector(".cart-dropdown__footer");
+    if (footerToRemove) footerToRemove.remove();
+  }
+};

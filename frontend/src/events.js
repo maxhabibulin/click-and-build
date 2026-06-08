@@ -1,13 +1,18 @@
 import { ui, allViews } from "./ui.js";
-import { toggleTheme } from "./controllers/theme-controller.js";
 import { navigateTo } from "./utils/navigation.js";
-import { addToCart, updateQuantity } from "./services/cart-service.js";
+import { toggleTheme } from "./controllers/theme-controller.js";
 import { toggleCartMenu, closeCartMenu } from "./ui/cart-menu.js";
+import { addToCart, updateQuantity } from "./services/cart-service.js";
+import { toggleLanguageMenu, closeLanguageMenu } from "./ui/language-menu.js";
 import {
   updateMiniCart,
   renderMainCartPage,
+  renderCheckoutPage,
 } from "./controllers/cart-controller.js";
-import { toggleLanguageMenu, closeLanguageMenu } from "./ui/language-menu.js";
+import {
+  handleSearch,
+  handleSortChange,
+} from "./controllers/catalog-controller.js";
 import {
   nextSlide,
   prevSlide,
@@ -17,10 +22,6 @@ import {
   openProductModal,
   closeProductModal,
 } from "./controllers/product-details-controller.js";
-import {
-  handleSearch,
-  handleSortChange,
-} from "./controllers/catalog-controller.js";
 
 export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
   const handleAddToCartAction = (productId, quantity = 1) => {
@@ -167,6 +168,7 @@ export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
 
     if (checkoutBtn) {
       navigateTo(checkoutView, allViews, "checkout");
+      renderCheckoutPage();
     }
   });
 
