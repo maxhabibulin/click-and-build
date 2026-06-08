@@ -49,11 +49,13 @@ FONT SIZE SYSTEM (px)
     0 0.2rem 0.4rem rgba(0, 0, 0, 0.04), 0 0.2rem 0.2rem rgba(0, 0, 0, 0.06);
   --shadow-testimonial: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.1);
   --shadow-card: 0 2rem 3.2rem rgba(0, 0, 0, 0.07);
-  --shadow-card-hover: 0 2rem 4.8rem rgba(28, 126, 214, 0.1);
+  --shadow-card-hover: 0 2rem 4.8rem rgba(28, 126, 214, 0.12);
   --shadow-btn-big-hover: 0 1.6rem 3.2rem rgba(0, 0, 0, 0.07);
   --shadow-btn-big-active: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.1);
   --shadow-modal:
     0 1rem 3rem rgba(0, 0, 0, 0.1), 0 0.5rem 1.5rem rgba(0, 0, 0, 0.05);
+  --shadow-input: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.03);
+  --shadow-input-hover: 0 0.4rem 1.2rem rgba(28, 126, 214, 0.18);
 
   /*  --- Typography ---  */
   /* Font Style*/
@@ -135,10 +137,13 @@ body.dark-mode {
   --shadow-testimonial:
     0 2.4rem 4.8rem rgba(0, 0, 0, 0.4), 0 0 2rem rgba(28, 126, 214, 0.1);
   --shadow-card: 0 2rem 4rem rgba(0, 0, 0, 0.4);
-  /* Fix: Adjust shadow  */
-  --shadow-card-hover: 0 2rem 4.8rem rgba(28, 126, 214, 0.1);
+  --shadow-card-hover:
+    0 2rem 4rem rgba(0, 0, 0, 0.45), 0 1rem 4.8rem rgba(51, 154, 240, 0.2);
   /* Fix: Adjust button big hover and active */
   --shadow-btn-hover: 0 0 2.5rem rgba(28, 126, 214, 0.4);
   --shadow-btn-big-active: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.6);
   --shadow-modal: 0 2rem 5rem rgba(0, 0, 0, 0.6);
+  --shadow-input: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.25);
+  --shadow-input-hover:
+    0 0.4rem 1.2rem rgba(0, 0, 0, 0.3), 0 0.2rem 1.6rem rgba(51, 154, 240, 0.25);
 }
