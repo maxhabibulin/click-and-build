@@ -61,6 +61,7 @@
 
   & .cart-dropdown__list {
     max-height: 34.3rem;
+    padding: var(--space-2) var(--space-16) 0 0;
   }
 }
 

@@ -241,7 +241,6 @@
 
 .cart-menu {
   width: 34rem;
-  padding: var(--space-16) 0 var(--space-16) var(--space-16);
   border-radius: var(--radius-12);
   cursor: default;
   z-index: 1000;
@@ -257,8 +256,8 @@
   display: flex;
   flex-direction: column;
   list-style: none;
-  max-height: 28rem;
-  padding-right: var(--space-16);
+  max-height: 30rem;
+  padding: var(--space-16) var(--space-16) 0 var(--space-16);
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--color-border) transparent;
@@ -337,7 +336,7 @@
   flex-direction: column;
   gap: var(--space-16);
   border-top: 0.1rem solid var(--color-border);
-  padding: var(--space-12) var(--space-16) 0 0;
+  padding: var(--space-12) var(--space-16) var(--space-16) var(--space-16);
   margin-top: var(--space-4);
 }
 
