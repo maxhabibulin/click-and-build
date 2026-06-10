@@ -51,17 +51,18 @@
 }
 
 .checkout__summary {
-  & .checkout__summary-list {
-    margin-bottom: var(--space-24);
-  }
-
-  & .cart-dropdown__filled {
-    border-bottom: 0.1rem solid var(--color-border);
-  }
-
   & .cart-dropdown__list {
     max-height: 34.3rem;
     padding: var(--space-2) var(--space-16) 0 0;
+    margin-top: 0;
+  }
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    border-bottom: 0.1rem solid var(--color-border);
+    margin: var(--space-4) 0 var(--space-24) 0;
+    transition: border-color 0.5s ease;
   }
 }
 

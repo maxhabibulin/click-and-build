@@ -257,10 +257,12 @@
   flex-direction: column;
   list-style: none;
   max-height: 30rem;
-  padding: var(--space-16) var(--space-16) 0 var(--space-16);
+  padding: var(--space-12) var(--space-16) 0 var(--space-16);
+  margin-top: var(--space-4);
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--color-border) transparent;
+  transition: scrollbar-color 0.5s ease;
 }
 
 .cart-dropdown__item {
@@ -277,6 +279,7 @@
 
   &:not(:last-child) {
     border-bottom: 0.1rem solid var(--color-border);
+    transition: border-color 0.5s ease;
   }
 
   &:hover .cart-dropdown__item-quantity {
@@ -293,6 +296,7 @@
   background-color: var(--color-white-bg);
   border-radius: calc(var(--radius-12) - 0.6rem);
   overflow: hidden;
+  transition: background-color 0.5s ease;
 }
 
 .cart-dropdown__img {
@@ -313,11 +317,13 @@
   align-items: center;
   justify-content: space-between;
   color: var(--color-text-main);
+  transition: color 0.5s ease;
 }
 
 .cart-dropdown__item-quantity {
   color: var(--color-primary-darker);
   font-weight: 800;
+  transition: color 0.5s ease;
 
   .dark-mode & {
     color: var(--color-primary);
@@ -329,6 +335,7 @@
   color: var(--color-text-main);
   font-weight: 600;
   opacity: 0.8;
+  transition: color 0.5s ease;
 }
 
 .cart-dropdown__footer {
