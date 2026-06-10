@@ -2,7 +2,7 @@ import { ui, allViews } from "./ui.js";
 import { navigateTo } from "./utils/navigation.js";
 import { toggleTheme } from "./controllers/theme-controller.js";
 import { toggleCartMenu, closeCartMenu } from "./ui/cart-menu.js";
-import { addToCart, updateQuantity } from "./services/cart-service.js";
+import { getCart, addToCart, updateQuantity } from "./services/cart-service.js";
 import { toggleLanguageMenu, closeLanguageMenu } from "./ui/language-menu.js";
 import {
   updateMiniCart,
@@ -22,6 +22,7 @@ import {
   openProductModal,
   closeProductModal,
 } from "./controllers/product-details-controller.js";
+import { initCheckout } from "./controllers/checkout-controller.js";
 
 export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
   const handleAddToCartAction = (productId, quantity = 1) => {
@@ -247,5 +248,11 @@ export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
   window?.addEventListener("cartUpdated", () => {
     updateMiniCart();
     renderMainCartPage();
+  });
+
+  ui.checkout.form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const cartItems = getCart();
+    initCheckout(cartItems);
   });
 };
