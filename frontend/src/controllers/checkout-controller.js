@@ -5,14 +5,16 @@ import FetchWrapper from "../utils/fetch-wrapper.js";
 export const initCheckout = async (cartItems) => {
   const form = ui.checkout.form;
 
-  if (!form) return;
+  if (!form) return false;
 
   if (!cartItems || cartItems.length === 0) {
     alert("Oops! Your cart is currently empty.");
-    return;
+    return false;
   }
 
+  let submitBtn = null;
   const formData = new FormData(form);
+  const API = new FetchWrapper("http://localhost:3000");
 
   const orderData = {
     cart: cartItems,
@@ -21,9 +23,6 @@ export const initCheckout = async (cartItems) => {
     email: formData.get("email"),
     address: formData.get("address"),
   };
-
-  let submitBtn = null;
-  const API = new FetchWrapper("http://localhost:3000");
 
   try {
     submitBtn = form.querySelector('[type="submit"]');
@@ -38,11 +37,15 @@ export const initCheckout = async (cartItems) => {
 
     window.dispatchEvent(new Event("cartUpdated"));
     renderSuccessScreen(res);
+
+    return true;
   } catch (error) {
     console.error("Checkout submission failed", error);
     alert(`Error: ${error.message}`);
 
     submitBtn = form.querySelector('[type="submit"]');
     if (submitBtn) submitBtn.disabled = false;
+
+    return false;
   }
 };

@@ -337,7 +337,7 @@
           </div>
         </section>
       </div>
-      <div class="checkout" id="js-checkout-view">
+      <div class="checkout hidden" id="js-checkout-view">
         <section class="section-checkout container mt-64 mb-96" id="checkout">
           <h2 class="checkout__heading heading-secondary">Checkout</h2>
           <div class="checkout__grid grid grid-2-cols" id="js-checkout-grid">
@@ -426,6 +426,7 @@
                 </div>
                 <button
                   class="checkout__verification-btn btn btn--big"
+                  id="js-place-order-btn"
                   type="submit"
                   form="js-checkout-form"
                 >
@@ -434,6 +435,17 @@
               </div>
             </div>
           </div>
+        </section>
+      </div>
+      <div class="success hidden" id="js-success-view">
+        <section class="section-success container mt-64 mb-96" id="success">
+          <h2 class="success__heading heading-secondary">
+            Order created successfully!
+          </h2>
+          <div
+            class="success__grid grid grid-2-cols"
+            id="js-success-grid"
+          ></div>
         </section>
       </div>
     </main>

@@ -75,6 +75,8 @@ const loadInitialData = async () => {
   } else if (savedView === "checkout") {
     navigateTo(ui.views.checkout, allViews, "checkout");
     renderCheckoutPage();
+  } else if (savedView === "success") {
+    navigateTo(ui.views.success, allViews, "success");
   } else {
     navigateTo(ui.views.home, allViews, "home");
   }

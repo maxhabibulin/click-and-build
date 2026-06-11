@@ -173,6 +173,19 @@ export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
     }
   });
 
+  ui.checkout.form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const cartItems = getCart();
+    const isOrderSuccess = await initCheckout(cartItems);
+
+    if (isOrderSuccess) {
+      const successView = ui.views.success;
+      if (successView) {
+        navigateTo(successView, allViews, "success");
+      }
+    }
+  });
+
   ui.buttons.navigation.cartSwitcher?.addEventListener("click", (e) => {
     e.stopPropagation();
     const cartMenu = ui.menus.cart;
@@ -248,11 +261,5 @@ export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
   window?.addEventListener("cartUpdated", () => {
     updateMiniCart();
     renderMainCartPage();
-  });
-
-  ui.checkout.form?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const cartItems = getCart();
-    initCheckout(cartItems);
   });
 };

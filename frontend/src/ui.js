@@ -4,12 +4,14 @@ export const ui = {
     catalog: document.querySelector("#js-catalog-view"),
     cart: document.querySelector("#js-cart-view"),
     checkout: document.querySelector("#js-checkout-view"),
+    success: document.querySelector("#js-success-view"),
   },
   grids: {
     catalog: document.querySelector("#js-catalog-grid"),
     featured: document.querySelector("#js-featured-grid"),
     cart: document.querySelector("#js-cart-grid"),
     checkout: document.querySelector("#js-checkout-grid"),
+    success: document.querySelector("#js-success-grid"),
   },
   buttons: {
     toHome: [
