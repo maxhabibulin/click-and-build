@@ -2,11 +2,11 @@ import { ui } from "../ui.js";
 import {
   renderMainEmptyCart,
   renderMainFilledCart,
-} from "../views/cart-item-row.js";
+} from "../views/main-cart.js";
 import {
   renderMiniEmptyCart,
   renderMiniFilledCart,
-} from "../views/cart-mini-item.js";
+} from "../views/mini-cart.js";
 import { getCart, getCartCount } from "../services/cart-service.js";
 
 export const renderMainCartPage = () => {

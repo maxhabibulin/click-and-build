@@ -1,10 +1,10 @@
 import { ui } from "../ui.js";
-import renderSuccessScreen from "../views/success-card.js";
 import FetchWrapper from "../utils/fetch-wrapper.js";
+import renderFormErrorMsg from "../views/form-error.js";
+import renderSuccessScreen from "../views/success-card.js";
 
 export const initCheckout = async (cartItems) => {
   const form = ui.checkout.form;
-
   if (!form) return false;
 
   if (!cartItems || cartItems.length === 0) {
@@ -12,17 +12,39 @@ export const initCheckout = async (cartItems) => {
     return false;
   }
 
-  let submitBtn = null;
   const formData = new FormData(form);
-  const API = new FetchWrapper("http://localhost:3000");
+
+  const firstName = formData.get("firstName");
+  const lastName = formData.get("lastName");
+  const email = formData.get("email");
+  const address = formData.get("address");
+
+  let formErr = form.querySelector(".shipping-form__error");
+
+  if (
+    !firstName?.trim() ||
+    !lastName?.trim() ||
+    !email?.trim() ||
+    !address?.trim()
+  ) {
+    renderFormErrorMsg(form);
+    return false;
+  }
+
+  if (formErr) {
+    formErr.remove();
+  }
 
   const orderData = {
     cart: cartItems,
-    firstName: formData.get("firstName"),
-    lastName: formData.get("lastName"),
-    email: formData.get("email"),
-    address: formData.get("address"),
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    address: address,
   };
+
+  let submitBtn = null;
+  const API = new FetchWrapper("http://localhost:3000");
 
   try {
     submitBtn = form.querySelector('[type="submit"]');
@@ -33,6 +55,7 @@ export const initCheckout = async (cartItems) => {
 
     if (res) {
       localStorage.removeItem("shopping_cart");
+      form.reset();
     }
 
     window.dispatchEvent(new Event("cartUpdated"));
@@ -43,9 +66,7 @@ export const initCheckout = async (cartItems) => {
     console.error("Checkout submission failed", error);
     alert(`Error: ${error.message}`);
 
-    submitBtn = form.querySelector('[type="submit"]');
     if (submitBtn) submitBtn.disabled = false;
-
     return false;
   }
 };

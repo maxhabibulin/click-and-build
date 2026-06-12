@@ -44,6 +44,15 @@
   }
 }
 
+.shipping-form__error {
+  display: block;
+  color: red;
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  line-height: 1.1;
+  margin-top: var(--space-8);
+}
+
 .checkout__sidebar {
   width: 100%;
   display: flex;
