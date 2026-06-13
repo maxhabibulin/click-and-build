@@ -9,8 +9,12 @@
 .shipping-form__field {
   display: flex;
   flex-direction: column;
-  gap: var(--space-8);
+  gap: var(--space-12);
   font-size: var(--font-size-lg);
+
+  &:not(:last-of-type) {
+    margin-bottom: var(--space-16);
+  }
 }
 
 .shipping-form__input {
@@ -23,7 +27,6 @@
   border: 0.1rem solid var(--color-border);
   box-shadow: var(--shadow-input);
   border-radius: var(--radius-12);
-  margin-bottom: var(--space-16);
   padding: 0 var(--space-16);
   transition:
     color 0.5s ease,
@@ -42,15 +45,6 @@
     opacity: 0.5;
     transition: color 0.5s ease;
   }
-}
-
-.shipping-form__error {
-  display: block;
-  color: red;
-  font-size: var(--font-size-md);
-  font-weight: 600;
-  line-height: 1.1;
-  margin-top: var(--space-8);
 }
 
 .checkout__sidebar {

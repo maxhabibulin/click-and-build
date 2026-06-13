@@ -1,4 +1,5 @@
 import { ui } from "../ui.js";
+import removeElement from "../utils/remove-element.js";
 import FetchWrapper from "../utils/fetch-wrapper.js";
 import renderSuccessScreen from "../views/success-card.js";
 import {
@@ -12,20 +13,13 @@ export const initCheckout = async (cartItems) => {
 
   if (!form || !checkoutSidebar) return false;
 
-  let checkoutSidebarErrorContainer = checkoutSidebar.querySelector(
-    ".checkout__summary-error",
-  );
-  let formErrorContainer = form.querySelector(".shipping-form__error");
-
   if (!cartItems || cartItems.length === 0) {
     renderCheckoutSummaryErrorMsg(checkoutSidebar);
-
-    if (formErrorContainer) formErrorContainer.remove();
-
+    removeElement(form.querySelector(".shipping-form__error"));
     return false;
   }
 
-  if (checkoutSidebarErrorContainer) checkoutSidebarErrorContainer.remove();
+  removeElement(checkoutSidebar.querySelector(".checkout__summary-error"));
 
   const formData = new FormData(form);
 
@@ -44,7 +38,7 @@ export const initCheckout = async (cartItems) => {
     return false;
   }
 
-  if (formErrorContainer) formErrorContainer.remove();
+  removeElement(form.querySelector(".shipping-form__error"));
 
   const orderData = {
     cart: cartItems,

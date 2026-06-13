@@ -180,6 +180,7 @@ export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
 
     if (isOrderSuccess) {
       const successView = ui.views.success;
+
       if (successView) {
         navigateTo(successView, allViews, "success");
       }

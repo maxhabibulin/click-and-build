@@ -1,4 +1,5 @@
 import { ui } from "../ui.js";
+import removeElement from "../utils/remove-element.js";
 import {
   renderMainEmptyCart,
   renderMainFilledCart,
@@ -77,6 +78,6 @@ export const renderCheckoutPage = () => {
     renderMiniFilledCart(container, cartItems);
 
     const footerToRemove = container.querySelector(".cart-dropdown__footer");
-    if (footerToRemove) footerToRemove.remove();
+    removeElement(footerToRemove);
   }
 };
