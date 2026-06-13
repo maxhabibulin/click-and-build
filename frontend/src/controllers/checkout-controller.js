@@ -9,17 +9,16 @@ import {
 
 export const initCheckout = async (cartItems) => {
   const form = ui.checkout.form;
-  const checkoutSidebar = ui.checkout.checkoutSidebar;
 
-  if (!form || !checkoutSidebar) return false;
+  if (!form) return false;
 
   if (!cartItems || cartItems.length === 0) {
-    renderCheckoutSummaryErrorMsg(checkoutSidebar);
-    removeElement(form.querySelector(".shipping-form__error"));
+    renderCheckoutSummaryErrorMsg();
+    removeElement(document.querySelector(".shipping-form__error"));
     return false;
   }
 
-  removeElement(checkoutSidebar.querySelector(".checkout__summary-error"));
+  removeElement(document.querySelector(".checkout__summary-error"));
 
   const formData = new FormData(form);
 
@@ -34,11 +33,11 @@ export const initCheckout = async (cartItems) => {
     !email?.trim() ||
     !address?.trim()
   ) {
-    renderFormErrorMsg(form);
+    renderFormErrorMsg();
     return false;
   }
 
-  removeElement(form.querySelector(".shipping-form__error"));
+  removeElement(document.querySelector(".shipping-form__error"));
 
   const orderData = {
     cart: cartItems,

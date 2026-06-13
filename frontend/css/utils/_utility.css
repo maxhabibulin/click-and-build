@@ -33,13 +33,3 @@
 .hidden {
   display: none;
 }
-
-/* Error Message */
-.error-msg {
-  display: block;
-  color: red;
-  font-size: var(--font-size-md);
-  font-weight: 600;
-  line-height: 1.1;
-  margin-top: var(--space-24);
-}

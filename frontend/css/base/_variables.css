@@ -32,6 +32,11 @@ FONT SIZE SYSTEM (px)
   --color-text-main: #343a40;
   --color-text-muted: #495057;
 
+  /* Read Colors */
+  --color-error: #fa5252;
+  --color-error-dark: #f03e3e;
+  --color-error-bg: #fff5f5;
+
   /* Blue Tints */
   --color-bg-light: #e7f5ff;
   --color-bg-accent: #d2e5f7;
@@ -105,12 +110,11 @@ body.dark-mode {
     var(--color-primary-darker),
     var(--color-primary)
   );
-  --gradient-end: #1971c1
-    --color-primary-gradient-dark: linear-gradient(
-      135deg,
-      var(--color-primary-darker),
-      var(--gradient-end)
-    );
+  --color-primary-gradient-dark: linear-gradient(
+    135deg,
+    var(--color-primary-darker),
+    var(--gradient-end)
+  );
 
   /* White Colors */
   --color-always-white: #e7f5ff;
@@ -119,6 +123,11 @@ body.dark-mode {
   /* Grays Colors */
   --color-text-main: #e7f5ff;
   --color-text-muted: #b9c4cc;
+
+  /* Read Colors */
+  --color-error: #ff6b6b;
+  --color-error-dark: #ff8787;
+  --color-error-bg: #2b1d1d;
 
   /* Blue Tints */
   --color-bg-light: #1a1a1a;
