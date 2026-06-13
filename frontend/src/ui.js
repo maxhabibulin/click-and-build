@@ -76,7 +76,6 @@ export const ui = {
   },
   checkout: {
     form: document.querySelector("#js-checkout-form"),
-    checkoutSidebar: document.querySelector("#js-checkout-sidebar"),
     summaryList: document.querySelector("#js-checkout-summary-list"),
   },
 };

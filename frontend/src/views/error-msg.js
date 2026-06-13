@@ -1,5 +1,8 @@
+import { ui } from "../ui.js";
 import generateSvg from "../utils/svg-ns.js";
 import removeElement from "../utils/remove-element.js";
+
+let errorTimeoutId = null;
 
 export const renderErrorMsg = (message) => {
   let toastContainer = document.querySelector(".toast-notification-zone");
@@ -31,9 +34,20 @@ export const renderErrorMsg = (message) => {
 
   const textNode = errorBlock.querySelector(".error__msg");
   if (textNode) textNode.textContent = message;
+
+  if (errorTimeoutId) clearTimeout(errorTimeoutId);
+
+  errorTimeoutId = setTimeout(() => {
+    clearErrorMsg();
+  }, 10000);
 };
 
 export const clearErrorMsg = () => {
   const errorBlock = document.querySelector(".error-msg-container");
   removeElement(errorBlock);
+
+  if (errorTimeoutId) {
+    clearTimeout(errorTimeoutId);
+    errorTimeoutId = null;
+  }
 };

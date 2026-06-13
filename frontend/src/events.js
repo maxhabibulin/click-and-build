@@ -1,4 +1,5 @@
 import { ui, allViews } from "./ui.js";
+import { clearErrorMsg } from "./views/error-msg.js";
 import { navigateTo } from "./utils/navigation.js";
 import { toggleTheme } from "./controllers/theme-controller.js";
 import { toggleCartMenu, closeCartMenu } from "./ui/cart-menu.js";
@@ -221,6 +222,11 @@ export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
     const langMenu = ui.menus.lang;
     const cartSwitcher = ui.buttons.navigation.cartSwitcher;
     const langSwitcher = ui.buttons.navigation.langSwitcher;
+
+    if (target.closest(".error-msg-container")) {
+      clearErrorMsg();
+      return;
+    }
 
     if (!cartSwitcher?.contains(target) && !cartMenu?.contains(target)) {
       closeCartMenu(cartMenu);
