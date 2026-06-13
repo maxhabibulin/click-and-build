@@ -1,27 +1,20 @@
 import { ui } from "../ui.js";
-import removeElement from "../utils/remove-element.js";
 import FetchWrapper from "../utils/fetch-wrapper.js";
 import renderSuccessScreen from "../views/success-card.js";
-import {
-  renderFormErrorMsg,
-  renderCheckoutSummaryErrorMsg,
-} from "../views/error-msg.js";
+import { renderErrorMsg, clearErrorMsg } from "../views/error-msg.js";
 
 export const initCheckout = async (cartItems) => {
   const form = ui.checkout.form;
-
   if (!form) return false;
 
+  clearErrorMsg();
+
   if (!cartItems || cartItems.length === 0) {
-    renderCheckoutSummaryErrorMsg();
-    removeElement(document.querySelector(".shipping-form__error"));
+    renderErrorMsg("Oops! Your cart is currently empty.");
     return false;
   }
 
-  removeElement(document.querySelector(".checkout__summary-error"));
-
   const formData = new FormData(form);
-
   const firstName = formData.get("firstName");
   const lastName = formData.get("lastName");
   const email = formData.get("email");
@@ -33,11 +26,9 @@ export const initCheckout = async (cartItems) => {
     !email?.trim() ||
     !address?.trim()
   ) {
-    renderFormErrorMsg();
+    renderErrorMsg("Please fill out all the fields in the shipping form.");
     return false;
   }
-
-  removeElement(document.querySelector(".shipping-form__error"));
 
   const orderData = {
     cart: cartItems,
@@ -68,7 +59,7 @@ export const initCheckout = async (cartItems) => {
     return true;
   } catch (error) {
     console.error("Checkout submission failed", error);
-    alert(`Error: ${error.message}`);
+    renderErrorMsg(`Oh no! ${error.message}.`);
 
     if (submitBtn) submitBtn.disabled = false;
     return false;

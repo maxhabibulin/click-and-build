@@ -1,3 +1,7 @@
+.section-checkout {
+  position: relative;
+}
+
 .checkout__grid {
   align-items: start;
 }
@@ -120,7 +124,4 @@
 .checkout__verification-btn {
   width: 100%;
   font-weight: 600;
-}
-
-.shipping-form__error {
 }
