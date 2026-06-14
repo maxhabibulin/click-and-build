@@ -41,7 +41,7 @@ router.post("/", (req, res) => {
       stmt.finalize();
 
       res.json({
-        message: "Order created successfully!",
+        message: "Thank you for your purchase!",
         orderInfo: {
           id: orderID,
           totalPrice: total,

@@ -439,13 +439,90 @@
       </div>
       <div class="success hidden" id="js-success-view">
         <section class="section-success container mt-64 mb-96" id="success">
-          <h2 class="success__heading heading-secondary">
-            Order created successfully!
-          </h2>
-          <div
-            class="success__grid grid grid-2-cols"
-            id="js-success-grid"
-          ></div>
+          <div class="success__grid" id="js-success-grid">
+            <div class="success__wrapper">
+              <div class="success__main">
+                <div class="success__icon-box">
+                  <svg class="success__icon" aria-hidden="true">
+                    <use href="img/svg/icons.svg#icon-success"></use>
+                  </svg>
+                </div>
+                <header class="success__content">
+                  <p class="success__greeting">Hey Doe John,</p>
+                  <h2 class="success__heading heading-secondary">
+                    Thank you for your purchase!
+                  </h2>
+                </header>
+                <div class="success__text-box">
+                  <p class="success__text">
+                    Your order
+                    <strong class="success__order-id">#12</strong> was placed
+                    successfully!
+                  </p>
+                  <p class="success__text success__text--sub">
+                    We've sent a confirmation email to
+                    <strong class="success__order-email"
+                      >john.doe@example.com</strong
+                    >.
+                  </p>
+                </div>
+                <address class="success__delivery-details">
+                  <h3 class="success__subheading heading-tertiary">
+                    Shipping address
+                  </h3>
+                  <p class="success__delivery-text">
+                    123 Main Street, New York, USA
+                  </p>
+                  <p class="success__delivery-time">
+                    Estimated delivery in <strong>5-7 business days</strong>.
+                  </p>
+                </address>
+              </div>
+              <aside class="success__aside">
+                <div class="success__receipt-header">
+                  <h3 class="success__receipt-heading heading-tertiary">
+                    Order receipt
+                  </h3>
+                  <span class="success__invoice-num"
+                    >Receipt #INV-2026-012</span
+                  >
+                </div>
+                <div class="success__receipt-body">
+                  <ul
+                    class="success__products-list"
+                    id="js-success-products-list"
+                  >
+                    <li class="success__product-item">
+                      <span class="success__product-name">Order subtotal</span>
+                      <span class="success__product-price">1999$</span>
+                    </li>
+                  </ul>
+                  <div class="success__calc-box">
+                    <div class="success__calc-row">
+                      <span>Shipping & Handling</span>
+                      <span class="success__calc-free">Free</span>
+                    </div>
+                    <div class="success__calc-row">
+                      <span>Estimated Tax</span>
+                      <span>0.00$</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="success__receipt-footer">
+                  <div class="success__total-box">
+                    <span class="success__total-label">Total paid</span>
+                    <span class="success__total-price">1999$</span>
+                  </div>
+                  <div class="success__meta-box">
+                    <span class="success__meta-label">Ordered on</span>
+                    <p class="success__date">
+                      <time datetime="2026-06-14T14:00">14.06.2026, 14:00</time>
+                    </p>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </div>
         </section>
       </div>
     </main>

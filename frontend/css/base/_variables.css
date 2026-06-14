@@ -37,6 +37,9 @@ FONT SIZE SYSTEM (px)
   --color-error-dark: #f03e3e;
   --color-error-bg: #fff5f5;
 
+  /* Green Colors */
+  --color-success: #22c55e;
+
   /* Blue Tints */
   --color-bg-light: #e7f5ff;
   --color-bg-accent: #d2e5f7;
@@ -128,6 +131,9 @@ body.dark-mode {
   --color-error: #ff6b6b;
   --color-error-dark: #ff8787;
   --color-error-bg: #2b1d1d;
+
+  /* Green Colors */
+  --color-success: #4ade80;
 
   /* Blue Tints */
   --color-bg-light: #1a1a1a;

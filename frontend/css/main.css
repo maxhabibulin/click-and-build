@@ -8,6 +8,7 @@
 @import "./components/_error-msg.css";
 @import "./components/_product-cards.css";
 @import "./components/_product-details.css";
+@import "./components/_success-card.css";
 @import "./layout/_cart.css";
 @import "./layout/_catalog.css";
 @import "./layout/_checkout.css";
