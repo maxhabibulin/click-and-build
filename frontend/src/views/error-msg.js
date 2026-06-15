@@ -1,6 +1,6 @@
 import { ui } from "../ui.js";
 import generateSvg from "../utils/svg-ns.js";
-import removeElement from "../utils/remove-element.js";
+import { removeElement } from "../utils/remove.js";
 
 let errorTimeoutId = null;
 

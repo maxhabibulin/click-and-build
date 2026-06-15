@@ -50,6 +50,7 @@ export const initCheckout = async (cartItems) => {
 
     if (res) {
       localStorage.removeItem("shopping_cart");
+      localStorage.setItem("latestOrder", JSON.stringify(res));
       form.reset();
     }
 

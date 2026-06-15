@@ -3,6 +3,7 @@ import CurrentYear from "./src/utils/date.js";
 import { initEventListeners } from "./src/events.js";
 import { navigateTo } from "./src/utils/navigation.js";
 import FetchWrapper from "./src/utils/fetch-wrapper.js";
+import renderSuccessScreen from "./src/views/success-card.js";
 import { renderProductCard } from "./src/views/product-card.js";
 import { initCatalog } from "./src/controllers/catalog-controller.js";
 import { applySavedTheme } from "./src/controllers/theme-controller.js";
@@ -57,10 +58,6 @@ const handleCatalogViewOpen = () => {
   }
 };
 
-const handleCartViewOpen = () => {
-  console.log("Main cart is opened...");
-};
-
 const loadInitialData = async () => {
   await Promise.all([loadAndRenderCatalog(), loadTestimonials()]);
   initEventListeners(handleCatalogViewOpen, () => globalProducts);
@@ -76,7 +73,16 @@ const loadInitialData = async () => {
     navigateTo(ui.views.checkout, allViews, "checkout");
     renderCheckoutPage();
   } else if (savedView === "success") {
-    navigateTo(ui.views.success, allViews, "success");
+    const savedOrder = localStorage.getItem("latestOrder");
+
+    if (savedOrder) {
+      const parsedOrder = JSON.parse(savedOrder);
+      navigateTo(ui.views.success, allViews, "success");
+      renderSuccessScreen(parsedOrder);
+      return;
+    }
+    localStorage.setItem("currentView", "home");
+    navigateTo(ui.views.home, allViews, "home");
   } else {
     navigateTo(ui.views.home, allViews, "home");
   }

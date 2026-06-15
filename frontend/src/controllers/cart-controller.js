@@ -1,5 +1,5 @@
 import { ui } from "../ui.js";
-import removeElement from "../utils/remove-element.js";
+import { removeElement } from "../utils/remove.js";
 import {
   renderMainEmptyCart,
   renderMainFilledCart,
