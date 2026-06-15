@@ -51,7 +51,14 @@ router.post("/", (req, res) => {
             email,
             address,
           },
-          date: new Date().toLocaleString(),
+          date: new Date().toLocaleString("de-DE", {
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: false,
+          }),
         },
       });
     },
