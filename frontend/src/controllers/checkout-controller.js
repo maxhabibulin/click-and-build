@@ -1,5 +1,6 @@
 import { ui } from "../ui.js";
 import FetchWrapper from "../utils/fetch-wrapper.js";
+import { capitalizeFirstLetter } from "../utils/string.js";
 import renderSuccessScreen from "../views/success-card.js";
 import { renderErrorMsg, clearErrorMsg } from "../views/error-msg.js";
 
@@ -15,10 +16,10 @@ export const initCheckout = async (cartItems) => {
   }
 
   const formData = new FormData(form);
-  const firstName = formData.get("firstName");
-  const lastName = formData.get("lastName");
-  const email = formData.get("email");
-  const address = formData.get("address");
+  const firstName = capitalizeFirstLetter(formData.get("firstName"));
+  const lastName = capitalizeFirstLetter(formData.get("lastName"));
+  const email = formData.get("email")?.toLowerCase() ?? "";
+  const address = formData.get("address") ?? "";
 
   if (
     !firstName?.trim() ||
