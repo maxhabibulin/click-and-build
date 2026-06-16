@@ -18,50 +18,87 @@ It demonstrates a **single page application** for a fictional custom PC building
 
 ## 🧱 Project Structure
 
-```
-click-and-build/
-│
+```text
+Click-and-Build/
 ├── backend/
+│   ├── data/
+│   │   ├── products-mock.js
+│   │   └── testimonials-mock.js
+│   ├── routes/
+│   │   ├── orders.js
+│   │   ├── products.js
+│   │   └── testimonials.js
+│   ├── db.js
 │   ├── database.db
+│   ├── package-lock.json
 │   ├── package.json
 │   └── server.js
 │
 ├── frontend/
-│   ├── index.html
-│   ├── main.js
-│   ├── components/
-│   │   ├── _buttons.css
-│   │   ├── _features.css
-│   │   ├── _footer.css
-│   │   ├── _general.css
-│   │   ├── _hero.css
-│   │   ├── _navigation.css
-│   │   ├── _product-cards.css
-│   │   ├── _queries.css
-│   │   ├── _testimonials.css
-│   │   ├── _utility.css
-│   │   ├── _variables.css
+│   ├── css/
+│   │   ├── base/
+│   │   │   ├── _general.css
+│   │   │   ├── _queries.css
+│   │   │   └── _variables.css
+│   │   ├── components/
+│   │   │   ├── _buttons.css
+│   │   │   ├── _catalog-controls.css
+│   │   │   ├── _error-msg.css
+│   │   │   ├── _product-cards.css
+│   │   │   ├── _product-details.css
+│   │   │   └── _success-card.css
+│   │   ├── layout/
+│   │   │   ├── _cart.css
+│   │   │   ├── _catalog.css
+│   │   │   ├── _checkout.css
+│   │   │   ├── _features.css
+│   │   │   ├── _footer.css
+│   │   │   ├── _hero.css
+│   │   │   ├── _navigation.css
+│   │   │   └── _testimonials.css
+│   │   ├── utils/
+│   │   │   └── _utility.css
 │   │   └── main.css
 │   ├── img/
 │   │   ├── favicon/
-│   │   │   └── site.webmanifest
 │   │   ├── hero/
-│   │   │   └── hero.avif
 │   │   ├── logo/
 │   │   ├── product-card/
-│   │   │   ├── pc-1.avif
-│   │   │   ├── pc-2.avif
-│   │   │   └── pc-3.avif
 │   │   ├── svg/
 │   │   └── testimonial/
-│   │       ├── customer-1.avif
-│   │       ├── customer-2.avif
-│   │       ├── customer-3.avif
-│   │       └── customer-4.avif
-│   └── modules/
-│       ├── current-year.js
-│       ├── testimonial-data.js
-│       └── testimonial.js
+│   ├── index.html
+│   ├── main.js
+│   └── src/
+│       ├── controllers/
+│       │   ├── cart-controller.js
+│       │   ├── catalog-controller.js
+│       │   ├── checkout-controller.js
+│       │   ├── featured-products-controller.js
+│       │   ├── product-details-controller.js
+│       │   ├── testimonials-controller.js
+│       │   └── theme-controller.js
+│       ├── models/
+│       │   └── testimonial.js
+│       ├── services/
+│       │   └── cart-service.js
+│       ├── ui/
+│       │   ├── cart-menu.js
+│       │   └── language-menu.js
+│       ├── utils/
+│       │   ├── date.js
+│       │   ├── fetch-wrapper.js
+│       │   ├── navigation.js
+│       │   ├── remove.js
+│       │   ├── string.js
+│       │   └── svg-ns.js
+│       ├── views/
+│       │   ├── error-msg.js
+│       │   ├── main-cart.js
+│       │   ├── mini-cart.js
+│       │   ├── product-card.js
+│       │   └── success-card.js
+│       ├── events.js
+│       └── ui.js
 │
 ├── .gitignore
 ├── LICENSE
@@ -72,32 +109,59 @@ click-and-build/
 
 ## 🚀 How to Run
 
-**Method 1: Direct File Opening**
+This project has a small backend API and a separate frontend UI, so both parts should be started for the app to work correctly.
 
-- Download the project
-- Open `index.html` in your web browser
-
-**Method 2: Local Development Server**
+### 1) Start the backend API
 
 ```bash
-# Clone repository
-git clone https://github.com/maxhabibulin/Click-And-Build.git
-cd click-and-build
-
-# Choose one of these local servers:
-python -m http.server 8000    # Python
-npx serve .                   # Node.js
-php -S localhost:8000         # PHP
+# From the project root
+cd backend
+npm install
+npm run dev
 ```
+
+The API will run at:
+
+- `http://localhost:3000`
+
+### 2) Start the frontend
+
+Open a second terminal and run:
+
+```bash
+# From the project root
+cd frontend
+python -m http.server 5500
+```
+
+Then open:
+
+- `http://localhost:5500`
+
+You can also use VS Code Live Server or another static file server for the frontend.
+
+### Optional alternative
+
+If you prefer a different frontend server, you can run:
+
+```bash
+cd frontend
+npx serve .
+```
+
+Then open the URL shown in the terminal output.
 
 ---
 
 ## 🛠️ Technologies Used
 
-- **HTML5** - Semantic markup and accessibility
-- **CSS3** - Grid, Flexbox, Custom Properties, Transitions
-- **JavaScript ES6+** - Classes, Modules, Event Handling
-- **SVG Icons** - Custom icon system
+- **HTML5** - Markup for the app structure and content
+- **CSS3** - Layout styling, responsive design, and reusable component styles
+- **JavaScript (ES Modules)** - Frontend app logic, event handling, and DOM rendering
+- **Express.js** - Backend API server for product, order, and testimonial endpoints
+- **CORS** - Cross-origin requests between frontend and backend
+- **SQLite** - Local database used by the backend
+- **SVG assets** - Icon elements used throughout the UI
 
 ---
 
