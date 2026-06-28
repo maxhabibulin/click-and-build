@@ -3,6 +3,9 @@ import db from "../db.js";
 
 const router = express.Router();
 
+// POST /api/order
+// Receives a checkout order from the frontend as JSON, stores it in the database,
+// and returns a confirmation response with the new order information.
 router.post("/", (req, res) => {
   const { cart, firstName, lastName, email, address } = req.body;
 

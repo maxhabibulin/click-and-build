@@ -117,7 +117,13 @@ Click-and-Build/
 
 ## 🚀 How to Run
 
-This project has a small backend API and a separate frontend UI, so both parts should be started for the app to work correctly.
+The frontend uses asynchronous JavaScript and JSON to communicate with the backend without reloading the page. The app uses modern Fetch API requests, which are the current form of AJAX-style communication.
+
+- The main frontend entry point in [frontend/main.js](frontend/main.js) loads product and testimonial data from the backend using the fetch-based wrapper in [frontend/src/utils/fetch-wrapper.js](frontend/src/utils/fetch-wrapper.js).
+- The backend server in [backend/server.js](backend/server.js) exposes three API routes:
+  - GET /api/products: returns the product catalog as JSON
+  - GET /api/testimonials: returns testimonials as JSON
+- This separates the UI from the data layer and exchanges JSON between the client and server.
 
 ### 1) Start the backend API
 

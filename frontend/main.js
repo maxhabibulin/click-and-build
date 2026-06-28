@@ -14,6 +14,7 @@ import {
   renderCheckoutPage,
 } from "./src/controllers/cart-controller.js";
 
+// Application startup: initialize the footer date, cart preview, and saved theme.
 const initApp = () => {
   const yearProvider = new CurrentYear();
   if (ui.footer.yearSpan) {
@@ -26,9 +27,14 @@ const initApp = () => {
 initApp();
 applySavedTheme();
 
+// Global runtime cache variable for holding products to minimize redundant API calls.
 let globalProducts = [];
+
+// The app uses modern Fetch API requests, which are the current form of AJAX-style communication.
+// Frontend API client for making asynchronous requests to the Express backend via Fetch API.
 const API = new FetchWrapper("http://localhost:3000");
 
+// Load the product catalog from the backend via Fetch API and render it into the UI.
 const loadAndRenderCatalog = async () => {
   try {
     const data = await API.get("/api/products");
@@ -41,6 +47,7 @@ const loadAndRenderCatalog = async () => {
   }
 };
 
+// Load testimonials from the backend as JSON and pass them into the testimonial controller.
 const loadTestimonials = async () => {
   try {
     const data = await API.get("/api/testimonials");
@@ -58,12 +65,14 @@ const handleCatalogViewOpen = () => {
   }
 };
 
+// Initialize all initial data and restore the last saved page view after the app loads.
 const loadInitialData = async () => {
   await Promise.all([loadAndRenderCatalog(), loadTestimonials()]);
   initEventListeners(handleCatalogViewOpen, () => globalProducts);
 
   const savedView = localStorage.getItem("currentView") ?? "home";
 
+  // Evaluates last current state to route the client back to their active workflow.
   if (savedView === "catalog") {
     navigateTo(ui.views.catalog, allViews, "catalog");
     handleCatalogViewOpen();

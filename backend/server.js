@@ -8,8 +8,11 @@ import testimonialsRoutes from "./routes/testimonials.js";
 const app = express();
 const port = 3000;
 
+// Enable Cross-Origin Resource Sharing to ensure that the frontend can call the backend locally.
 app.use(cors());
+// Parse incoming JSON bodies from frontend requests such as checkout submissions.
 app.use(express.json());
+// Mount the API endpoint routers for products, orders, and testimonials.
 app.use("/api/products", productRoutes);
 app.use("/api/order", ordersRoutes);
 app.use("/api/testimonials", testimonialsRoutes);
