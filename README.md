@@ -1,18 +1,26 @@
-# 🖥️ Click & Build (Demo)
+# 🖥️ Click & Build (Full-Stack Demo)
 
-This is an **educational HTML, CSS, and JavaScript project** created to practice frontend design, object-oriented programming (OOP), and DOM manipulation.
-It demonstrates a **single page application** for a fictional custom PC building service - _Click & Build_
+This is an **educational full-stack web project** created to practice frontend design, object-oriented programming (OOP), DOM manipulation, and backend API development.
+It demonstrates a **single-page application** for a fictional custom PC building service - _Click & Build_ - where a modular frontend and a Node.js/Express API are built using ES modules and supported by SQLite.
 
 ---
 
 ## 💡 Features
 
-- **Interactive testimonial carousel** with keyboard navigation
+- **Full-stack architecture** with separate frontend and backend layers
+- **RESTful API** for products, orders, and testimonials
+- **Database-driven content** using SQLite
+- **Object-Oriented JavaScript** with ES6 modules
 - **Responsive grid layout** using CSS Grid and Flexbox
 - **Modern CSS design system** with custom properties
-- **Object-Oriented JavaScript** with ES6 modules
 - **Dynamic content rendering** and DOM manipulation
 - **Accessible UI components** with ARIA labels
+- **Interactive testimonial carousel** with keyboard navigation
+- **Product details modal** for exploring individual PC builds
+- **Shopping cart experience** with quantity controls, item removal, and cart summary updates
+- **Mini cart preview** and cart badge indicator showing the current item count
+- **Checkout form validation** with toast-style error feedback
+- **Theme toggle** supporting light and dark modes
 
 ---
 
@@ -167,22 +175,21 @@ Then open the URL shown in the terminal output.
 
 ## 🎯 Learning Objectives
 
-- Practice **modular JavaScript architecture**
-- Implement **interactive UI components**
-- Master **CSS layout techniques** (Grid & Flexbox)
-- Apply **accessibility best practices**
-- Use **ES6+ features** (Classes, Modules, Arrow functions)
-- _Future: Implement responsive design_
-- _Future: Migrate to Vite build system_
+- Practice **modular JavaScript architecture** across frontend and backend layers
+- Build **interactive UI components** such as product modals, cart interactions, and testimonial navigation
+- Master **CSS layout techniques** using Grid and Flexbox
+- Apply **accessibility best practices** in UI interactions and semantic structure
+- Use **ES6+ features** such as modules, classes, and arrow functions
+- Improve **responsive design** further for mobile and other screen sizes
+- Improve **image assets** for remaining catalog items
+- Explore **Vite** as a future build tool and development workflow improvement
 
 ---
 
 ## 🗒️ Notes
 
 - This is a **learning project** — not intended for production use.
-- All images are placeholder assets for demonstration
-- Designed to demonstrate **modular architecture, separation of concerns, OOP principles, and DOM manipulation**.
-- Focus on **clean code structure** and **maintainable design patterns**
+- All images are placeholder assets for demonstration.
 
 ---
 
@@ -202,4 +209,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white) ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
 ![Status](https://img.shields.io/badge/status-demo%20project-green.svg) ![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)
