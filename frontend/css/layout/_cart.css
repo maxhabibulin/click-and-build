@@ -38,6 +38,10 @@
   transition: color 0.5s ease;
 }
 
+.cart__grid:has(.cart-item:nth-child(3)) .cart__table-header {
+  padding-right: var(--space-12);
+}
+
 .cart__list {
   display: flex;
   flex-direction: column;
@@ -46,6 +50,7 @@
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--color-border) transparent;
+  overscroll-behavior: contain;
   transition: scrollbar-color 0.5s ease;
 }
 
