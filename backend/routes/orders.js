@@ -6,7 +6,7 @@ const router = express.Router();
 // POST /api/order
 // Receives a checkout order from the frontend as JSON,
 // validates pricing server-side against the database,
-// stores the order, and returns a transaction confirmation response. i
+// stores the order, and returns a transaction confirmation response.
 router.post("/", (req, res) => {
   const { cart, firstName, lastName, email, address } = req.body;
 
