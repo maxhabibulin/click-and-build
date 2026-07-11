@@ -13,10 +13,13 @@
   overflow: hidden;
 }
 
+.product-card__img-box {
+  background-color: var(--color-white-bg);
+}
+
 .product-card__img {
   width: 100%;
   padding: var(--space-12);
-  background-color: var(--color-white-bg);
   border-radius: var(--radius-12);
 }
 

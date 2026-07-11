@@ -6,10 +6,15 @@ export const renderProductCard = (pc) => {
   figure.dataset.id = pc.id;
   figure.style.cursor = "pointer";
 
+  const imgBox = document.createElement("div");
+  imgBox.classList.add("product-card__img-box");
+
   const img = document.createElement("img");
   img.classList.add("product-card__img");
   img.src = pc.product_img;
   img.alt = pc.product_name;
+
+  imgBox.appendChild(img);
 
   const content = document.createElement("div");
   content.classList.add("product-card__content");
@@ -73,7 +78,7 @@ export const renderProductCard = (pc) => {
 
   footer.append(price, btn);
   content.append(title, list, footer);
-  figure.append(img, content);
+  figure.append(imgBox, content);
 
   return figure;
 };
