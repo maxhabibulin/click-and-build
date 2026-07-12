@@ -23,8 +23,13 @@ export const renderSuccessScreen = (res) => {
   const customerName =
     `${capitalizeFirstLetter(firstName)} ${capitalizeFirstLetter(lastName)}`.trim();
 
+  const successScreen = document.createElement("div");
+  successScreen.classList.add("success-screen");
+
   const wrapper = document.createElement("div");
   wrapper.classList.add("success__wrapper");
+
+  successScreen.appendChild(wrapper);
 
   const mainSection = document.createElement("div");
   mainSection.classList.add("success__main");
@@ -201,7 +206,7 @@ export const renderSuccessScreen = (res) => {
   aside.append(receiptHeader, receiptBody, receiptFooter);
   wrapper.append(mainSection, aside);
 
-  grid.appendChild(wrapper);
+  grid.appendChild(successScreen);
 };
 
 export default renderSuccessScreen;

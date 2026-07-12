@@ -261,6 +261,7 @@
   margin-top: var(--space-4);
   overflow-y: auto;
   scrollbar-width: thin;
+  overscroll-behavior: contain;
   scrollbar-color: var(--color-border) transparent;
   transition: scrollbar-color 0.5s ease;
 }

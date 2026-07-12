@@ -1,3 +1,11 @@
+.success-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+}
+
 .success__wrapper {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
