@@ -125,26 +125,26 @@
 
   .cart-menu {
     width: 40rem;
-  }
 
-  .cart-dropdown__item-title {
-    font-size: var(--font-size-lg);
-  }
+    & .cart-dropdown__item-title {
+      font-size: var(--font-size-lg);
+    }
 
-  .cart-dropdown__item-price {
-    font-size: var(--font-size-md);
-  }
+    & .cart-dropdown__item-price {
+      font-size: var(--font-size-md);
+    }
 
-  .cart-dropdown__total-label {
-    font-size: var(--font-size-xl);
-  }
+    & .cart-dropdown__total-label {
+      font-size: var(--font-size-xl);
+    }
 
-  .cart-dropdown__total-price {
-    font-size: var(--font-size-xl);
-  }
+    & .cart-dropdown__total-price {
+      font-size: var(--font-size-xl);
+    }
 
-  .cart-dropdown__cart-btn {
-    font-size: var(--font-size-md);
+    & .cart-dropdown__cart-btn {
+      font-size: var(--font-size-md);
+    }
   }
 
   .product-card {
@@ -187,26 +187,26 @@
 
   .cart-menu {
     width: 44rem;
-  }
 
-  .cart-dropdown__item-title {
-    font-size: var(--font-size-xl);
-  }
+    & .cart-dropdown__item-title {
+      font-size: var(--font-size-xl);
+    }
 
-  .cart-dropdown__item-price {
-    font-size: var(--font-size-lg);
-  }
+    & .cart-dropdown__item-price {
+      font-size: var(--font-size-lg);
+    }
 
-  .cart-dropdown__total-label {
-    font-size: var(--font-size-2xl);
-  }
+    & .cart-dropdown__total-label {
+      font-size: var(--font-size-2xl);
+    }
 
-  .cart-dropdown__total-price {
-    font-size: var(--font-size-2xl);
-  }
+    & .cart-dropdown__total-price {
+      font-size: var(--font-size-2xl);
+    }
 
-  .cart-dropdown__cart-btn {
-    font-size: var(--font-size-lg);
+    & .cart-dropdown__cart-btn {
+      font-size: var(--font-size-lg);
+    }
   }
 
   .product-modal__content {
@@ -260,8 +260,54 @@
     }
   }
 
+  .nav-control__menu {
+    top: calc(100% + 2.1rem);
+    right: calc(100% + -9.5rem);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .cart-menu {
+    width: 50vw;
+    height: 100vh;
+    top: calc(100% + 2.1rem);
+    right: calc(100% + -14.7rem);
+    border-radius: 0;
+  }
+
+  .testimonial {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-24);
+  }
+
   .section-testimonial {
-    max-width: 85rem;
+    max-width: 97%;
+  }
+
+  .testimonial__img {
+    width: 90%;
+    transform: none;
+  }
+
+  .slider-btn--left {
+    transform: translate(20%, -50%);
+  }
+
+  .slider-btn--right {
+    transform: translate(-20%, -50%);
+  }
+
+  .testimonial {
+    padding: var(--space-24) var(--space-8) var(--space-24) var(--space-48);
+  }
+
+  .testimonial__box {
+    min-height: 28rem;
+  }
+
+  .catalog__grid {
+    row-gap: calc(var(--space-32) + var(--space-4));
   }
 
   .cart__summary {
@@ -279,23 +325,90 @@
     background-color: rgb(222, 204, 255);
   }
 
-  .grid-3-cols {
+  .mb-96 {
+    margin-bottom: var(--space-32);
+  }
+
+  .mb-128 {
+    margin-bottom: var(--space-64);
+  }
+
+  .grid {
+    column-gap: var(--space-16);
+  }
+
+  .grid-2-cols {
     grid-template-columns: 1fr;
+  }
+
+  .grid-3-cols {
+    &:has(.feature__item) {
+      grid-template-columns: 1fr;
+    }
 
     &:has(.product-card) {
-      row-gap: var(--space-48);
-
-      width: 100%;
+      grid-template-columns: repeat(2, 1fr);
     }
+  }
+
+  .heading-secondary {
+    margin-bottom: var(--space-32);
+  }
+
+  .hero__img {
+    width: 50%;
+    margin-bottom: var(--space-16);
+  }
+
+  .feature__item:not(:last-child) {
+    margin-bottom: var(--space-32);
+  }
+
+  .feature__icon {
+    margin-bottom: var(--space-4);
+  }
+
+  .feature__title {
+    margin-bottom: var(--space-8);
+  }
+
+  .section-product-card .product-card:not(:last-child) {
+    margin-bottom: var(--space-16);
+  }
+
+  .catalog__grid {
+    row-gap: var(--space-16);
+  }
+
+  .catalog__controls {
+    margin-bottom: var(--space-24);
+  }
+
+  .section-testimonial {
+    max-width: 96.7%;
+  }
+}
+
+@media (max-width: 30em) {
+  body {
+    background-color: rgb(181, 207, 255);
+  }
+
+  .section-testimonial {
+    max-width: 96.7%;
+  }
+
+  .testimonial__box {
+    min-height: 50rem;
+  }
+
+  .success__wrapper {
+    max-width: 55rem;
   }
 }
 
 @media (max-width: 27em) {
   body {
     background-color: rgb(255, 187, 239);
-  }
-
-  .success__wrapper {
-    max-width: 55rem;
   }
 }
