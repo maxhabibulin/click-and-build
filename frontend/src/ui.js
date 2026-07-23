@@ -26,6 +26,7 @@ export const ui = {
       document.querySelector("#js-hero-btn"),
     ],
     navigation: {
+      mobileMenu: document.querySelector("#js-mobile-menu-btn"),
       cartSwitcher: document.querySelector("#js-cart-btn"),
       themeSwitcher: document.querySelector("#js-theme-btn"),
       langSwitcher: document.querySelector("#js-lang-btn"),
@@ -34,6 +35,7 @@ export const ui = {
     closeBtn: document.querySelector("#js-close-btn"),
   },
   menus: {
+    mobile: document.querySelector("#js-mobile-menu"),
     cart: document.querySelector("#js-cart-menu"),
     lang: document.querySelector("#js-lang-menu"),
     cartBadge: document.querySelector("#js-cart-badge"),

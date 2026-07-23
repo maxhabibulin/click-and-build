@@ -154,7 +154,6 @@ body.dark-mode {
   --shadow-card: 0 2rem 4rem rgba(0, 0, 0, 0.4);
   --shadow-card-hover:
     0 2rem 4rem rgba(0, 0, 0, 0.45), 0 1rem 4.8rem rgba(51, 154, 240, 0.2);
-  /* Fix: Adjust button big hover and active */
   --shadow-btn-hover: 0 0 2.5rem rgba(28, 126, 214, 0.4);
   --shadow-btn-big-active: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.6);
   --shadow-modal: 0 2rem 5rem rgba(0, 0, 0, 0.6);

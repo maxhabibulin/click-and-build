@@ -20,6 +20,10 @@
   }
 }
 
+.section-cart:has(.cart-main__empty) .cart__main::after {
+  content: none;
+}
+
 .cart__table-header,
 .cart-item {
   display: grid;

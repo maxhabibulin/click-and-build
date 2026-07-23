@@ -90,6 +90,7 @@ Click-and-Build/
 │       ├── services/
 │       │   └── cart-service.js
 │       ├── ui/
+│       │   ├── mobile-menu.js
 │       │   ├── cart-menu.js
 │       │   └── language-menu.js
 │       ├── utils/

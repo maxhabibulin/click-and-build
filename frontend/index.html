@@ -31,6 +31,25 @@
   <body id="home">
     <header class="navigation">
       <nav class="navigation__content">
+        <button
+          class="mobile-nav-toggle"
+          id="js-mobile-menu-btn"
+          aria-label="Toggle menu"
+        >
+          <svg
+            class="mobile-nav-toggle__icon mobile-nav-toggle__icon--bars"
+            aria-hidden="true"
+          >
+            <use href="img/svg/icons.svg#icon-bars"></use>
+          </svg>
+          <svg
+            class="mobile-nav-toggle__icon mobile-nav-toggle__icon--x"
+            aria-hidden="true"
+          >
+            <use href="img/svg/icons.svg#icon-x"></use>
+          </svg>
+          <div class="mobile-nav-toggle__menu" id="js-mobile-menu"></div>
+        </button>
         <a class="navigation__logo-link" id="js-nav-logo" href="#">
           <img
             class="navigation__logo-img"
@@ -78,7 +97,7 @@
             <div class="cart-menu" id="js-cart-menu"></div>
           </button>
           <button
-            class="nav-control"
+            class="nav-control nav-control--btn"
             id="js-lang-btn"
             aria-label="Change language"
           >
@@ -126,11 +145,13 @@
         <section class="section-hero container mt-64 mb-96">
           <div class="hero__container">
             <div class="grid grid-2-cols">
-              <img
-                class="hero__img"
-                src="img/hero/hero.avif"
-                alt="Click & Build store"
-              />
+              <div class="hero__img-box">
+                <img
+                  class="hero__img"
+                  src="img/hero/hero.avif"
+                  alt="Click & Build store"
+                />
+              </div>
               <div class="hero__text-box">
                 <h1 class="hero__heading heading-primary">
                   We design and build custom computers to enhance your life

@@ -1,10 +1,11 @@
 import { ui, allViews } from "./ui.js";
-import { clearErrorMsg } from "./views/error-msg.js";
 import { navigateTo } from "./utils/navigation.js";
+import { clearErrorMsg } from "./views/error-msg.js";
 import { toggleTheme } from "./controllers/theme-controller.js";
 import { toggleCartMenu, closeCartMenu } from "./ui/cart-menu.js";
-import { getCart, addToCart, updateQuantity } from "./services/cart-service.js";
+import { toggleMobileMenu, closeMobileMenu } from "./ui/mobile-menu.js";
 import { toggleLanguageMenu, closeLanguageMenu } from "./ui/language-menu.js";
+import { getCart, addToCart, updateQuantity } from "./services/cart-service.js";
 import {
   updateMiniCart,
   renderMainCartPage,
@@ -188,25 +189,45 @@ export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
     }
   });
 
+  ui.buttons.navigation.mobileMenu?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const mobileMenu = ui.menus.mobile;
+    const cartMenu = ui.menus.cart;
+    const langMenu = ui.menus.lang;
+    toggleMobileMenu(mobileMenu);
+    closeCartMenu(cartMenu);
+    closeLanguageMenu(langMenu);
+  });
+
   ui.buttons.navigation.cartSwitcher?.addEventListener("click", (e) => {
     e.stopPropagation();
     const cartMenu = ui.menus.cart;
     const langMenu = ui.menus.lang;
+    const mobileMenu = ui.menus.mobile;
     toggleCartMenu(cartMenu);
     closeLanguageMenu(langMenu);
+    closeMobileMenu(mobileMenu);
   });
 
   ui.buttons.navigation.langSwitcher?.addEventListener("click", (e) => {
     e.stopPropagation();
     const langMenu = ui.menus.lang;
     const cartMenu = ui.menus.cart;
+    const mobileMenu = ui.menus.mobile;
     toggleLanguageMenu(langMenu);
     closeCartMenu(cartMenu);
+    closeMobileMenu(mobileMenu);
   });
 
-  ui.buttons.navigation.themeSwitcher?.addEventListener("click", () =>
-    toggleTheme(),
-  );
+  ui.buttons.navigation.themeSwitcher?.addEventListener("click", () => {
+    const langMenu = ui.menus.lang;
+    const cartMenu = ui.menus.cart;
+    const mobileMenu = ui.menus.mobile;
+    toggleTheme();
+    closeMobileMenu(mobileMenu);
+    closeCartMenu(cartMenu);
+    closeLanguageMenu(langMenu);
+  });
 
   ui.buttons.closeBtn?.addEventListener("click", closeProductModal);
 
@@ -218,14 +239,20 @@ export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
 
   document.addEventListener("click", (e) => {
     const target = e.target;
+    const mobileMenu = ui.menus.mobile;
     const cartMenu = ui.menus.cart;
     const langMenu = ui.menus.lang;
+    const menuSwitcher = ui.buttons.navigation.mobileMenu;
     const cartSwitcher = ui.buttons.navigation.cartSwitcher;
     const langSwitcher = ui.buttons.navigation.langSwitcher;
 
     if (target.closest(".error-msg-container")) {
       clearErrorMsg();
       return;
+    }
+
+    if (!menuSwitcher?.contains(target) && !mobileMenu?.contains(target)) {
+      closeMobileMenu(mobileMenu);
     }
 
     if (!cartSwitcher?.contains(target) && !cartMenu?.contains(target)) {
@@ -239,10 +266,12 @@ export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
 
   document.addEventListener("keydown", (e) => {
     const key = e.key;
+    const mobileMenu = ui.menus.mobile;
     const cartMenu = ui.menus.cart;
     const langMenu = ui.menus.lang;
 
     if (key === "Escape") {
+      closeMobileMenu(mobileMenu);
       closeCartMenu(cartMenu);
       closeLanguageMenu(langMenu);
       closeProductModal();
