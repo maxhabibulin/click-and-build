@@ -12,6 +12,7 @@ It demonstrates a **single-page application** for a fictional custom PC building
 - **Database-driven content** using SQLite
 - **Object-Oriented JavaScript** with ES6 modules
 - **Responsive grid layout** using CSS Grid and Flexbox
+- **Media queries** optimization for various screen resolutions and devices
 - **Modern CSS design system** with custom properties
 - **Dynamic content rendering** and DOM manipulation
 - **Accessible UI components** with ARIA labels
@@ -21,6 +22,7 @@ It demonstrates a **single-page application** for a fictional custom PC building
 - **Mini cart preview** and cart badge indicator showing the current item count
 - **Checkout form validation** with toast-style error feedback
 - **Theme toggle** supporting light and dark modes
+- **Total price calculation** logic handled on server-side
 
 ---
 
@@ -187,7 +189,7 @@ Then open the URL shown in the terminal output.
 - Master **CSS layout techniques** using Grid and Flexbox
 - Apply **accessibility best practices** in UI interactions and semantic structure
 - Use **ES6+ features** such as modules, classes, and arrow functions
-- Improve **responsive design** further for mobile and other screen sizes
+- Optimize **responsive design** for mobile and other screen sizes
 - Improve **image assets** for remaining catalog items
 - Explore **Vite** as a future build tool and development workflow improvement
 
