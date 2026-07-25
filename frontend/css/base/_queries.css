@@ -151,6 +151,9 @@
       visibility 0.1s ease,
       transform 0.3s ease;
     z-index: 11;
+    overflow: hidden;
+    overscroll-behavior: none;
+    touch-action: none;
   }
 
   .navigation__link {
@@ -655,7 +658,8 @@
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
-    gap: var(--space-12);
+    gap: var(--space-8);
+    margin-bottom: var(--space-16);
   }
 
   .catalog__search-wrapper {
