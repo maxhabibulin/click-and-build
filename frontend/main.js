@@ -32,7 +32,13 @@ let globalProducts = [];
 
 // The app uses modern Fetch API requests, which are the current form of AJAX-style communication.
 // Frontend API client for making asynchronous requests to the Express backend via Fetch API.
-const API = new FetchWrapper("http://localhost:3000");
+const isProduction =
+  window.location.hostname !== "localhost" &&
+  window.location.hostname !== "127.0.0.1";
+const BASE_URL = isProduction
+  ? "https://click-and-build.onrender.com"
+  : "http://localhost:3000";
+const API = new FetchWrapper(BASE_URL);
 
 // Load the product catalog from the backend via Fetch API and render it into the UI.
 const loadAndRenderCatalog = async () => {
