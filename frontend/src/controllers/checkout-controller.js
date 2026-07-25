@@ -47,7 +47,6 @@ export const initCheckout = async (cartItems) => {
     if (submitBtn) submitBtn.disabled = true;
 
     const res = await API.post("/api/order", orderData);
-    console.log("Order confirmed:", res);
 
     if (res) {
       localStorage.removeItem("shopping_cart");

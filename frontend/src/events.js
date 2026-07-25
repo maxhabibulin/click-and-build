@@ -36,9 +36,6 @@ export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
     if (targetProduct) {
       const productToAdd = { ...targetProduct, quantity: quantity };
       addToCart(productToAdd);
-      console.log(
-        `Product with ID: ${targetProduct.id} "${targetProduct.product_name}" successfully added to cart!`,
-      );
       closeProductModal();
     } else {
       console.warn(`Product with ID: ${productId} is not found in global list`);
@@ -62,7 +59,6 @@ export const initEventListeners = (onCatalogOpen, getGlobalProducts) => {
       const selectedProduct = currentProducts.find((p) => p.id === productId);
 
       if (selectedProduct) {
-        console.log(`Opening modal for ID: ${selectedProduct.id}`);
         openProductModal(selectedProduct);
 
         const input = ui.productModal.modal?.querySelector(
