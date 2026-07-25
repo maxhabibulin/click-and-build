@@ -3,6 +3,10 @@
 This is an **educational full-stack web project** created to practice frontend design, object-oriented programming (OOP), DOM manipulation, and backend API development.
 It demonstrates a **single-page application** for a fictional custom PC building service - _Click & Build_ - where a modular frontend and a Node.js/Express API are built using ES modules and supported by SQLite.
 
+**Live Demo:** [https://click-and-build.netlify.app](https://click-and-build.netlify.app)
+
+> ⚠️ **Note:** The backend is hosted on a free instance **(Render)** that spins down after inactivity. The initial request may take around **50 seconds** to wake up the server. If this happens, please wait a moment or refresh the page.
+
 ---
 
 ## 💡 Features
