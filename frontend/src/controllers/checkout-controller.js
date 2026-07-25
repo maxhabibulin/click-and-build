@@ -40,7 +40,13 @@ export const initCheckout = async (cartItems) => {
   };
 
   let submitBtn = null;
-  const API = new FetchWrapper("http://localhost:3000");
+  const isProduction =
+    window.location.hostname !== "localhost" &&
+    window.location.hostname !== "127.0.0.1";
+  const BASE_URL = isProduction
+    ? "https://click-and-build.onrender.com"
+    : "http://localhost:3000";
+  const API = new FetchWrapper(BASE_URL);
 
   try {
     submitBtn = form.querySelector('[type="submit"]');
