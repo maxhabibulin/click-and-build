@@ -4,7 +4,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 10rem;
   scrollbar-width: thin;
-  scrollbar-gutter: stable;
+  overflow-y: scroll;
 }
 
 html.modal-open {
