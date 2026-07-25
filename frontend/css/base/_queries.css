@@ -442,8 +442,13 @@
     text-align: center;
   }
 
+  .summary-card {
+    padding: var(--space-32) var(--space-24);
+  }
+
   .checkout__verification {
     text-align: center;
+    padding: var(--space-32) var(--space-24);
   }
 
   .checkout__verification-box {
@@ -632,7 +637,7 @@
 
   .grid-3-cols:has(.product-card) {
     grid-template-columns: repeat(2, 1fr);
-    row-gap: var(--space-4);
+    row-gap: 0;
   }
 
   .cart__table-header-col:nth-child(4),
