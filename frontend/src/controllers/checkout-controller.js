@@ -8,10 +8,14 @@ export const initCheckout = async (cartItems) => {
   const form = ui.checkout.form;
   if (!form) return false;
 
+  let submitBtn = form.querySelector('[type="submit"]');
+  if (submitBtn) submitBtn.disabled = true;
+
   clearErrorMsg();
 
   if (!cartItems || cartItems.length === 0) {
     renderErrorMsg("Oops! Your cart is currently empty.");
+    if (submitBtn) submitBtn.disabled = false;
     return false;
   }
 
@@ -28,6 +32,7 @@ export const initCheckout = async (cartItems) => {
     !address?.trim()
   ) {
     renderErrorMsg("Please fill out all the fields in the shipping form.");
+    if (submitBtn) submitBtn.disabled = false;
     return false;
   }
 
@@ -39,7 +44,6 @@ export const initCheckout = async (cartItems) => {
     address: address,
   };
 
-  let submitBtn = null;
   const isProduction =
     window.location.hostname !== "localhost" &&
     window.location.hostname !== "127.0.0.1";
@@ -49,9 +53,6 @@ export const initCheckout = async (cartItems) => {
   const API = new FetchWrapper(BASE_URL);
 
   try {
-    submitBtn = form.querySelector('[type="submit"]');
-    if (submitBtn) submitBtn.disabled = true;
-
     const res = await API.post("/api/order", orderData);
 
     if (res) {
